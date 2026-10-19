@@ -133,8 +133,8 @@ Once you have the links, downloading is more of a problem than for PDFs, because
 
 For some repositories, downloading cannot be efficiently automated. Here are the options:
 
-1. **Open the links, download by hand.** Ask Claude for Chrome to open each of the links in a new tab, and go over them manually.
-2. **Let Claude download.** Ask Claude for Chrome to download them itself: this spends a lot of tokens, is very slow and quite unreliable, but might save your own time.
+1. **Open the links, download by hand.** Ask [Claude in Chrome](https://claude.com/claude-in-chrome) to open each of the links in a new tab, and go over them manually.
+2. **Let Claude download.** Ask Claude in Chrome to download them itself: this spends a lot of tokens, is very slow and quite unreliable, but might save your own time.
 
 Sometimes a package doesn't contain the data itself, but provides instructions on how to fetch the data from another source. Agents are quite good at this most of the time; just ask them to follow the authors' instructions.
 
