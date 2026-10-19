@@ -210,5 +210,6 @@ Another example, we can try to test, what if we replace all left hand sides with
 
 ## More tips
 
-Worktrees and Pull requests, questions document
-...
+- **Worktrees.** Give each agent its own git worktree (`git worktree add`), so parallel agents never edit the same files.
+- **Pull requests.** Have every agent finish with a pull request instead of committing to `main`. You review a diff, CI runs the tests, and a bad change is one click to reject.
+- **Questions document.** Agents that run for hours pile up questions only you can answer. Ask them to collect these on one page of cards: each card has a title, one explicit question, a few sentences of context in plain words, 2–4 answer buttons and a note box. You answer the cards when you have time, and the agents read your answers back.
