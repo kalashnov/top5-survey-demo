@@ -1,6 +1,5 @@
 /pdfs
 /txt
-/datasets/*
-!/datasets/*.dvc
+/datasets
 /verdicts
 __pycache__/
