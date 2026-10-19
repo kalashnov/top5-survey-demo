@@ -62,7 +62,7 @@ The first thing is to collect any public urls for each paper. The repo already c
 
 This will contain mistakes, some links will lead to other papers, some links will lead to supplementary material instead. Some papers will have no link, even though the paper is made public on the author's website. A good approach is to run a number of haiku subagents who will be tasked to correct the mistakes/search the web for correct versions. This is more expensive then searching API of above sources with the code, but we have already narrowed down the task before handing it to LLMs. For this excercise I made sure none of the papers in this sample link to a wrong PDF, so we skip the data cleaning part here, and will learn about subagents on a more exciting example.
 
-To download the PDFs from my list, run (this will take a few minutes):
+**What to do.** To download the PDFs from my list, run (this will take a few minutes):
 
 ```bash
 python fetch_pdfs.py
@@ -92,7 +92,7 @@ Therefore, we will heavily optimize the cost per paper. Here are a few important
 3. One can worry that a larger prompt means more input, therefore more costs. But, the prompt doesn't change from request to request, and if everything is designed correctly, it is cached, and is billed at a 10% rate. The larger part of the input is the paper anyway.
 4. Finally, we use a feature called "structured output". It constrains the model to output a valid json, which we can then use to construct our final dataset. The schema for this application is in ...
 
-To run the classification analysis, just execute:
+**What to do.** To run the classification analysis, just execute:
 
 ```bash
 python classify.py          # writes verdicts/<wid>.json
@@ -118,7 +118,7 @@ For some repos downloading cannot be efficiently automated. Here are the options
 1. Ask Claude for Chrome to open each of the links in the new tab and go over them manually
 2. Ask Claude for Chrome to download themselves: this spends a lot of tokens, is very slow, quite unreliable, but might save your own time.
 
-For this tutorial I suggest to manually download a few replication packages, e.g. these. After they are downloaded just ask Claude to go into your downloads folder and copy them into the project
+**What to do.** For this tutorial I suggest to manually download a few replication packages, e.g. these. After they are downloaded just ask Claude to go into your downloads folder and copy them into the project
 
 | Paper | Size | Repository | Package |
 |---|---|---|---|
@@ -130,6 +130,8 @@ For this tutorial I suggest to manually download a few replication packages, e.g
 | W3186531035, AER 2024 | 1.2 GB | openICPSR | https://doi.org/10.3886/E198004V1 |
 
 ## Run stage 5
+
+**What to do.** Check that the registered tables replicate:
 
 ```bash
 pytest test_replications.py            # one test per published column
