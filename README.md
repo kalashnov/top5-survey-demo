@@ -21,7 +21,8 @@ In this toy example, we will:
 
 The whole tutorial is written with Claude in mind, but a large part of it is not specific to Claude. Some of the steps can run with any agent; others may require rewriting some of the repo's code, which shouldn't be a big pain. Ask your agent for help here!
 
-The repo is small enough not to eat any sensible part of your quota on a 20 USD subscription.
+> [!TIP]
+> The repo is small enough not to eat any sensible part of your quota on a 20 USD subscription.
 
 ## Navigating the tutorial
 
@@ -37,6 +38,8 @@ The tutorial is organized in sections. Each section has some writing explaining 
 
 ## Stage 1: Collect papers
 
+*Time: ~6 min to download, a few seconds to extract · Tools: Python, PyMuPDF*
+
 The first thing is to collect any public URLs for each paper. To save time, the repo already contains URLs for each paper, but generally a good approach is to ask your agent to write a script that systematically reviews the following sources:
 
 1. OpenAlex
@@ -44,7 +47,10 @@ The first thing is to collect any public URLs for each paper. To save time, the 
 3. NBER
 4. arXiv
 
-The result will contain mistakes: some links will lead to other papers, and some will lead to supplementary material instead. Some papers will have no link, even though the paper is public on the author's website. A good approach is to run a number of Haiku subagents tasked with correcting the mistakes and searching the web for the correct versions. This is more expensive than scraping the APIs of the sources above with code, but by then we have already narrowed down the task before handing it to LLMs. For this exercise I made sure none of the papers in this sample link to a wrong PDF, so we skip the data cleaning part here and will learn about subagents on a more exciting example.
+The result will contain mistakes: some links will lead to other papers, and some will lead to supplementary material instead. Some papers will have no link, even though the paper is public on the author's website. A good approach is to run a number of Haiku subagents tasked with correcting the mistakes and searching the web for the correct versions. This is more expensive than scraping the APIs of the sources above with code, but by then we have already narrowed down the task before handing it to LLMs.
+
+> [!NOTE]
+> For this exercise I made sure none of the papers in this sample link to a wrong PDF, so we skip the data cleaning part here and will learn about subagents on a more exciting example.
 
 **What to do.** To download the PDFs from my list, run (this will take a few minutes):
 
@@ -61,6 +67,8 @@ python extract_text.py
 
 ## Stage 2: Classifying the methodology of papers
 
+*Time: ~2 min for 50 papers, 4 at a time · Tools: Claude Agent SDK, Haiku*
+
 Now we arrive at the fun part: running an army of subagents. The idea of this stage is as follows. Let the agents read the paper and answer a few questions: Do they run an experiment? Do they run difference-in-differences? What is the source of the data?
 
 Our virtues and our vices:
@@ -75,15 +83,18 @@ Therefore, we will heavily optimize the cost per paper. Here are a few important
 2. **A long prompt with examples.** We use a very verbose, clear prompt with a lot of examples, and we validate this prompt with a few experiments/iterations. The prompt for this task is in [`prompts/system_prompt.md`](prompts/system_prompt.md). A really good prompt lets us use smaller models.
 3. **Prompt caching.** One may worry that a larger prompt means more input, and therefore higher costs. But the prompt doesn't change from request to request, and if everything is designed correctly, it is cached and billed at a 10% rate. The larger part of the input is the paper anyway.
 4. **Structured output.** Finally, we use a feature called "structured output". It constrains the model to output valid JSON, which we can then use to construct our final dataset. The schema for this application is in [`prompts/json_schema.json`](prompts/json_schema.json).
-5. **Batch processing.** The other option to save is batch processing, which we do not use here. Most providers allow to submit the job for an agent to a "batch" instead of "on-demand". They guarantee the response within 24 hours, but they wouldn't be obligated to answer right away. They provide significant discounts. However, it also involves tradeoffs, e.g. it might be harder to manage the prompt cache (which expires). For Claude, it also doesn't work with subscription. For my scale I found that a 100 USD subscription, though add some inconvenience, is the most cost effective option, so I do not rely on batch processing
+5. **Batch processing.** The other way to save is batch processing, which we do not use here. Most providers let you submit a job as a "batch" instead of "on demand". They guarantee a response within 24 hours, but are not obliged to answer right away, and they give significant discounts. However, it also involves tradeoffs, e.g. it might be harder to manage the prompt cache (which expires). For Claude, it also doesn't work with a subscription. At my scale I found that a 100 USD subscription, though it adds some inconvenience, is the most cost-effective option, so I do not rely on batch processing.
 
-**What to do.** 
+**What to do.**
 
-For this stage you need to make sure that you are authenitificated in Claude Code command line interface:
+For this stage you need to make sure that you are authenticated in the Claude Code command line interface:
 
-```claude -p "Reply with OK"```
+```bash
+claude -p "Reply with OK"
+```
 
-If you use ChatGPT, you will need to ask your agent to adapt the code to your provider
+> [!NOTE]
+> If you use ChatGPT, you will need to ask your agent to adapt the code to your provider.
 
 To run the classification, just execute:
 
@@ -94,6 +105,8 @@ python classify.py          # writes verdicts/<wid>.json
 This will output one JSON file per paper with the answers to the questions we asked.
 
 ## Stage 3: Download replication data
+
+*Time: depends on you, the 6 packages total ~1.5 GB · Tools: browser, optionally Claude for Chrome*
 
 For downloading datasets we follow the same approach as for PDFs. We first need to collect a list of URLs (already collected for this example). Ask the agent to write code that systematically scrapes the following sources:
 
@@ -113,7 +126,8 @@ For some repositories, downloading cannot be efficiently automated. Here are the
 1. **Open the links, download by hand.** Ask Claude for Chrome to open each of the links in a new tab, and go over them manually.
 2. **Let Claude download.** Ask Claude for Chrome to download them itself: this spends a lot of tokens, is very slow and quite unreliable, but might save your own time.
 
-Sometimes a package doesn't contain the data itself, but provides instructions on how to fetch the data from another source. Agents are quite good at this most of the time; just ask them to follow the authors' instructions.
+> [!TIP]
+> Sometimes a package doesn't contain the data itself, but provides instructions on how to fetch the data from another source. Agents are quite good at this most of the time; just ask them to follow the authors' instructions.
 
 **What to do.** For this tutorial I suggest manually downloading a few replication packages, e.g. these. After they are downloaded, just ask Claude to go into your downloads folder and copy them into the project.
 
@@ -128,20 +142,23 @@ Sometimes a package doesn't contain the data itself, but provides instructions o
 
 ## Stage 4: Replication
 
-This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add some structure to their search. 
+*Time: varies by paper for the agents, seconds for the tests · Tools: Claude Code subagents (Sonnet), pyfixest, pytest*
 
-Note: why do we ask a subagent to do it and ask only one paper at a time? We do this for both quality and costs minimization. We do not want the each subagent to have contest from the other paper, for two reasons: 1) long contexts are more expensive 2) too long contexts may deteriorate quality. 
+This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add some structure to their search.
 
-A good way to add structure is to recognize that our unit of analysis is a regression. A regression is more or less determined by its right-hand side and left-hand side. So we need the subagent to provide us with 
-    1. a prepared dataset, 
-    2. the right-hand side, and the left-hand side and other details of specification (e.g. standard errors variant)
+> [!NOTE]
+> Why do we ask a subagent to do it, and give it only one paper at a time? For both quality and cost. We do not want each subagent to carry context from the other papers, for two reasons: 1) long contexts are more expensive, and 2) too long contexts may deteriorate quality.
+
+A good way to add structure is to recognize that our unit of analysis is a regression. A regression is more or less determined by its right-hand side and left-hand side. So we need the subagent to provide us with
+    1. a prepared dataset,
+    2. the right-hand side, the left-hand side and other details of the specification (e.g. the standard errors variant),
     3. the published coefficients.
 
-This is where we fix the `Spec` interface. It register the model specification the agent is willing to fit and it's reference value. After that the code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
+This is where we fix the `Spec` interface. It registers the model specification the agent wants to fit and its reference values. After that, the code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
 
 This way we
-    1. have some guardrail that the agent did indeed check the coefficient against the published one
-    2. have the replication results in a structured format as well (a set of `Specs`), which can be later collected in the dataset of their own
+    1. have a guardrail that the agent did indeed check the coefficients against the published ones,
+    2. have the replication results in a structured format as well (a set of `Spec`s), which can later be collected into a dataset of their own.
 
 You will find that papers fail to replicate for various reasons: the package doesn't contain the required data, the version of the PDF we have is not the published version, or the authors indeed made a mistake. But in most cases they replicate well.
 
@@ -155,7 +172,7 @@ Run 1 sonnet subagent for each paper with a dataset (2 in parallel),
 prompt them with replicate.md and ask them to replicate the paper. Report back with the results.
 ```
 
-The chat will spawn subagents and talk to them on your behalf
+The chat will spawn subagents and talk to them on your behalf.
 
 The output of the agents should be data preparation scripts and registered regressions, which they either could or could not replicate.
 
@@ -166,7 +183,8 @@ pytest test_replications.py            # one test per published column
 ```
 
 ## Stage 5: new analysis
-time: eternity
+
+*Time: eternity*
 
 Suppose, instead of just replicating the analysis of the authors we want to extend it. Here there are two useful approaches. 
 
@@ -178,7 +196,13 @@ Another example, we can try to test, what if we replace all left hand sides with
 
 ## Take home lessons:
 
-<Claude, please summarize>
+1. **Narrow the task with code first.** Scripts collect links, download files and extract text for free. LLMs only get what code cannot do, such as fixing wrong links.
+2. **Use the smallest model that does the job.** Answering fixed questions about a paper is a job for Haiku, given a long, clear prompt with examples.
+3. **Keep the prompt fixed.** A prompt that does not change is cached and billed at a fraction of the price; the paper is the bulk of the input.
+4. **Ask for structured output.** A JSON schema turns the answers into a dataset instead of text to read.
+5. **One subagent per paper.** A short context is cheaper and gives better answers.
+6. **Fix the interface in advance for open-ended tasks.** The agents explore freely, but report through a `Spec`, and our own code checks the result. That is the guardrail, and the results come out structured.
+7. **Expect mistakes at every automated step.** Some links lead to the wrong paper, and some papers do not replicate. Check a sample by hand before trusting the rest.
 
 ## More tips
 
