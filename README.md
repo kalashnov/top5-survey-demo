@@ -147,7 +147,7 @@ A good way to add structure is to recognize that our unit of analysis is a regre
 2. the right-hand side, the left-hand side and other details of the specification (e.g. the standard errors variant),
 3. the published coefficients.
 
-This is where we fix the [`Spec` interface](stage4_replicate/replications/spec.py) (see [an example paper](stage4_replicate/replications/W4401126511.py) that uses it). It registers the model specification the agent wants to fit and its reference values. After that, the code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
+This is where we fix the [`Spec` interface](stage4_replicate/replications/spec.py) It is a format, in which the model registers the specification they want to fit and its reference value. After that, the code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
 
 This way we
 
