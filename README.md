@@ -21,3 +21,12 @@ pip install -r requirements.txt
 dvc pull -r r2ro txt.dvc
 python classify.py          # writes verdicts/<wid>.json
 ```
+
+## Run stage 5
+
+```bash
+dvc pull -r r2ro datasets/W4401126511.dvc
+pytest test_replications.py            # one test per published column
+```
+
+`prompts/replicate.md` asks an agent to add a paper: `replications/<wid>.py` with its data loader and `SPECS`.
