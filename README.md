@@ -3,11 +3,11 @@
 This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
 
 1. How to run/manage/schedule hundreds of subagents
-  1.   With API
-  2.   Simply in chat
+    1.   With API
+    2.   Simply in chat
 4. How to save on costs
-   1. With local models
-   2. With ...
+    1. With local models
+    2. With ...
 6. How to write prompts
 
 In this toy example, we will:
