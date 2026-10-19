@@ -1,7 +1,5 @@
 # Top-5 survey demo
 
-REFER TO PAUL GOLDSMITH, HULL, CR
-
 This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
 
 1. How to run/manage/schedule dozens of subagents
@@ -24,6 +22,12 @@ In this toy example, we will:
 > **ChatGPT and other providers.** The whole tutorial is written with Claude in mind, but a large part of it is not specific to Claude. Some of the steps can run with any agent; others may require rewriting some of the repo's code, which shouldn't be a big pain. Ask your agent for help here!
 
 The repo is small enough not to eat any sensible part of your quota on a 20 USD subscription.
+
+## Related work
+
+- **Chen and Roth (2024), "Logs with Zeros? Some Problems and Solutions", QJE.** Their replication code, [jiafengkevinchen/logs-public](https://github.com/jiafengkevinchen/logs-public), re-estimates the log specifications of published papers. The classification question in Stage 2, whether a paper logs its outcome, comes from the same problem.
+- **Peter Hull** ([@instrumenthull](https://x.com/instrumenthull)) used an AI agent to read more than 5,000 top-five papers from the last ten years and find two-way fixed effects regressions with staggered adoption, to measure how much "negative weights" matter in practice.
+- **Paul Goldsmith-Pinkham** teaches [Claude Code for applied economists](https://markusacademy.substack.com/p/claude-code-for-applied-economists) and has proposed [LLM-friendly academic papers](https://paulgp.substack.com/p/llm-friendly-academic-papers-a-proposal), whose replication packages an agent can run and verify.
 
 ## Navigating the tutorial
 
