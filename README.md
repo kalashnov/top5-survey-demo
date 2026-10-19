@@ -5,8 +5,8 @@ REFER TO PAUL GOLDSMITH, HULL, CR
 This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
 
 1. How to run/manage/schedule hundreds of subagents
-    1.   With API
-    2.   Simply in chat
+    1. With API
+    2. Simply in chat
 2. How to save on costs
     1. With local models
     2. With tight prompts
@@ -15,6 +15,7 @@ This is a tutorial on a mass survey and replication of papers using an LLM. The 
     5. With batch processing
 
 In this toy example, we will:
+
 1. **Survey.** Survey the methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in `papers.json`.
 2. **Replicate.** Ask the agents to replicate the empirical papers in the sample in an organized way.
 3. **Extend.** The next step is bounded only by imagination.
@@ -75,9 +76,9 @@ Now we arrive at the fun part: running an army of subagents. The idea of this st
 
 Our virtues and our vices:
 
-Virtue: We ask a set of simple questions about a given input. No exploration or problem solving is needed.
-Vice: We need to classify thousands of papers.
-Vice: We need structured output, so that it is ready to load into Stata and explore.
+- **Virtue:** We ask a set of simple questions about a given input. No exploration or problem solving is needed.
+- **Vice:** We need to classify thousands of papers.
+- **Vice:** We need structured output, so that it is ready to load into Stata and explore.
 
 Therefore, we will heavily optimize the cost per paper. Here are a few important choices:
 
@@ -148,15 +149,17 @@ Sometimes a package doesn't contain the data itself, but provides instructions o
 This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add some structure to their search.
 
 A good way to add structure is to recognize that our unit of analysis is a regression. A regression is more or less determined by its right-hand side and left-hand side. So we need the subagent to provide us with
-    1. a prepared dataset,
-    2. the right-hand side, the left-hand side and other details of the specification (e.g. the standard errors variant),
-    3. the published coefficients.
+
+1. a prepared dataset,
+2. the right-hand side, the left-hand side and other details of the specification (e.g. the standard errors variant),
+3. the published coefficients.
 
 This is where we fix the `Spec` interface. It registers the model specification the agent wants to fit and its reference values. After that, the code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
 
 This way we
-    1. have a guardrail that the agent did indeed check the coefficients against the published ones,
-    2. have the replication results in a structured format as well (a set of `Spec`s), which can later be collected into a dataset of their own.
+
+1. have a guardrail that the agent did indeed check the coefficients against the published ones,
+2. have the replication results in a structured format as well (a set of `Spec`s), which can later be collected into a dataset of their own.
 
 You will find that papers fail to replicate for various reasons: the package doesn't contain the required data, the version of the PDF we have is not the published version, or the authors indeed made a mistake. But in most cases they replicate well.
 
