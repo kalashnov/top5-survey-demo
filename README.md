@@ -1,16 +1,11 @@
 # Top-5 survey demo
 
-This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
+This is a tutorial on a mass survey and replication of papers using an LLM. It teaches:
 
-1. How to run/manage/schedule dozens of subagents
-    1. With API
-    2. Simply in chat
-2. How to save on costs
-    1. With local models
-    2. With tight prompts
-    3. With context control
-    4. With prompt caching
-    5. With batch processing
+| | |
+|---|---|
+| 🤖 **Run, manage and schedule dozens of subagents** | with the API · simply in chat |
+| 💸 **Save on costs** | local models · tight prompts · context control · prompt caching · batch processing |
 
 In this toy example, we will:
 
