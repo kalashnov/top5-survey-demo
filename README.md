@@ -38,7 +38,7 @@ The tutorial is organized in sections. Each section has some writing explaining 
 
 ## Stage 1: Collect papers
 
-*Time: ~6 min to download, a few seconds to extract · Tools: Python, PyMuPDF*
+*Time: ~6 min to download, a few seconds to extract · Concepts: scripted search of paper databases, LLM clean-up of what code finds*
 
 The first thing is to collect any public URLs for each paper. To save time, the repo already contains URLs for each paper, but generally a good approach is to ask your agent to write a script that systematically reviews the following sources:
 
@@ -67,7 +67,7 @@ python extract_text.py
 
 ## Stage 2: Classifying the methodology of papers
 
-*Time: ~2 min for 50 papers, 4 at a time · Tools: Claude Agent SDK, Haiku*
+*Time: ~2 min for 50 papers, 4 at a time · Concepts: subagents at scale, small models, prompt caching, structured output, batch processing*
 
 Now we arrive at the fun part: running an army of subagents. The idea of this stage is as follows. Let the agents read the paper and answer a few questions: Do they run an experiment? Do they run difference-in-differences? What is the source of the data?
 
@@ -106,7 +106,7 @@ This will output one JSON file per paper with the answers to the questions we as
 
 ## Stage 3: Download replication data
 
-*Time: depends on you, the 6 packages total ~1.5 GB · Tools: browser, optionally Claude for Chrome*
+*Time: depends on you, the 6 packages total ~1.5 GB · Concepts: data repositories and their APIs, browser agents*
 
 For downloading datasets we follow the same approach as for PDFs. We first need to collect a list of URLs (already collected for this example). Ask the agent to write code that systematically scrapes the following sources:
 
@@ -142,7 +142,7 @@ For some repositories, downloading cannot be efficiently automated. Here are the
 
 ## Stage 4: Replication
 
-*Time: varies by paper for the agents, seconds for the tests · Tools: Claude Code subagents (Sonnet), pyfixest, pytest*
+*Time: varies by paper for the agents, seconds for the tests · Concepts: one subagent per paper, a fixed interface for agents' output, automated verification, orchestrating subagents from chat*
 
 This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add some structure to their search.
 
@@ -184,7 +184,7 @@ pytest test_replications.py            # one test per published column
 
 ## Stage 5: new analysis
 
-*Time: eternity*
+*Time: eternity · Concepts: extending a fixed interface, reusing shared code across papers*
 
 Suppose, instead of just replicating the analysis of the authors we want to extend it. Here there are two useful approaches. 
 
