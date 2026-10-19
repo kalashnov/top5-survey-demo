@@ -103,7 +103,7 @@ claude -p "Reply with OK"
 > [!NOTE]
 > **ChatGPT and other providers.** If you use ChatGPT, you will need to ask your agent to adapt the code to your provider.
 
-To run the classification, just execute:
+To run the classification, just execute (this already implements all of the recommendations above):
 
 ```bash
 python classify.py          # writes verdicts/<wid>.json
