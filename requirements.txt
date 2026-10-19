@@ -1,4 +1,5 @@
 claude-agent-sdk>=0.2.116
+dvc[s3]
 pyfixest
 pandas
 pytest
