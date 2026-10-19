@@ -4,7 +4,7 @@ REFER TO PAUL GOLDSMITH, HULL, CR
 
 This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
 
-1. How to run/manage/schedule hundreds of subagents
+1. How to run/manage/schedule dozens of subagents
     1. With API
     2. Simply in chat
 2. How to save on costs
@@ -210,6 +210,6 @@ Another example, we can try to test, what if we replace all left hand sides with
 
 ## More tips
 
-- **Worktrees.** Give each agent its own git worktree (`git worktree add`), so parallel agents never edit the same files.
-- **Pull requests.** Have every agent finish with a pull request instead of committing to `main`. You review a diff, CI runs the tests, and a bad change is one click to reject.
-- **Questions document.** Agents that run for hours pile up questions only you can answer. Ask them to collect these on one page of cards: each card has a title, one explicit question, a few sentences of context in plain words, 2–4 answer buttons and a note box. You answer the cards when you have time, and the agents read your answers back.
+- **Worktrees.** When you start a chat (or a subagent), ask it to `work in a worktree`. This gives the agent their own folder, where they can do whatever they want.
+- **Pull requests.** Having dozens of subagent each working on their paper makes it hard to review their results in detail. Ask them to submit a pull request to the github repo after they are done in their worktree. This way you can see what they done, before it reaches the main project folder
+- **Questions document.** Subagents may want you to make some decisions they hesitate to do on their own. Make a document, and ask them to collect questions in a document. You can answer in the document and then just instruct them to read the answer from there. There are numerous ways to improve: require to structure the document in a certain way, provide tags to filter/classify questions, and even have small subagents, whom you can ask follow up questions on the decisions to make
