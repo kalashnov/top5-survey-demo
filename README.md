@@ -83,6 +83,8 @@ claude setup-token                       # log in in the browser; it prints a lo
 export CLAUDE_CODE_OAUTH_TOKEN=<token>
 ```
 
+If you use ChatGPT, you will need to ask your agent to adapt the code to your provider
+
 To run the classification, just execute:
 
 ```bash
