@@ -1,5 +1,6 @@
 claude-agent-sdk>=0.2.116
 dvc[s3]
+pymupdf
 pyfixest
 pandas
 pytest

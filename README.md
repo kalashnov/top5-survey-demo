@@ -61,6 +61,14 @@ python fetch_pdfs.py
 
 It saves each paper's `pdf_url` from `papers.json` to `pdfs/<wid>.pdf`, skips the files you already have and prints `ok` or `failed` for each paper; a failed download usually works on a rerun. All 50 take about 6 minutes.
 
+Then extract the text the later stages read:
+
+```bash
+python extract_text.py
+```
+
+It writes `pdfs/<wid>.pdf` as plain text to `txt/<wid>.txt` with PyMuPDF, skipping texts you already have. All 50 take a few seconds.
+
 ## Run stage 3
 
 ```bash
