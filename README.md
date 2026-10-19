@@ -75,9 +75,24 @@ python extract_text.py
 ```
 
 
-## Run stage 3
+## Stage 3: classifying the methodology of papers
 
-Now we arrive to fun part: running an army of subagents
+Now we arrive to fun part: running an army of subagents. The idea of this stage is as follows. Let the agent's read the paper and answer a few question: do they run an experiment? do they run difference-in-differences? What is the source of data?
+
+Our virtues and our vices:
+
+Virtue: We ask a set of simple questions on a given input. No exploration or problem solving needed
+Vice: We need to classify thousands of papers.
+Vice: We need structured output for it to be ready to load in STATA and explore.
+
+Therefore, we will heavily optimize the cost per paper. Here are a few important choices:
+
+1. We can run a local model to pre-screen paper texts to throw away anything not related to methodology. UCSD's slurm cluster can run local model of the size enough to do this task. I do not cover this in detail, because it requires more involvement. Less text to input -> less costs.
+2. We run a very verbose, clear prompt with a lot of examples. And we validate this prompt with a few experiments/iterations. The prompt for this task is given in ... . A really good prompt can allow us to use smaller models.
+3. One can worry that a larger prompt means more input, therefore more costs. But, the prompt doesn't change from request to request, and if everything is designed correctly, it is cached, and is billed at a 10% rate. The larger part of the input is the paper anyway.
+4. Finally, we use a feature called "structured output". It constrains the model to output a valid json, which we can then use to construct our final dataset. The schema for this application is in ...
+
+To run the classification analysis, just execute:
 
 ```bash
 python classify.py          # writes verdicts/<wid>.json
