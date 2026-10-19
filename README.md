@@ -53,7 +53,7 @@ The first thing is to collect any public urls for each paper. The repo already c
 
 This will contain mistakes, some links will lead to other papers, some links will lead to supplementary material instead. Some papers will have no link, even though the paper is made public on the author's website. A good approach is to run a number of haiku subagents who will be tasked to correct the mistakes/search the web for correct versions. This is more expensive then searching API of above sources with the code, but we have already narrowed down the task before handing it to LLMs. For this excercise I made sure none of the papers in this sample link to a wrong PDF, so we skip the data cleaning part here, and will learn about subagents on a more exciting example.
 
-To download the PDFs from my list, run:
+To download the PDFs from my list, run (this will take a few minutes):
 
 ```bash
 python fetch_pdfs.py
@@ -64,6 +64,7 @@ Then extract the plan text from pdf:
 ```bash
 python extract_text.py
 ```
+
 
 ## Run stage 3
 
