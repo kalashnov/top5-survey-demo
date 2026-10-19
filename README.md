@@ -122,6 +122,8 @@ For downloading datasets we follow the same approach as for PDFs. We first need 
 7. Econometric Society
 8. The paper's own text for direct links
 
+Here is a suggested prompt: [`prompts/collect_data_urls.md`](prompts/collect_data_urls.md).
+
 Once you have the links, downloading is more of a problem than for PDFs, because it usually requires you to consent to something and/or leave your contact details. Some repositories (e.g. Harvard Dataverse and Zenodo) have an API. You can ask your agent to figure out the API and run code to download the datasets. Either way, you need to babysit it.
 
 For some repositories, downloading cannot be efficiently automated. Here are the options:
