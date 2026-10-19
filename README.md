@@ -25,27 +25,6 @@ The repo is small enough not to eat any sensible part of your quota on a 20 USD 
 
 The tutorial is organized in sections. Each section has some writing explaining best practices. However, if you just want to skip it and execute the code, skip to the **What to do** paragraph. Also, if you are not interested in some stages, you may ask your agent to do that stage for you.
 
-## Setup
-
-Note: if you wish, ask your agent to help you with this part.
-
-This repository analyses paper PDFs and data, which are not in this repo. You can either fetch them yourself as a part of Stage 1, or you can skip it and use the PDFs I provide. For this, you will need to run:
-
-```bash
-pip install -r requirements.txt
-dvc remote modify --local r2ro access_key_id <key ID>
-dvc remote modify --local r2ro secret_access_key <secret>
-dvc pull -r r2ro
-```
-
-The agents run on your Claude account. With a Claude subscription, create a token once (needs Claude Code installed) and export it in the shell you run the code from:
-
-```bash
-claude setup-token                       # log in in the browser; it prints a long-lived token
-export CLAUDE_CODE_OAUTH_TOKEN=<token>
-```
-
-With an API key instead, `export ANTHROPIC_API_KEY=<key>`: the same code, billed per token. Set only one of the two.
 
 ## Stages
 
@@ -95,7 +74,16 @@ Therefore, we will heavily optimize the cost per paper. Here are a few important
 3. One may worry that a larger prompt means more input, and therefore higher costs. But the prompt doesn't change from request to request, and if everything is designed correctly, it is cached and billed at a 10% rate. The larger part of the input is the paper anyway.
 4. Finally, we use a feature called "structured output". It constrains the model to output valid JSON, which we can then use to construct our final dataset. The schema for this application is in [`prompts/json_schema.json`](prompts/json_schema.json).
 
-**What to do.** To run the classification, just execute:
+**What to do.** 
+
+For this stage you need to setup your claude token as an environmental variable, so that the code can use your subscription.
+
+```bash
+claude setup-token                       # log in in the browser; it prints a long-lived token
+export CLAUDE_CODE_OAUTH_TOKEN=<token>
+```
+
+To run the classification, just execute:
 
 ```bash
 python classify.py          # writes verdicts/<wid>.json
