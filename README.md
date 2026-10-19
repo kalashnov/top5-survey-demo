@@ -6,7 +6,7 @@ This is a tutorial on a mass survey and replication of papers using an LLM. The 
 2. How to save on costs
 3. How to write prompts
 
-In this toy example, we will survey methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in `papers.json`. Then we will take the empirical papers in the sample and ask the agents to replicate them in an organized way. Then next step is bounded by imagination only.
+In this toy example, we will survey methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in `papers.json`. The we will take the empirical papers in the sample and ask the agents to replicate them in an organized way. Then next step is bounded by imagination only.
 
 The whole tutorial is written with Claude in mind, but a large part of it is not pivoted towards Claude specifically. Some of the steps can run with any agent, others may require to rewrite some of the repo's code, which shouldn't be a big pain. Ask your agent for help here!
 
