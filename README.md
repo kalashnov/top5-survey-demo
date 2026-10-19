@@ -190,8 +190,6 @@ pytest test_replications.py            # one test per published column
 
 ## Stage 5: new analysis
 
-*Covers: extending a fixed interface, reusing shared code across papers*
-
 Suppose, instead of just replicating the analysis of the authors we want to extend it. Here there are two useful approaches. 
 
 First example will require decision for each seperate paper from scratch: Just as an example, we want them to systematically run interaction tables. Then, we can write `ISpec`, that will formalize interaction tables and write a prompt that will ask an agent to 
