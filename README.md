@@ -65,8 +65,6 @@ Then extract the plan text from pdf:
 python extract_text.py
 ```
 
-It writes `pdfs/<wid>.pdf` as plain text to `txt/<wid>.txt` with PyMuPDF, skipping texts you already have. All 50 take a few seconds.
-
 ## Run stage 3
 
 ```bash
