@@ -201,12 +201,9 @@ Another example, we can try to test, what if we replace all left hand sides with
 ## Take home lessons:
 
 1. **Narrow the task with code first.** Scripts collect links, download files and extract text for free. LLMs only get what code cannot do, such as fixing wrong links.
-2. **Use the smallest model that does the job.** Answering fixed questions about a paper is a job for Haiku, given a long, clear prompt with examples.
-3. **Keep the prompt fixed.** A prompt that does not change is cached and billed at a fraction of the price; the paper is the bulk of the input.
-4. **Ask for structured output.** A JSON schema turns the answers into a dataset instead of text to read.
-5. **One subagent per paper.** A short context is cheaper and gives better answers.
-6. **Fix the interface in advance for open-ended tasks.** The agents explore freely, but report through a `Spec`, and our own code checks the result. That is the guardrail, and the results come out structured.
-7. **Expect mistakes at every automated step.** Some links lead to the wrong paper, and some papers do not replicate. Check a sample by hand before trusting the rest.
+3. **Keep the prompt fixed.** A prompt that does not change is cached and billed at a fraction of the price; the paper is the bulk of the input. Anything that changes from agent to agent should go after the initial prompt
+4. **Fix the format of output with any means** It can be strictly enforced structured output, or it could be the same testing procedure on the agent's output.
+5. **One subagent per paper for a long task.** A short context is cheaper and gives better answers.
 
 ## More tips
 
