@@ -14,7 +14,7 @@ The whole tutorial is written with Claude in mind, but a large part of it is not
 
 Note: if you wish, ask you agent to help you with this part.
 
-The papers, their texts and the replication data are not in git: they live in DVC storage. You will get a read-only key ID and secret by email. Run this once from the repository root:
+This repository analyses paper pdfs and data, which are not in this repo. you can either fetch them yourself as a part of Stage 1, or you can skip it and use the pdfs I provide. For this, you will need 
 
 ```bash
 pip install -r requirements.txt
@@ -23,7 +23,6 @@ dvc remote modify --local r2ro secret_access_key <secret>
 dvc pull -r r2ro
 ```
 
-`--local` keeps the keys on your machine only (`.dvc/config.local`, which git ignores), so they never get committed.
 
 ## Stages
 
