@@ -101,7 +101,7 @@ Therefore, we will heavily optimize the cost per paper. Here are a few important
 python classify.py          # writes verdicts/<wid>.json
 ```
 
-This will output a json with the questions we asked, answered in a structured way
+This will output one json per paper with the answers to the questions we asked
 
 ## Stage 3: Download replication data
 
