@@ -38,7 +38,7 @@ The tutorial is organized in sections. Each section has some writing explaining 
 
 ## Stage 1: Collect papers
 
-*Concepts: scripted search of paper databases, LLM clean-up of what code finds*
+*Concepts: subagents*
 
 The first thing is to collect any public URLs for each paper. To save time, the repo already contains URLs for each paper, but generally a good approach is to ask your agent to write a script that systematically reviews the following sources:
 
