@@ -76,12 +76,9 @@ Therefore, we will heavily optimize the cost per paper. Here are a few important
 
 **What to do.** 
 
-For this stage you need to setup your claude token as an environmental variable, so that the code can use your subscription.
+For this stage you need to make sure that you are authenitificated in Claude Code command line interface:
 
-```bash
-claude setup-token                       # log in in the browser; it prints a long-lived token
-export CLAUDE_CODE_OAUTH_TOKEN=<token>
-```
+```claude -p "Reply with OK"```
 
 If you use ChatGPT, you will need to ask your agent to adapt the code to your provider
 
