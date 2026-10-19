@@ -35,7 +35,7 @@ All commands below assume the environment is active and you are in the repositor
 
 ## Stages
 
-The tutorial is organized in stages. If you just want to skip it and execute the code, skip to the **What to do** paragraph. Also, if you are not interested in some stages, you may ask your agent to do that stage for you.
+The tutorial is organized in stages. If you want to skip the explanations and just execute the code, go to the **What to do** paragraph. Also, if you are not interested in some stages, you may ask your agent to do that stage for you.
 
 1. **Collect papers.** List the journals' articles, draw the sample, download the PDFs, extract the text.
 2. **Classify.** Ask each paper a fixed set of questions about its methodology, collect the answers as structured data.
@@ -44,7 +44,7 @@ The tutorial is organized in stages. If you just want to skip it and execute the
 
 ## Stage 1: Collect papers
 
-*Covers: code exctraction first, then subagents*
+*Covers: code extraction first, then subagents*
 
 The first thing is to collect any public URLs for each paper. To save time, the repo already contains URLs for each paper, but generally a good approach is to ask your agent to write a script that systematically reviews the following sources:
 
@@ -55,7 +55,7 @@ The first thing is to collect any public URLs for each paper. To save time, the 
 
 Here is a suggested prompt: [`stage1_collect_papers/collect_urls.md`](stage1_collect_papers/collect_urls.md).
 
-The result will contain mistakes: some links will lead to other papers, and some will lead to supplementary material instead. Some papers will have no link, even though the paper is public on the author's website. A good approach is to run a number of **Haiku subagents** tasked each with a couple of papers to check for the mistakes and/or search the web for the correct versions. This is more expensive than scraping the APIs of the sources above with code, but also, we have already narrowed down the task before handing it to LLMs.
+The result will contain mistakes: some links will lead to other papers, and some will lead to supplementary material instead. Some papers will have no link, even though the paper is public on the author's website. A good approach is to run a number of **Haiku subagents** each tasked with a couple of papers to check for the mistakes and/or search the web for the correct versions. This is more expensive than scraping the APIs of the sources above with code, but by then we have already narrowed down the task before handing it to LLMs.
 
 > [!NOTE]
 > For this exercise I made sure none of the papers in this sample link to a wrong PDF, so we skip the data cleaning part here and will learn about subagents on a more exciting example.
@@ -75,7 +75,7 @@ python stage1_collect_papers/extract_text.py
 
 ## Stage 2: Classifying the methodology of papers
 
-*Covers: subagents at scale, verose prompts, few-shot examples, prompt caching, structured output, batch processing*
+*Covers: subagents at scale, verbose prompts, few-shot examples, prompt caching, structured output, batch processing*
 
 Now we arrive at the fun part: running an army of subagents. The idea of this stage is as follows. Let the agents read the paper and answer a few questions: Do they run an experiment? Do they run difference-in-differences? What is the source of the data?
 
@@ -161,7 +161,7 @@ A good way to add structure is to recognize that our unit of analysis is a regre
 2. the right-hand side, the left-hand side and other details of the specification (e.g. the standard errors variant),
 3. the published coefficients.
 
-This is where we fix the [`Spec` interface](stage4_replicate/replications/spec.py) It is a format, in which the model registers the specification they want to fit and its reference value. After that, the code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
+This is where we fix the [`Spec` interface](stage4_replicate/replications/spec.py). It is a format in which the agent registers the specification it wants to fit and its reference values. After that, the code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
 
 This way we
 
@@ -171,7 +171,7 @@ This way we
 You will find that papers fail to replicate for various reasons: the package doesn't contain the required data, the version of the PDF we have is not the published version, or the authors indeed made a mistake. But in most cases they replicate well.
 
 > [!NOTE]
-> Why do we use *sub*agent, and why do we ask to process one paper at a time? For both quality and cost. We do not want each our main chat to carry context from processing of other papers, for two reasons: 1) longer contexts are expensive, and 2) longer contexts may deteriorate quality.
+> Why do we use a *sub*agent, and why do we ask it to process one paper at a time? For both quality and cost. We do not want our main chat to carry context from processing other papers, for two reasons: 1) longer contexts are expensive, and 2) longer contexts may deteriorate quality.
 
 
 **What to do.**
@@ -193,7 +193,7 @@ Check that the registered tables replicate:
 pytest stage4_replicate            # one test per published column
 ```
 
-To get all registered specs as one dataset, with the published and replicated coefficient side by side, run:
+To get all registered specs as one dataset, with the published and replicated coefficients side by side, run:
 
 ```bash
 python stage4_replicate/collect_specs.py   # writes specs.csv: one row per published number
@@ -201,29 +201,29 @@ python stage4_replicate/collect_specs.py   # writes specs.csv: one row per publi
 
 ## Stage 5: new analysis
 
-Suppose, instead of just replicating the analysis of the authors we want to extend it. Here there are two useful approaches. 
+Suppose that, instead of just replicating the authors' analysis, we want to extend it. There are two useful approaches. 
 
-First example will require decision for each seperate paper from scratch: Just as an example, we want them to systematically run interaction tables. Then, we can write `ISpec`, that will formalize interaction tables and write a prompt that will ask an agent to 
+The first example requires a decision for each separate paper from scratch. Say we want the agents to systematically run interaction tables. Then we can write `ISpec`, which will formalize interaction tables, and write a prompt that will ask an agent to 
 
-Then, we can register another version of `Spec`, e.g. `ISpec` (`I` for interaction) and ask the subagents to come up with sensible interaction regressions. Of course, we should also come up with some automated way to validate/aggregate the agent's output.
+Then, we can register another version of `Spec`, e.g. `ISpec` (`I` for interaction) and ask the subagents to come up with sensible interaction regressions. Of course, we should also come up with some automated way to validate/aggregate the agents' output.
 
-Another example, we can try to test, what if we replace all left hand sides with `exp` -- we can do it from the shared code we wrote in advance. There is no need to spawn a new subagent for each paper from scratch
+In another example, we can test what happens if we replace all left-hand sides with `exp`: we can do it with the shared code we wrote in advance. There is no need to spawn a new subagent for each paper from scratch.
 
-## Take home lessons:
+## Take-home lessons
 
 1. **Narrow the task with code first.** Scripts collect links, download files and extract text for free. LLMs only get what code cannot do, such as fixing wrong links.
-3. **Keep the prompt fixed.** A prompt that does not change is cached and billed at a fraction of the price; the paper is the bulk of the input. Anything that changes from agent to agent should go after the initial prompt
-4. **Fix the format of output with any means** It can be strictly enforced structured output, or it could be the same testing procedure on the agent's output.
-5. **One subagent per paper for a long task.** A short context is cheaper and gives better answers.
+2. **Keep the prompt fixed.** A prompt that does not change is cached and billed at a fraction of the price; the paper is the bulk of the input. Anything that changes from agent to agent should go after the initial prompt.
+3. **Fix the output format by any means.** It can be strictly enforced structured output, or it can be the same testing procedure on the agent's output.
+4. **One subagent per paper for a long task.** A short context is cheaper and gives better answers.
 
 ## More tips
 
-- **Worktrees.** When you start a chat (or a subagent), ask it to `work in a worktree`. This gives the agent their own folder, where they can do whatever they want.
-- **Pull requests.** Having dozens of subagent each working on their paper makes it hard to review their results in detail. Ask them to submit a pull request to the github repo after they are done in their worktree. This way you can see what they done, before it reaches the main project folder. Generally, using git is a requirement here, to always be able to rollback their changes
-- **Questions document.** Subagents may want you to make some decisions they hesitate to do on their own. Make a document, and ask them to collect questions in a document. You can answer in the document and then just instruct them to read the answer from there. There are numerous ways to improve: require to structure the document in a certain way, provide tags to filter/classify questions, and even have small subagents, whom you can ask follow up questions on the decisions to make
+- **Worktrees.** When you start a chat (or a subagent), ask it to `work in a worktree`. This gives the agent its own folder, where it can do whatever it wants.
+- **Pull requests.** Having dozens of subagents, each working on its own paper, makes it hard to review their results in detail. Ask them to submit a pull request to the GitHub repo after they are done in their worktree. This way you can see what they have done before it reaches the main project folder. Generally, using git is a requirement here, to always be able to roll back their changes.
+- **Questions document.** Subagents may want you to make some decisions they hesitate to make on their own. Make a document and ask them to collect their questions in it. You can answer in the document and then just instruct them to read the answer from there. There are numerous ways to improve this: require a certain structure for the document, provide tags to filter/classify questions, and even have small subagents you can ask follow-up questions about the decisions to make.
 
 ## Related work
 
-- An idea of Specs is taken from a [replication package](https://github.com/jiafengkevinchen/logs-public) for **Chen and Roth (2024), "Logs with Zeros? Some Problems and Solutions", QJE.** 
+- The idea of Specs is taken from a [replication package](https://github.com/jiafengkevinchen/logs-public) for **Chen and Roth (2024), "Logs with Zeros? Some Problems and Solutions", QJE.** 
 - **Peter Hull** also undertakes a large replication effort in the context of two-way fixed effects. The writeup is ["Two-Way Fixed Effects and Modern Difference-in-Differences: An Empirical Comparison"](https://www.dropbox.com/scl/fi/ago5vsi89l2ns388rwhgz/did_reanalysis.pdf?rlkey=zxv893g3j5j8dpqkwxsy48o6q), and the repository [peterdhull/twfe-replication](https://github.com/peterdhull/twfe-replication) reproduces its figures.
-- Some pdf collection ideas are taken from **Paul Goldsmith-Pinkham** who built [Economics Literature Search](https://paulgp.com/econlit-pipeline/), a full-text search for 15,000 papers (code: [paulgp/econlit-pipeline](https://github.com/paulgp/econlit-pipeline)). Somre results can be explored on the [dashboard](https://paulgp.com/econlit-pipeline/dashboard.html). This repo suggests another step -- indexing the corpus with LLM by classifying methods with LLMs rather than jsut text search
+- Some PDF collection ideas are taken from **Paul Goldsmith-Pinkham** who built [Economics Literature Search](https://paulgp.com/econlit-pipeline/), a full-text search for 15,000 papers (code: [paulgp/econlit-pipeline](https://github.com/paulgp/econlit-pipeline)). Some results can be explored on the [dashboard](https://paulgp.com/econlit-pipeline/dashboard.html). This repo suggests another step: indexing the corpus by classifying methods with LLMs rather than just text search.
