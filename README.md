@@ -179,5 +179,5 @@ Another example, we can try to test, what if we replace all left hand sides with
 
 ## More tips
 
-Worktrees and Pull requests
+Worktrees and Pull requests, questions board
 ...
