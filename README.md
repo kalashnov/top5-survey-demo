@@ -3,8 +3,12 @@
 This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
 
 1. How to run/manage/schedule hundreds of subagents
-2. How to save on costs
-3. How to write prompts
+  1.   With API
+  2.   Simply in chat
+4. How to save on costs
+   1. With local models
+   2. With ...
+6. How to write prompts
 
 In this toy example, we will:
 1. survey methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in `papers.json`.
@@ -72,6 +76,8 @@ python extract_text.py
 
 
 ## Run stage 3
+
+Now we arrive to fun part: running an army of subagents
 
 ```bash
 python classify.py          # writes verdicts/<wid>.json
