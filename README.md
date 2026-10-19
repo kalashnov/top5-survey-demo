@@ -72,6 +72,22 @@ python extract_text.py
 python classify.py          # writes verdicts/<wid>.json
 ```
 
+## Stage 4: Download replication data
+
+All five journals ask authors to publish a replication package, but the package rarely sits next to the paper. Each journal deposits it in its own repository:
+
+1. AER: openICPSR
+2. QJE: Harvard Dataverse
+3. REStud: Zenodo
+4. ECMA: Zenodo, or the supplementary material on the journal's site
+5. JPE: Harvard Dataverse, or the journal's site
+
+A good approach is to ask your agent to write a script that, for each paper, asks DataCite for deposits that cite the paper's DOI, and searches the paper's text for a data availability statement and repository links. This finds packages for QJE almost always, and for the other journals much less often: their deposits often do not link back to the paper. It also makes mistakes, some links lead to a preprint or to a dataset the paper only cites. As in Stage 1, a few haiku subagents searching the web can fill the gaps and fix the mistakes. The repo already contains the 20 links I am sure about, in the `replication_url` field of `papers.json`.
+
+Dataverse and Zenodo have open APIs, so your agent can download from them with a short script. openICPSR needs a login and a click through its terms, so AER packages are easier to download by hand. Packages range from a few MB to tens of GB, so check the size before you download. Some come with code only, because their data is confidential.
+
+The 6 packages used in this tutorial are already in `datasets/`, and `dvc pull` gets them.
+
 ## Run stage 5
 
 ```bash
