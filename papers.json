@@ -1,5 +1,17 @@
 [
  {
+  "wid": "W3122766908",
+  "journal_code": "AER",
+  "publication_year": 2021,
+  "doi": "https://doi.org/10.1257/aer.20181415",
+  "pdf_url": "http://www.nber.org/papers/w28404.pdf",
+  "title": "Exchange Rates and Prices: Evidence from the 2015 Swiss Franc Appreciation",
+  "authors": "Raphael Auer; Ariel Burstein; Sarah M. Lein",
+  "abstract": "We dissect the impact of a large and sudden exchange rate appreciation on Swiss border import prices, retail prices, and consumer expenditures on domestic and imported nondurable goods, following the removal of the EUR/CHF floor in January 2015. Cross-sectional variation in border price changes by currency of invoicing carries over to consumer prices and allocations, impacting retail prices of imports and competing domestic goods, as well as import expenditures. We provide measures of the sensitivity of retail import prices to border prices and the sensitivity of import shares to relative prices, which is higher when using retail prices than border prices. (JEL E21, E31, F14, F31, L11)",
+  "data": null,
+  "replicated": false
+ },
+ {
   "wid": "W3174918233",
   "journal_code": "AER",
   "publication_year": 2021,
@@ -10,18 +22,6 @@
   "abstract": "This paper reports on a two-tiered experiment designed to separately identify the selection and effort margins of pay for performance (P4P). At the recruitment stage, teacher labor markets were randomly assigned to a “pay-for-percentile” or fixed-wage contract. Once recruits were placed, an unexpected, incentive-compatible, school-level re-randomization was performed so that some teachers who applied for a fixed-wage contract ended up being paid by P4P, and vice versa. By the second year of the study, the within-year effort effect of P4P was 0.16 standard deviations of pupil learning, with the total effect rising to 0.20 standard deviations after allowing for selection. (JEL C93, I21, J23, J33, J41, J45, O15)",
   "data": "datasets/W3174918233",
   "replicated": true
- },
- {
-  "wid": "W3202051763",
-  "journal_code": "AER",
-  "publication_year": 2021,
-  "doi": "https://doi.org/10.1257/aer.20190913",
-  "pdf_url": null,
-  "title": "Oligopolistic Price Leadership and Mergers: The United States Beer Industry",
-  "authors": "Nathan Miller; Gloria Sheu; Matthew Weinberg",
-  "abstract": "We study a repeated game of price leadership in which a firm proposes supermarkups over Bertrand prices to a coalition of rivals. Supermarkups and marginal costs are recoverable from data on prices and quantities using the model’s structure. In an application to the beer industry, we find that price leadership increases profit relative to Bertrand competition by 17 percent in fiscal years 2006 and 2007, and by 22 percent in 2010 and 2011, with the change mostly due to consolidation. We simulate two mergers, which relax binding incentive compatibility constraints and increase supermarkups. These coordinated effects arise even with efficiencies that offset price increases under Bertrand competition. (JEL G34, K21, L13, L14, L41, L66)",
-  "data": null,
-  "replicated": false
  },
  {
   "wid": "W3145681792",
@@ -36,14 +36,14 @@
   "replicated": false
  },
  {
-  "wid": "W4283385561",
+  "wid": "W3168661866",
   "journal_code": "AER",
   "publication_year": 2022,
-  "doi": "https://doi.org/10.1257/aer.20200212",
-  "pdf_url": null,
-  "title": "Designing Deadlines",
-  "authors": "Erik Strøjer Madsen",
-  "abstract": "I study how an organization should manage a project of uncertain scope, when it is advised by a privately informed expert who prefers to prolong his employment. The optimal long-term contract combines a deadline for project completion and incentive payments which decline as the deadline approaches. When the firm can additionally learn about the project's state from output, the optimal deadline exhibits variable sensitivity to output, with a hard deadline at the outset of the project and increasingly soft deadlines as the project's performance declines. (JEL D21, D82, D86, G31, J33, M52, M54)",
+  "doi": "https://doi.org/10.1257/aer.20201529",
+  "pdf_url": "https://doi.org/10.3386/w27768",
+  "title": "Effective Demand Failures and the Limits of Monetary Stabilization Policy",
+  "authors": "Michael Woodford",
+  "abstract": "The challenge for stabilization policy presented by the COVID-19 pandemic stems above all from disruption of the circular flow of payments, resulting in a failure of what Keynes (1936) calls “effective demand.” As a consequence, economic activity in many sectors can be inefficiently low, and interest-rate policy cannot eliminate the distortions—not because of a limit on the extent to which interest rates can be reduced, but because interest-rate reductions fail to stimulate demand of the right sorts. Fiscal transfers are instead well suited to addressing the fundamental problem, and can under certain circumstances achieve a first-best allocation of resources. (JEL E23, E32, E43, E52, E62, E63, H63)",
   "data": null,
   "replicated": false
  },
@@ -60,14 +60,14 @@
   "replicated": false
  },
  {
-  "wid": "W4390363324",
+  "wid": "W4385367893",
   "journal_code": "AER",
   "publication_year": 2023,
-  "doi": "https://doi.org/10.1257/aer.20221605",
-  "pdf_url": null,
-  "title": "Competing to Commit: Markets with Rational Inattention",
-  "authors": "Carlo Cusumano; Francesco� Fabbri; Ferdinand Pieroth",
-  "abstract": "Two homogeneous-good firms compete for a consumer’s unitary demand. The consumer is rationally inattentive and pays entropy costs to process information about firms’ offers. Compared to a collusion benchmark, competition produces two effects. As in standard models, competition puts downward pressure on prices. But, additionally, an attention effect arises: the consumer engages in trade more often. This alleviates the commitment problem that firms have when facing inattentive consumers and increases trade efficiency. For high enough attention costs, the attention effect dominates the effect on prices: firms’ profits are higher under competition than under collusion. (JEL D11, D21, D43, D83, L12)",
+  "doi": "https://doi.org/10.1257/aer.20200780",
+  "pdf_url": "https://www.nber.org/papers/w33161.pdf",
+  "title": "The Political Economy of International Regulatory Cooperation",
+  "authors": "Giovanni Maggi; Ralph Ossa",
+  "abstract": "We examine international regulatory agreements that are negotiated under lobbying pressures from producer groups. The way in which lobbying influences the cooperative setting of regulatory policies, as well as the welfare impacts of international agreements, depend crucially on whether the interests of producers in different countries are aligned or in conflict. The former situation tends to occur for product standards, while the latter tends to occur for process standards. We find that, if producer lobbies are strong enough, agreements on product standards lead to excessive deregulation and decrease welfare, while agreements on process standards tighten regulations and enhance welfare. (JEL F13, F14, F15, L15, L51)",
   "data": null,
   "replicated": false
  },
@@ -96,14 +96,14 @@
   "replicated": true
  },
  {
-  "wid": "W4409963010",
+  "wid": "W4409035904",
   "journal_code": "AER",
   "publication_year": 2025,
-  "doi": "https://doi.org/10.1257/aer.20231067",
-  "pdf_url": null,
-  "title": "Changing Tracks: Human Capital Investment after Loss of Ability",
-  "authors": "Anders Humlum; Jakob Roland Munch; Pernille Plato",
-  "abstract": "We provide the first evidence on how workers invest in human capital after losing ability. Using quasi-random work accidents in Danish administrative data, we find that workers enroll in bachelor’s programs after physical injuries, pursuing degrees that build on their past training and experience. Exploiting institutional differences in the stackability of degrees, we find that higher education moves injured workers from disability benefits to full-time employment, earning 25 percent more than before injury. Reskilling subsidies for injured workers pay for themselves four times over, and current rates of reskilling are substantially below the social optimum, especially for middle-aged workers. (JEL I26, J14, J24, J62)",
+  "doi": "https://doi.org/10.1257/aer.20190650",
+  "pdf_url": "https://www.nber.org/papers/w9924.pdf",
+  "title": "Fragile New Economy: Intangible Capital, Corporate Savings Glut, and Financial Instability",
+  "authors": "Ye Li",
+  "abstract": "The transition toward an intangible-intensive economy reshapes financial systems by creating a self-perpetuating savings glut in the production sector. As intangibles become increasingly important, firms hoard liquidity to finance investment in intangibles of limited pledgeability. Firms’ savings feed cheap leverage to financial intermediaries and allow intermediaries to bid up asset prices, which in turn encourages firms to save more for asset creation. This paper develops a macrofinance model that offers a coherent account of rising corporate savings, debt-fueled growth of intermediaries, declining interest rates, and rising asset valuation. Along these secular trends, endogenous financial risk accumulates. (JEL E43, E44, G12, G21, G31, G32)",
   "data": null,
   "replicated": false
  },
@@ -252,26 +252,26 @@
   "replicated": false
  },
  {
-  "wid": "W3157470586",
+  "wid": "W3130661344",
   "journal_code": "JPE",
   "publication_year": 2021,
-  "doi": "https://doi.org/10.1086/715023",
-  "pdf_url": null,
-  "title": "Communication and Community Enforcement",
-  "authors": "Takuo Sugaya; Alexander Wolitzky",
-  "abstract": "We study the repeated prisoner’s dilemma with random matching, a canonical model of community enforcement with decentralized information. We assume that (1) with small probability, each player is a “bad type” who never cooperates, (2) players observe and remember their partners’ identities, and (3) each player interacts with others frequently but meets any particular partner infrequently. We show that these assumptions preclude cooperation in the absence of explicit communication but that introducing within-match cheap talk communication restores cooperation. Thus, communication is essential for community enforcement.",
+  "doi": "https://doi.org/10.1086/714093",
+  "pdf_url": "https://wrap.warwick.ac.uk/147066/1/WRAP-on-the-direction-innovation-Squintani-2021.pdf",
+  "title": "On the Direction of Innovation",
+  "authors": "Hugo A. Hopenhayn; Francesco Squintani",
+  "abstract": "How are resources allocated across different R&D areas (i.e., problems to be solved)? As a result of dynamic congestion externalities, the competitive market allocates excessive resources into those of high return, being those with higher private (and social) payoffs. Good problems are tackled too soon, and as a result the distribution of open research problems in the socially optimal solution stochastically dominates that of the competitive equilibrium. A severe form of rent dissipation occurs in the latter, where the total value of R&D activity equals the value of allocating all resources to the least valuable problem solved. Resulting losses can be substantial.",
   "data": null,
   "replicated": false
  },
  {
-  "wid": "W2262212231",
+  "wid": "W4220778792",
   "journal_code": "JPE",
   "publication_year": 2022,
-  "doi": "https://doi.org/10.1086/720393",
-  "pdf_url": null,
-  "title": "The Economic Effects of Long-Term Climate Change: Evidence from the Little Ice Age",
-  "authors": "Maria Waldinger",
-  "abstract": "Recent studies consistently find important economic effects of year-to-year weather fluctuations. I study the economic effects of long-term and gradual climate change over 250 years in the Little Ice Age (1600–1850), during which people and economies had time to adapt. Results show significant negative economic effects of long-term climate change. Temperature impacted the economy through its effect on agricultural productivity and mortality. To adapt to the Little Ice Age, economies increased trade and changed land use. I discuss the relevance of these results for understanding the impact of today’s climate change, especially in developing countries.",
+  "doi": "https://doi.org/10.1086/719908",
+  "pdf_url": "https://pure.rug.nl/ws/files/223886338/719908.pdf",
+  "title": "Measuring the Private and Social Returns to R&amp;D: Unintended Spillovers versus Technology Markets",
+  "authors": "Pere Arqué‐Castells; Daniel F. Spulber",
+  "abstract": "The canonical approach to measuring private and social returns to R&D assumes diffusion through spillovers. We develop a general framework that allows R&D to diffuse through both spillovers and voluntary technology transfers. To operationalize the framework, we create a data set of interactions in the market for technology between publicly held US firms. We use changes in tax incentives for R&D to identify causal effects. Taking market channels into account decreases the observed difference between social and private returns to R&D as compared with the canonical approach. The analysis suggests significant gains from trade in markets for technology.",
   "data": null,
   "replicated": false
  },
@@ -324,14 +324,14 @@
   "replicated": false
  },
  {
-  "wid": "W4400649443",
+  "wid": "W4403094494",
   "journal_code": "JPE",
   "publication_year": 2024,
-  "doi": "https://doi.org/10.1086/732218",
-  "pdf_url": null,
-  "title": "Not a Flying Start after All? A Comment",
-  "authors": "Otto Sevaldson Lillebø; Simen Markussen; Knut H. Røed; Yuejun Zhao",
-  "abstract": "In a paper published in the Journal of Political Economy, Carneiro, Løken, and Salvanes (2015) reported large positive effects on offspring outcomes of a reform they described as introducing paid maternity leave in Norway. Causal identification rested on a discontinuity implying that only mothers giving birth after a specific cutoff date were entitled to paid leave. We show that the analysis relied on an incorrect description of the reform. The reform did not introduce paid maternity leave, but extended it by 5–6 weeks. The postulated discontinuity never existed as treatment and control groups had the same maternity leave conditions.",
+  "doi": "https://doi.org/10.1086/733423",
+  "pdf_url": "http://www.nber.org/papers/w27088.pdf",
+  "title": "Dissecting Mechanisms of Financial Crises: Intermediation and Sentiment",
+  "authors": "Arvind Krishnamurthy; Professor Wenhao Li",
+  "abstract": "We develop a model of financial crises with both a financial amplification mechanism, via frictional intermediation, and a role for sentiment, via time-varying beliefs about an illiquidity state. The model accounts for the entire crisis cycle, matching data on the frothy precrisis behavior of asset markets and credit; the sharp transition to a crisis where asset values fall, disintermediation occurs, and output falls; and the slow postcrisis recovery in output. Both the intermediation and the belief mechanism are essential to match the crisis cycle. However, modeling the belief variation via either a Bayesian or a diagnostic model can match the broad patterns.",
   "data": null,
   "replicated": false
  },
@@ -504,6 +504,18 @@
   "replicated": false
  },
  {
+  "wid": "W4226348880",
+  "journal_code": "REST",
+  "publication_year": 2022,
+  "doi": "https://doi.org/10.1093/restud/rdac017",
+  "pdf_url": "https://www.philadelphiafed.org/-/media/frbp/assets/working-papers/2019/wp19-26.pdf",
+  "title": "Should Central Banks Issue Digital Currency?",
+  "authors": "Todd Keister; Daniel R. Sanches",
+  "abstract": "Abstract We study how introducing a central bank digital currency affects equilibrium allocations and welfare in an environment where both currency and bank deposits are used in exchange. We highlight an important policy tradeoff: while a digital currency tends to improve efficiency in exchange, it may also crowd out bank deposits, raise banks’ funding costs, and decrease investment. We derive conditions under which targeted digital currencies, which compete only with physical currency or only with bank deposits, raise welfare. If such targeted currencies are infeasible, we illustrate the policy tradeoffs that arise when issuing a single, universal digital currency.",
+  "data": null,
+  "replicated": false
+ },
+ {
   "wid": "W4292647031",
   "journal_code": "REST",
   "publication_year": 2022,
@@ -512,18 +524,6 @@
   "title": "Revealed Price Preference: Theory and Empirical Analysis",
   "authors": "Rahul Deb; Yuichi Kitamura; John Quah; Jörg Stoye",
   "abstract": "Abstract To determine the welfare implications of price changes in demand data, we introduce a revealed preference relation over prices. We show that the absence of cycles in this relation characterizes a consumer who trades off the utility of consumption against the disutility of expenditure. Our model can be applied whenever a consumer’s demand over a strict subset of all available goods is being analysed; it can also be extended to settings with discrete goods and non-linear prices. To illustrate its use, we apply our model to a single-agent data set and to a data set with repeated cross-sections. We develop a novel test of linear hypotheses on partially identified parameters to estimate the proportion of the population who are revealed better off due to a price change in the latter application. This new technique can be used for non-parametric counterfactual analysis more broadly.",
-  "data": null,
-  "replicated": false
- },
- {
-  "wid": "W4313389613",
-  "journal_code": "REST",
-  "publication_year": 2022,
-  "doi": "https://doi.org/10.1093/restud/rdac080",
-  "pdf_url": null,
-  "title": "Unemployment Insurance in Macroeconomic Stabilization",
-  "authors": "Rohan Kekre",
-  "abstract": "Abstract I study unemployment insurance (UI) in general equilibrium with incomplete markets, search frictions, and nominal rigidities. An increase in generosity raises the aggregate demand for consumption if the unemployed have a higher marginal propensity to consume than the employed or if agents precautionary save in light of future income risk. This raises output and employment unless monetary policy raises the nominal interest rate. In an analysis of the U.S. economy over 2008–2014, UI benefit extensions had a contemporaneous output multiplier around 1. The unemployment rate would have been as much as 0.4 pp higher absent these extensions.",
   "data": null,
   "replicated": false
  },
@@ -552,18 +552,6 @@
   "replicated": false
  },
  {
-  "wid": "W4394761112",
-  "journal_code": "REST",
-  "publication_year": 2024,
-  "doi": "https://doi.org/10.1093/restud/rdae040",
-  "pdf_url": null,
-  "title": "Shallow Meritocracy",
-  "authors": "Peter Andre",
-  "abstract": "Abstract Meritocracies aspire to reward hard work and promise not to judge individuals by the circumstances into which they were born. However, circumstances often shape the choice to work hard. I show that people’s merit judgments are “shallow” and insensitive to this effect. They hold others responsible for their choices, even if these choices have been shaped by unequal circumstances. In an experiment, U.S. participants judge how much money workers deserve for the effort they exert. Unequal circumstances disadvantage some workers and discourage them from working hard. Nonetheless, participants reward the effort of disadvantaged and advantaged workers identically, regardless of the circumstances under which choices are made. For some participants, this reflects their fundamental view regarding fair rewards. For others, the neglect results from the uncertain counterfactual. They understand that circumstances shape choices but do not correct for this because the counterfactual—what would have happened under equal circumstances—remains uncertain.",
-  "data": "datasets/W4394761112",
-  "replicated": false
- },
- {
   "wid": "W4400548728",
   "journal_code": "REST",
   "publication_year": 2024,
@@ -574,6 +562,18 @@
   "abstract": "Abstract This paper shows that the outcome of trade wars for tariffs and welfare will be affected by the monetary policy regime. The key message is that trade policy interacts with monetary policy in a way that magnifies the welfare costs of discretionary monetary policy in an international setting. If countries follow monetary policies of flexible inflation targeting, trade wars are relatively mild, with low equilibrium tariffs and small welfare costs. Discretionary monetary policies imply much higher tariffs, high inflation rates, and substantially larger welfare costs. We quantify the effects of a global trade war among major economies using estimates of trade elasticities, economic size, net foreign assets, and trade openness. We find large welfare benefits of an inflation targeting monetary policy for all countries.",
   "data": null,
   "replicated": false
+ },
+ {
+  "wid": "W4405354213",
+  "journal_code": "REST",
+  "publication_year": 2024,
+  "doi": "https://doi.org/10.1093/restud/rdae074",
+  "pdf_url": "https://zenodo.org/records/10965745/files/README.pdf",
+  "title": "Optimal Pricing of a New Utility Service: The Case of Piped Water in Vietnam",
+  "authors": "Quy‐Toan Do; Hanan G. Jacoby",
+  "abstract": "Abstract As utility services expand throughout the developing world, providers must grapple with how to set prices to recover average costs. Data from a multiyear randomised pricing experiment among nearly 1,500 recently connected piped water customers in Vietnam reveal month-to-month demand persistence. Based on structural demand estimation, we document how endogenous preferences, if unaccounted for, can lead to low take-up and thereby threaten the financial viability of the new water utility. We also show that such demand persistence calls for pricing schemes that defer lump-sum payment, effectively allowing future consumers to subsidise their present selves.",
+  "data": "datasets/W4405354213",
+  "replicated": true
  },
  {
   "wid": "W3140303326",
