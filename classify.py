@@ -16,16 +16,24 @@ SCHEMA = json.loads((PROMPTS / "json_schema.json").read_text())
 
 # No tools, settings or plugins: Claude Code's own context would otherwise ride along.
 OPTIONS = ClaudeAgentOptions(
-    model=MODEL, system_prompt=(PROMPTS / "system_prompt.md").read_text(),
-    tools=[], allowed_tools=[], setting_sources=[], mcp_servers={}, strict_mcp_config=True,
-    skills=[], agents={}, plugins=[],
+    model=MODEL,
+    system_prompt=(PROMPTS / "system_prompt.md").read_text(),
     output_format={"type": "json_schema", "schema": SCHEMA},
+    tools=[],
+    allowed_tools=[],
+    setting_sources=[],
+    mcp_servers={},
+    strict_mcp_config=True,
+    skills=[],
+    agents={},
+    plugins=[],
 )
 
 
 async def classify(p: dict, slots: asyncio.Semaphore) -> None:
-    body = Path(f"txt/{p['wid']}.txt").read_text(errors="replace")
-    prompt = (f"## {p['wid']}\n"
+    wid = p["wid"]
+    body = Path(f"txt/{wid}.txt").read_text(errors="replace")
+    prompt = (f"## {wid}\n"
               f"- **Title**: {p['title'].strip()}\n"
               f"- **Authors**: {p['authors'].strip()}\n"
               f"- **Journal**: {p['journal_code']} {p['publication_year']}\n"
@@ -36,16 +44,26 @@ async def classify(p: dict, slots: asyncio.Semaphore) -> None:
         async for m in query(prompt=prompt, options=OPTIONS):
             if isinstance(m, ResultMessage):
                 r = m
-    if r.structured_output is None:
-        raise RuntimeError(f"{p['wid']}: no verdict ({r.subtype})")
-    Path(f"verdicts/{p['wid']}.json").write_text(json.dumps(
-        {"wid": p["wid"], "model": MODEL, "usage": r.usage, **r.structured_output}, indent=1, ensure_ascii=False))
-    print(p["wid"], [v["log_dv_likely"] for v in r.structured_output["verdicts"]], flush=True)
+    verdict = r.structured_output
+    if verdict is None:
+        raise RuntimeError(f"{wid}: no verdict ({r.subtype})")
+
+    record = {"wid": wid, "model": MODEL, "usage": r.usage, **verdict}
+    out = Path(f"verdicts/{wid}.json")
+    out.write_text(json.dumps(record, indent=1, ensure_ascii=False))
+    print(wid, [v["log_dv_likely"] for v in verdict["verdicts"]], flush=True)
+
+
+def pending(p: dict) -> bool:
+    """Has text and no verdict yet."""
+    has_text = Path(f"txt/{p['wid']}.txt").exists()
+    done = Path(f"verdicts/{p['wid']}.json").exists()
+    return has_text and not done
 
 
 async def main() -> None:
-    todo = [p for p in json.loads(Path("papers.json").read_text())
-            if not Path(f"verdicts/{p['wid']}.json").exists() and Path(f"txt/{p['wid']}.txt").exists()]
+    papers = json.loads(Path("papers.json").read_text())
+    todo = [p for p in papers if pending(p)]
     if len(sys.argv) > 1:
         todo = todo[:int(sys.argv[1])]
     slots = asyncio.Semaphore(WORKERS)
