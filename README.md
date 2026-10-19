@@ -10,6 +10,8 @@ In this toy example, we will survey methodology of 50 papers from AER, QJE, JPE,
 
 The whole tutorial is written with Claude in mind, but a large part of it is not pivoted towards Claude specifically. Some of the steps can run with any agent, others may require to rewrite some of the repo's code, which shouldn't be a big pain. Ask your agent for help here!
 
+The repo is small enough to not eat any sensible part of your quota on a 20 USD subscription
+
 ## Setup
 
 Note: if you wish, ask you agent to help you with this part.
