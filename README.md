@@ -19,8 +19,9 @@ In this toy example, we will:
 2. **Replicate.** Ask the agents to replicate the empirical papers in the sample in an organized way.
 3. **Extend.** The next step is bounded only by imagination.
 
-> [!IMPORTANT]
-> **ChatGPT and other providers.** The whole tutorial is written with Claude in mind, but a large part of it is not specific to Claude. Some of the steps can run with any agent; others may require rewriting some of the repo's code, which shouldn't be a big pain. Ask your agent for help here!
+> **ChatGPT and other providers**
+>
+> The whole tutorial is written with Claude in mind, but a large part of it is not specific to Claude. Some of the steps can run with any agent; others may require rewriting some of the repo's code, which shouldn't be a big pain. Ask your agent for help here!
 
 The repo is small enough not to eat any sensible part of your quota on a 20 USD subscription.
 
@@ -93,8 +94,9 @@ For this stage you need to make sure that you are authenticated in the Claude Co
 claude -p "Reply with OK"
 ```
 
-> [!IMPORTANT]
-> **ChatGPT and other providers.** If you use ChatGPT, you will need to ask your agent to adapt the code to your provider.
+> **ChatGPT and other providers**
+>
+> If you use ChatGPT, you will need to ask your agent to adapt the code to your provider.
 
 To run the classification, just execute:
 
