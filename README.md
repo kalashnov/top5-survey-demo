@@ -137,9 +137,11 @@ You will find that papers fail to replicate for various reasons: the package doe
 The prompt for this stage is in [`prompts/replicate.md`](prompts/replicate.md). You can either write scheduling code in the spirit of Stage 2, or just ask in chat something like this:
 
 ```
-Run 1 subagent for each paper with a dataset (2 in parallel),
+Run 1 sonnet subagent for each paper with a dataset (2 in parallel),
 prompt them with replicate.md and ask them to replicate the paper. Report back with the results.
 ```
+
+The chat will spawn subagents and talk to them on your behalf
 
 The output of the agents should be data preparation scripts and registered regressions, which they either could or could not replicate.
 
