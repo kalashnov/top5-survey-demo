@@ -48,6 +48,18 @@
   "replicated": false
  },
  {
+  "wid": "W3190305424",
+  "journal_code": "AER",
+  "publication_year": 2023,
+  "doi": "https://doi.org/10.1257/aer.20210476",
+  "pdf_url": "http://www.nber.org/papers/w28020.pdf",
+  "title": "Is There Too Much Benchmarking in Asset Management?",
+  "authors": "Anil Kashyap; Natalia Kovrijnykh; Jian Li; Anna Pavlova",
+  "abstract": "We propose a tractable model of asset management in which benchmarking arises endogenously, and analyze its welfare consequences. Fund managers' portfolios are not contractible and they incur private costs in running them. Incentive contracts for fund managers create a pecuniary externality through their effect on asset prices. Benchmarking inflates asset prices and creates crowded trades. The crowding reduces the effectiveness of benchmarking in incentive contracts for others, which fund investors fail to account for. A social planner, recognizing the crowding, opts for contracts with less benchmarking and less incentive provision. The planner also delivers lower asset management costs. (JEL D82, D86, G11, G12, G23, G41)",
+  "data": null,
+  "replicated": false
+ },
+ {
   "wid": "W4367321980",
   "journal_code": "AER",
   "publication_year": 2023,
@@ -56,18 +68,6 @@
   "title": "Smart Contracts and the Coase Conjecture",
   "authors": "Thomas Brzustowski; Alkis Georgiadis-Harris; Balázs Szentes",
   "abstract": "This paper reconsiders the problem of a durable-good monopolist who cannot make intertemporal commitments. The buyer’s valuation is binary and his private information. The seller has access to dynamic contracts and, in each period, decides whether to deploy the previous period’s contract or to replace it with a new one. The main result of the paper is that the Coase conjecture fails: the monopo-list’s payoff is bounded away from the low valuation irrespective of the discount factor. (JEL D42, D82, D86, L12)",
-  "data": null,
-  "replicated": false
- },
- {
-  "wid": "W4385367893",
-  "journal_code": "AER",
-  "publication_year": 2023,
-  "doi": "https://doi.org/10.1257/aer.20200780",
-  "pdf_url": "https://www.nber.org/papers/w33161.pdf",
-  "title": "The Political Economy of International Regulatory Cooperation",
-  "authors": "Giovanni Maggi; Ralph Ossa",
-  "abstract": "We examine international regulatory agreements that are negotiated under lobbying pressures from producer groups. The way in which lobbying influences the cooperative setting of regulatory policies, as well as the welfare impacts of international agreements, depend crucially on whether the interests of producers in different countries are aligned or in conflict. The former situation tends to occur for product standards, while the latter tends to occur for process standards. We find that, if producer lobbies are strong enough, agreements on product standards lead to excessive deregulation and decrease welfare, while agreements on process standards tighten regulations and enhance welfare. (JEL F13, F14, F15, L15, L51)",
   "data": null,
   "replicated": false
  },
@@ -96,18 +96,6 @@
   "replicated": true
  },
  {
-  "wid": "W4409035904",
-  "journal_code": "AER",
-  "publication_year": 2025,
-  "doi": "https://doi.org/10.1257/aer.20190650",
-  "pdf_url": "https://www.nber.org/papers/w9924.pdf",
-  "title": "Fragile New Economy: Intangible Capital, Corporate Savings Glut, and Financial Instability",
-  "authors": "Ye Li",
-  "abstract": "The transition toward an intangible-intensive economy reshapes financial systems by creating a self-perpetuating savings glut in the production sector. As intangibles become increasingly important, firms hoard liquidity to finance investment in intangibles of limited pledgeability. Firms’ savings feed cheap leverage to financial intermediaries and allow intermediaries to bid up asset prices, which in turn encourages firms to save more for asset creation. This paper develops a macrofinance model that offers a coherent account of rising corporate savings, debt-fueled growth of intermediaries, declining interest rates, and rising asset valuation. Along these secular trends, endogenous financial risk accumulates. (JEL E43, E44, G12, G21, G31, G32)",
-  "data": null,
-  "replicated": false
- },
- {
   "wid": "W4409963023",
   "journal_code": "AER",
   "publication_year": 2025,
@@ -116,6 +104,18 @@
   "title": "Risk Aversion and Insurance Propensity",
   "authors": "Fabio Maccheroni; Mássimo Marinacci; Ruodu Wang; Qinyu Wu",
   "abstract": "We provide a new foundation of risk aversion by showing that this attitude is fully captured by the propensity to seize insurance opportunities. In our main results, we first characterize Arrow-Pratt (1963–1964) risk aversion in terms of propensity to full insurance and the stronger notion of risk aversion of Rothschild and Stiglitz (1970) in terms of propensity to partial insurance. We then extend the analysis to comparative risk aversion by showing that the classical notion of Yaari (1969) corresponds to comparative propensity to full insurance, while the stronger notion of Ross (1981) corresponds to comparative propensity to partial insurance. (JEL D81, G22, G52)",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4415700289",
+  "journal_code": "AER",
+  "publication_year": 2025,
+  "doi": "https://doi.org/10.1257/aer.20230168",
+  "pdf_url": "https://www.nber.org/papers/w33144.pdf",
+  "title": "Nonlinear Pricing and Misallocation",
+  "authors": "Gideon Bornstein; Alessandra Peter",
+  "abstract": "This paper studies the effect of nonlinear pricing on markups and misallocation. In a general equilibrium model in which firms are allowed to set a quantity-dependent pricing schedule, markup heterogeneity is not a sign of misallocation. Instead, we point to a new source of misallocation: high-taste consumers are allocated too much of each good, low-taste consumers too little. Using micro data from the retail sector, we show that nonlinear pricing is prevalent and quantify the model. Welfare losses from misallocation across consumers are substantially larger than those from misallocation across firms under linear pricing. (JEL D21, D24, D43, H25, J22, L13, L81)",
   "data": null,
   "replicated": false
  },
@@ -472,7 +472,7 @@
   "journal_code": "QJE",
   "publication_year": 2025,
   "doi": "https://doi.org/10.1093/qje/qjaf031",
-  "pdf_url": "https://econpapers.repec.org/scripts/redir.pf?u=http%3A%2F%2Fwww.nber.org%2Fpapers%2Fw28694.pdf;h=repec:nbr:nberwo:28694",
+  "pdf_url": "https://www.nber.org/papers/w28694.pdf",
   "title": "Barriers to Global Capital Allocation",
   "authors": "Bruno Pellegrino; Enrico Spolaore; Romain Wacziarg",
   "abstract": "ABSTRACT Observed international investment positions and cross-country heterogeneity in rates of return to capital are hard to reconcile with frictionless capital markets. This article develops a theory of international capital allocation: a multi-country dynamic spatial general equilibrium model in which the entire network of cross-border investment is endogenously determined. Our model features cross-country heterogeneity in fundamental risk, a demand system for international assets, and frictions that cause segmentation in international capital markets. We measure frictions affecting international investment and apply our model to data from nearly 100 countries, using a new dataset of international capital taxes and cultural, linguistic, and geographic distances between countries (geopoliticaldistance.org). Our model performs well in reproducing the composition of international portfolios, the cross section of home bias and rates of return to capital, and other key features of international capital markets. Finally, we carry out counterfactual exercises: we show that barriers to international investment reduce world output by 7% and raise the cross-country dispersion of capital per employee, contributing in a meaningful way to global inequality.",
