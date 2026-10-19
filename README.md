@@ -102,6 +102,8 @@ Therefore, we will heavily optimize the cost per paper. Here are a few important
 python classify.py          # writes verdicts/<wid>.json
 ```
 
+This will output a json with the questions we asked, answered in a structured way
+
 ## Stage 4: Download replication data
 
 For dataset downloading we follow the same approach as for pdfs. We first need to collect a list of urls (which are already collected for this example). Ask the agent to write code that systematically searches the following sources:
