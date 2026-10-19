@@ -1,6 +1,6 @@
 # Top-5 survey demo
 
-This is a tutorial on a mass survey and replication of papers using an LLM. It teaches:
+This is a tutorial on a mass survey and replication of papers using an LLM. It shows how to:
 
 | | |
 |---|---|
