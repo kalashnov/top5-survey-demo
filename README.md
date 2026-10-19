@@ -140,3 +140,6 @@ pytest test_replications.py            # one test per published column
 ```
 
 `prompts/replicate.md` asks an agent to add a paper: `replications/<wid>.py` with its data loader and `SPECS`.
+
+
+## Stage 6: new analysis
