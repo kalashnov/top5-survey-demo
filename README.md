@@ -99,14 +99,14 @@ For some repos downloading cannot be efficiently automated. Here are the options
 
 For this tutorial I suggest to manually download a few replication packages, e.g. these. After they are downloaded just ask Claude to go into your downloads folder and copy them into the project
 
-| Paper | Size | Package |
-|---|---|---|
-| W4401126511, AER 2024 | 4 MB | https://doi.org/10.3886/E197302V1 |
-| W4405354213, REStud 2024 | 16 MB | https://doi.org/10.5281/zenodo.10783446 |
-| W4387449673, JPE 2023 | 20 MB | https://doi.org/10.7910/DVN/NYSNOT |
-| W3174918233, AER 2021 | 33 MB | https://doi.org/10.3886/E121941V1 |
-| W4407240810, QJE 2025 | 214 MB | https://doi.org/10.7910/DVN/PDFDKR |
-| W3186531035, AER 2024 | 1.2 GB | https://doi.org/10.3886/E198004V1 |
+| Paper | Size | Repository | Package |
+|---|---|---|---|
+| W4401126511, AER 2024 | 4 MB | openICPSR | https://doi.org/10.3886/E197302V1 |
+| W4405354213, REStud 2024 | 16 MB | Zenodo | https://doi.org/10.5281/zenodo.10783446 |
+| W4387449673, JPE 2023 | 20 MB | Harvard Dataverse | https://doi.org/10.7910/DVN/NYSNOT |
+| W3174918233, AER 2021 | 33 MB | openICPSR | https://doi.org/10.3886/E121941V1 |
+| W4407240810, QJE 2025 | 214 MB | Harvard Dataverse | https://doi.org/10.7910/DVN/PDFDKR |
+| W3186531035, AER 2024 | 1.2 GB | openICPSR | https://doi.org/10.3886/E198004V1 |
 
 ## Run stage 5
 
