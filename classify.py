@@ -1,10 +1,8 @@
 """Stage 3: classify each paper in papers.json with Haiku; writes verdicts/<wid>.json.
-
-Usage: python classify.py [N]   (N = stop after N papers; finished papers are skipped)
+Finished papers are skipped, so a stopped run resumes.
 """
 import asyncio
 import json
-import sys
 from pathlib import Path
 
 from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
@@ -64,8 +62,6 @@ def pending(p: dict) -> bool:
 async def main() -> None:
     papers = json.loads(Path("papers.json").read_text())
     todo = [p for p in papers if pending(p)]
-    if len(sys.argv) > 1:
-        todo = todo[:int(sys.argv[1])]
     slots = asyncio.Semaphore(WORKERS)
     await asyncio.gather(*(classify(p, slots) for p in todo))
 
