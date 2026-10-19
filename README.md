@@ -140,9 +140,9 @@ Sometimes the packages doesn't contain the data itself, but provide instructions
 
 This is another stage, where we will heavily used subagents. However, this time the task is not clear cut, and we will need the agents to explore and use whatever tools they need. We however need to add structure to their search.
 
-A good way to structure is to understand that our unit of analysis is a regression. Regression is more or less decided by right hand side and left hand side. So, we need the subagent to provide us with 1) prepared dataset 2) right hand side 3) left hand side 4) published coefficients. Then the code, that we fixed in advance will run the regression and check the published coefficient against the result, reporting back, if the paper replicates or not
+A good way to structure is to understand that our unit of analysis is a regression. Regression is more or less decided by right hand side and left hand side. So, we need the subagent to provide us with 1) prepared dataset 2) right hand side 3) left hand side 4) published coefficients. Then the code, that we fixed in advance will run the regression and check the published coefficient against the result, reporting back, if the paper replicates or not. 
 
-You will find that papers
+You will find that papers do not replicate for various reasons: the package doesn't contain required data, the version of the PDF we have is not the published version, the authors indeed made a mistake. But in most of the cases they do replicate well.
 
 **What to do.** Check that the registered tables replicate:
 
