@@ -18,6 +18,20 @@ In this toy example, we will:
 
 The repo is small enough not to eat any sensible part of your quota on a 20 USD subscription.
 
+## Setup
+
+Create a Python environment (Python 3.11 or newer) and install the requirements, from the repository root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate          # on Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+All commands below assume the environment is active and you are in the repository root.
+
+> [!TIP]
+> Just ask your agent to do it: "Set up a Python environment for this repo and install requirements.txt."
 
 ## Stages
 
