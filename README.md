@@ -13,9 +13,9 @@ This is a tutorial on a mass survey and replication of papers using an LLM. The 
 3. How to write prompts
 
 In this toy example, we will:
-1. Survey the methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in `papers.json`.
-2. Ask the agents to replicate the empirical papers in the sample in an organized way.
-3. The next step is bounded only by imagination.
+1. **Survey.** Survey the methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in `papers.json`.
+2. **Replicate.** Ask the agents to replicate the empirical papers in the sample in an organized way.
+3. **Extend.** The next step is bounded only by imagination.
 
 The whole tutorial is written with Claude in mind, but a large part of it is not specific to Claude. Some of the steps can run with any agent; others may require rewriting some of the repo's code, which shouldn't be a big pain. Ask your agent for help here!
 
@@ -69,10 +69,10 @@ Vice: We need structured output, so that it is ready to load into Stata and expl
 
 Therefore, we will heavily optimize the cost per paper. Here are a few important choices:
 
-1. We can run a local model to pre-screen paper texts and throw away anything not related to methodology. UCSD's Slurm cluster can run a local model large enough for this task. I do not cover this in detail, because it requires more involvement. Less input text means lower costs.
-2. We use a very verbose, clear prompt with a lot of examples, and we validate this prompt with a few experiments/iterations. The prompt for this task is in [`prompts/system_prompt.md`](prompts/system_prompt.md). A really good prompt lets us use smaller models.
-3. One may worry that a larger prompt means more input, and therefore higher costs. But the prompt doesn't change from request to request, and if everything is designed correctly, it is cached and billed at a 10% rate. The larger part of the input is the paper anyway.
-4. Finally, we use a feature called "structured output". It constrains the model to output valid JSON, which we can then use to construct our final dataset. The schema for this application is in [`prompts/json_schema.json`](prompts/json_schema.json).
+1. **Pre-screen with a local model.** We can run a local model to pre-screen paper texts and throw away anything not related to methodology. UCSD's Slurm cluster can run a local model large enough for this task. I do not cover this in detail, because it requires more involvement. Less input text means lower costs.
+2. **A long prompt with examples.** We use a very verbose, clear prompt with a lot of examples, and we validate this prompt with a few experiments/iterations. The prompt for this task is in [`prompts/system_prompt.md`](prompts/system_prompt.md). A really good prompt lets us use smaller models.
+3. **Prompt caching.** One may worry that a larger prompt means more input, and therefore higher costs. But the prompt doesn't change from request to request, and if everything is designed correctly, it is cached and billed at a 10% rate. The larger part of the input is the paper anyway.
+4. **Structured output.** Finally, we use a feature called "structured output". It constrains the model to output valid JSON, which we can then use to construct our final dataset. The schema for this application is in [`prompts/json_schema.json`](prompts/json_schema.json).
 
 **What to do.** 
 
@@ -107,8 +107,8 @@ Once you have the links, downloading is more of a problem than for PDFs, because
 
 For some repositories, downloading cannot be efficiently automated. Here are the options:
 
-1. Ask Claude for Chrome to open each of the links in a new tab, and go over them manually.
-2. Ask Claude for Chrome to download them itself: this spends a lot of tokens, is very slow and quite unreliable, but might save your own time.
+1. **Open the links, download by hand.** Ask Claude for Chrome to open each of the links in a new tab, and go over them manually.
+2. **Let Claude download.** Ask Claude for Chrome to download them itself: this spends a lot of tokens, is very slow and quite unreliable, but might save your own time.
 
 Sometimes a package doesn't contain the data itself, but provides instructions on how to fetch the data from another source. Agents are quite good at this most of the time; just ask them to follow the authors' instructions.
 
