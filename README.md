@@ -146,7 +146,7 @@ Sometimes a package doesn't contain the data itself, but provides instructions o
 
 ## Stage 4: Replication
 
-*Covers: one subagent per paper, a fixed interface for agents' output, automated verification, orchestrating subagents from chat*
+*Covers: context management, orchestrating subagents from chat*
 
 This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add some structure to their search.
 
