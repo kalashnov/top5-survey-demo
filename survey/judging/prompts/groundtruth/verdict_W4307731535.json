@@ -1,0 +1,61 @@
+{
+  "wid": "W4307731535",
+  "model": "claude-opus-4-7",
+  "source": "claude_groundtruth_top10k",
+  "ts": "2026-06-01T00:45:23Z",
+  "elapsed_s": 12.12,
+  "subtype": "success",
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 41501,
+    "cache_creation_input_tokens": 4253,
+    "output_tokens": 692
+  },
+  "cost_estimate_usd": 0.19398525,
+  "thinking": [
+    ""
+  ],
+  "input": {
+    "body_chars": 8344,
+    "title": "The Psychosocial Value of Employment: Evidence from a Refugee Camp",
+    "authors": "Reshmaan Hussam; Erin Kelley; Gregory Lane; Fatima Zahra",
+    "journal_code": "AER",
+    "year": 2022
+  },
+  "structured_output": {
+    "verdicts": [
+      {
+        "id": "W4307731535",
+        "reasoning": "Three-arm field experiment (control / cash / employment) on Rohingya refugees, with a standardized psychosocial wellbeing index as main DV. The index is estimated linearly, not log-transformed. The arm-by-arm comparison is multi-treatment design, not subject-level heterogeneity. The abstract mentions effects 'concentrated among males', but the top-10K excerpt does not contain a dedicated heterogeneous-effects analysis — hence speculative.",
+        "is_empirical": "yes",
+        "log_dv_likely": "no",
+        "transformation": "none",
+        "instrumental": "no",
+        "panel": "speculative",
+        "regression_discontinuity": "no",
+        "experimental": "yes",
+        "lots_of_controls": "speculative",
+        "hd_fe": "no",
+        "costly_intervention": "yes",
+        "heterogeneous_effects": "speculative",
+        "dummy_outcome": "no",
+        "dummy_treatment": "yes",
+        "varying_propensity": "no",
+        "other_methods": [
+          "RCT",
+          "pre-registered",
+          "index outcomes",
+          "ITT"
+        ],
+        "data_source": [
+          "experimental_field"
+        ],
+        "objective_id": "W4307731535",
+        "heterogeneous_effects_overridden_from": "yes",
+        "repeated_cross_section": "no",
+        "multiarm_treatment": "yes"
+      }
+    ]
+  },
+  "audited": "2026-06-01 strict-heterogeneity audit"
+}

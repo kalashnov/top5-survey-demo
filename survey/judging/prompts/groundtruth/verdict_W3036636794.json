@@ -1,0 +1,64 @@
+{
+  "wid": "W3036636794",
+  "model": "claude-opus-4-7",
+  "source": "claude_groundtruth_top10k",
+  "ts": "2026-06-01T00:44:13Z",
+  "elapsed_s": 12.25,
+  "subtype": "success",
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 31415,
+    "cache_creation_input_tokens": 31991,
+    "output_tokens": 567
+  },
+  "cost_estimate_usd": 0.68956875,
+  "thinking": [
+    ""
+  ],
+  "input": {
+    "body_chars": 34807,
+    "title": "Watering Down Environmental Regulation in China*",
+    "authors": "Guojun He; Shaoda Wang; Bing Zhang",
+    "journal_code": "QJE",
+    "year": 2020
+  },
+  "structured_output": {
+    "verdicts": [
+      {
+        "id": "W3036636794",
+        "reasoning": "Main DVs are log(TFP), log(COD emissions), and log(water input), estimated via spatial RD around water monitoring stations. Coefficients are explicitly interpreted as percentage changes via e^β−1, confirming log-DV. Uses firm-year panel with FE and an IV (hydrological station). Variation across upstream/downstream firms and polluting/non-polluting industries is the IV source and a placebo, not subject-level subgroup heterogeneity.",
+        "is_empirical": "yes",
+        "log_dv_likely": "yes",
+        "transformation": "log",
+        "instrumental": "yes",
+        "panel": "yes",
+        "regression_discontinuity": "yes",
+        "experimental": "no",
+        "lots_of_controls": "yes",
+        "hd_fe": "yes",
+        "costly_intervention": "yes",
+        "heterogeneous_effects": "no",
+        "dummy_outcome": "no",
+        "dummy_treatment": "yes",
+        "varying_propensity": "yes",
+        "other_methods": [
+          "spatial RD",
+          "difference-in-discontinuities",
+          "DDD",
+          "local linear regression",
+          "Olley-Pakes TFP",
+          "MSE-optimal bandwidth"
+        ],
+        "data_source": [
+          "administrative_public",
+          "satellite_spatial"
+        ],
+        "objective_id": "W3036636794",
+        "heterogeneous_effects_overridden_from": "yes",
+        "repeated_cross_section": "no",
+        "multiarm_treatment": "no"
+      }
+    ]
+  },
+  "audited": "2026-06-01 strict-heterogeneity audit"
+}

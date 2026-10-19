@@ -11,3 +11,14 @@
 3. **Classify.** Does the paper use a log-transformed outcome (Haiku)?
 4. **Download replication data.** 12 of the 100 so far.
 5. **Replicate the published regressions.** 7 of the 100 so far.
+
+## Run stage 3
+
+Uses your Claude Code login; `ANTHROPIC_API_KEY` must be unset.
+
+```bash
+pip install -r requirements.txt
+dvc pull -r r2ro txt.dvc
+python -m survey.judging.run_llm_judgement --backend claude --model claude-haiku-5-5 \
+  --subset papers.json --pdftxt-dir txt --out-dir verdicts
+```

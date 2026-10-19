@@ -1,0 +1,234 @@
+{
+  "type": "object",
+  "properties": {
+    "verdicts": {
+      "type": "array",
+      "description": "An array of verdicts, exactly one object per evaluated paper.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reasoning": {
+            "type": "string",
+            "maxLength": 600,
+            "description": "Brief reasoning, 1-3 sentences. Start by identifying the DV (LHS) of the main regression(s) and whether it is logged. Note any log-on-RHS terms separately — those do NOT make this log-DV."
+          },
+          "is_empirical": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "partial",
+              "no"
+            ],
+            "description": "Does this paper estimate regressions on real data? 'no' = pure theory/methodology/conceptual; 'partial' = mostly theory with brief empirical illustration; 'yes' = main contribution includes empirical estimation. If 'no', log_dv_likely MUST be 'no' and transformation MUST be 'none'."
+          },
+          "log_dv_likely": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "Is the DEPENDENT variable (LHS) logged or Poisson-modeled? 'yes' requires DIRECT textual evidence in the body (log(Y) equation, table header naming a logged outcome, explicit prose). Inference from 'this outcome is conventionally logged in the literature' or back-calculation from coefficient interpretation, WITHOUT textual markers, = 'speculative', NOT 'yes'. Log-transforms on the RHS as controls do NOT count."
+          },
+          "transformation": {
+            "type": "string",
+            "enum": [
+              "log",
+              "log1p",
+              "arcsinh",
+              "poisson",
+              "none",
+              "unclear",
+              "other"
+            ],
+            "description": "Which specific transformation is on the LHS of the main regression? Specific values (log/log1p/arcsinh/poisson) require DIRECT textual evidence. When log_dv_likely='speculative' (inferred from literature norms), prefer 'unclear' over guessing a specific transformation."
+          },
+          "instrumental": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "Uses Instrumental Variables (IV, 2SLS, instruments)."
+          },
+          "panel": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "STRICTLY about TIME. SAME units observed for the DV at ≥2 distinct TIME periods (longitudinal), supporting entity AND time fixed effects that are used in the regression. No entity → repeated_cross_section. No time → see `hd_fe` for high-dimensional FE without time."
+          },
+          "repeated_cross_section": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "DIFFERENT samples drawn from the same population at ≥2 distinct time periods (separate cohorts/waves, no within-unit tracking). E.g., separate RCTs in different years on different participants is repeated cross-section, not panel. Requires the DV to be measured at multiple time periods; a single time-point study is neither."
+          },
+          "regression_discontinuity": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "Uses Regression Discontinuity Design (RDD, cutoffs, running variables)."
+          },
+          "experimental": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "Uses clear randomization methods (RCTs, lab experiments, field experiments, lotteries, etc)."
+          },
+          "multiarm_treatment": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "THREE OR MORE distinct treatment arms compared (e.g., \"cash arm vs employment arm vs control\"; \"letter A vs letter B vs letter C\")."
+          },
+          "lots_of_controls": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "Explicitly relies on a rich set of covariates. Tracks regular covariates and fixed-count FE (region, industry — bounded by the number of regions/industries, not by N). DOES NOT include high-dimensional sample-growing FE — those go in `hd_fe`."
+          },
+          "hd_fe": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "High-dimensional fixed effects whose count grows with the sample (individual/worker/firm/household/match FE, AKM-style two-way FE)."
+          },
+          "costly_intervention": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "Evaluates an intervention or policy that involves significant financial, time, or resource costs per subject treated."
+          },
+          "heterogeneous_effects": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "A dedicated subgroup analysis across subjects, causal forests, or treatment×covariate interactions with noticeable differences."
+          },
+          "dummy_outcome": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "Uses a binary/dummy dependent variable (e.g., probability models, extensive margin participation)."
+          },
+          "dummy_treatment": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "Uses a binary/dummy independent variable (e.g., policy adoption, program participation, gender as a main variable of interest)."
+          },
+          "varying_propensity": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "speculative",
+              "unclear",
+              "no"
+            ],
+            "description": "the treatment propensity varies."
+          },
+          "other_methods": {
+            "type": "array",
+            "description": "Use this field to list other notable method features if any (list of short keywords).",
+            "items": {
+              "type": "string"
+            }
+          },
+          "data_source": {
+            "type": "array",
+            "description": "Identify all origins of the data used in the empirical analysis. Select ALL that apply from the list. If no data analysis, leave empty [].",
+            "items": {
+              "type": "string",
+              "enum": [
+                "administrative_public",
+                "administrative_private",
+                "macro_aggregate",
+                "survey_public",
+                "proprietary_commercial",
+                "experimental_lab",
+                "experimental_field",
+                "web_scraped",
+                "unstructured",
+                "satellite_spatial",
+                "historical_archival",
+                "simulated_synthetic",
+                "unclear_other"
+              ]
+            }
+          }
+        },
+        "required": [
+          "reasoning",
+          "is_empirical",
+          "log_dv_likely",
+          "transformation",
+          "instrumental",
+          "panel",
+          "repeated_cross_section",
+          "regression_discontinuity",
+          "experimental",
+          "multiarm_treatment",
+          "lots_of_controls",
+          "hd_fe",
+          "costly_intervention",
+          "heterogeneous_effects",
+          "dummy_outcome",
+          "dummy_treatment",
+          "varying_propensity",
+          "other_methods",
+          "data_source"
+        ]
+      }
+    }
+  },
+  "required": [
+    "verdicts"
+  ]
+}

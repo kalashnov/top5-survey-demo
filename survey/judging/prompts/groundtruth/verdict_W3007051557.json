@@ -1,0 +1,62 @@
+{
+  "wid": "W3007051557",
+  "model": "claude-opus-4-7",
+  "source": "claude_groundtruth_top10k",
+  "ts": "2026-06-01T00:44:51Z",
+  "elapsed_s": 15.18,
+  "subtype": "success",
+  "usage": {
+    "input_tokens": 6,
+    "cache_read_input_tokens": 50060,
+    "cache_creation_input_tokens": 13239,
+    "output_tokens": 903
+  },
+  "cost_estimate_usd": 0.39113625,
+  "thinking": [
+    ""
+  ],
+  "input": {
+    "body_chars": 34984,
+    "title": "Income Segregation and Intergenerational Mobility Across Colleges in the United States*",
+    "authors": "Raj Chetty; John N. Friedman; Emmanuel Saez; Nicholas Turner; Danny Yagan",
+    "journal_code": "QJE",
+    "year": 2020
+  },
+  "structured_output": {
+    "verdicts": [
+      {
+        "id": "W3007051557",
+        "reasoning": "Main regressions are OLS rank-rank: child earnings percentile rank on parent income percentile rank with college fixed effects. The DV is a percentile rank (0-100), not logged. Income is discussed throughout in dollar terms, but every estimated equation has rank or a binary indicator on the LHS — never log(earnings). Statistics reported across college tiers and parent income quintiles are descriptive stratification, not heterogeneous treatment effects.",
+        "is_empirical": "yes",
+        "log_dv_likely": "no",
+        "transformation": "none",
+        "instrumental": "no",
+        "panel": "no",
+        "regression_discontinuity": "no",
+        "experimental": "no",
+        "lots_of_controls": "yes",
+        "hd_fe": "no",
+        "costly_intervention": "no",
+        "heterogeneous_effects": "no",
+        "dummy_outcome": "no",
+        "dummy_treatment": "no",
+        "varying_propensity": "no",
+        "other_methods": [
+          "rank-rank regression",
+          "college fixed effects",
+          "counterfactual simulation",
+          "imputation"
+        ],
+        "data_source": [
+          "administrative_public",
+          "proprietary_commercial"
+        ],
+        "objective_id": "W3007051557",
+        "heterogeneous_effects_overridden_from": "yes",
+        "repeated_cross_section": "no",
+        "multiarm_treatment": "no"
+      }
+    ]
+  },
+  "audited": "2026-06-01 strict-heterogeneity audit"
+}
