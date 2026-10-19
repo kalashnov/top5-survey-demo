@@ -23,7 +23,7 @@
   "authors": "Clare Leaver; Owen Ozier; Pieter Serneels; Andrew Zeitlin",
   "abstract": "This paper reports on a two-tiered experiment designed to separately identify the selection and effort margins of pay for performance (P4P). At the recruitment stage, teacher labor markets were randomly assigned to a “pay-for-percentile” or fixed-wage contract. Once recruits were placed, an unexpected, incentive-compatible, school-level re-randomization was performed so that some teachers who applied for a fixed-wage contract ended up being paid by P4P, and vice versa. By the second year of the study, the within-year effort effect of P4P was 0.16 standard deviations of pupil learning, with the total effect rising to 0.20 standard deviations after allowing for selection. (JEL C93, I21, J23, J33, J41, J45, O15)",
   "data": "datasets/W3174918233",
-  "replicated": true
+  "replicated": false
  },
  {
   "wid": "W3145681792",
@@ -335,7 +335,7 @@
   "authors": "Alejandro Ganimian; Karthik Muralidharan; Christopher R. Walters",
   "abstract": "We use a large-scale randomized experiment to study the impact of augmenting staffing in the world’s largest public early-childhood program: India’s Integrated Child Development Services. Adding a worker doubled net preschool instructional time and led to increases of 0.28σ and 0.46σ in math and language test scores after 18 months for children who remained enrolled in the program and 0.13σ and 0.10σ for all children enrolled at baseline. Rates of stunting and severe malnutrition were also lower in the treatment group for children who remained enrolled. A cost-benefit analysis suggests that the benefits of augmenting staffing significantly exceed its costs. These effects are likely to replicate even at larger scales of program implementation.",
   "data": "datasets/W4387449673",
-  "replicated": true
+  "replicated": false
  },
  {
   "wid": "W4390831510",
@@ -504,7 +504,7 @@
   "authors": "Michael Greenstone; Rohini Pande; Nicholas Ryan; Anant Sudarshan",
   "abstract": "Abstract Market-based environmental regulations are seldom used in low-income countries, where pollution is highest but state capacity is often low. We collaborated with the Gujarat Pollution Control Board (GPCB) to design and experimentally evaluate the world’s first particulate-matter emissions market, which covered industrial plants in a large Indian city. There are three main findings. First, the market functioned well. Treatment plants, randomly assigned to the emissions market, traded permits to become significant net sellers or buyers. After trading, treatment plants held enough permits to cover their emissions 99% of the time, compared with just 66% compliance with standards under the command-and-control status quo. Second, treatment plants reduced pollution emissions, relative to control plants, by 20%–30%. Third, the market reduced abatement costs by an estimated 11%, holding constant emissions. This cost-savings estimate is based on plant-specific marginal cost curves that we estimate from the universe of bids to buy and sell permits in the market. The combination of pollution reductions and low costs imply that the emissions market has mortality benefits that exceed its costs by at least 25 times.",
   "data": "datasets/W4407240810",
-  "replicated": true
+  "replicated": false
  },
  {
   "wid": "W4411847034",
@@ -621,7 +621,7 @@
   "authors": "Quy‐Toan Do; Hanan G. Jacoby",
   "abstract": "Abstract As utility services expand throughout the developing world, providers must grapple with how to set prices to recover average costs. Data from a multiyear randomised pricing experiment among nearly 1,500 recently connected piped water customers in Vietnam reveal month-to-month demand persistence. Based on structural demand estimation, we document how endogenous preferences, if unaccounted for, can lead to low take-up and thereby threaten the financial viability of the new water utility. We also show that such demand persistence calls for pricing schemes that defer lump-sum payment, effectively allowing future consumers to subsidise their present selves.",
   "data": "datasets/W4405354213",
-  "replicated": true
+  "replicated": false
  },
  {
   "wid": "W3140303326",

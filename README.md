@@ -26,7 +26,7 @@ The tutorial is organized in stages. If you just want to skip it and execute the
 1. **Collect papers.** List the journals' articles, draw the sample, download the PDFs, extract the text.
 2. **Classify.** Does the paper use a log-transformed outcome (Haiku)?
 3. **Download replication data.** 6 of the 50 so far.
-4. **Replicate the published regressions.** 5 of the 50 so far.
+4. **Replicate the published regressions.** 1 of the 50 so far.
 
 ## Stage 1: Collect papers
 
