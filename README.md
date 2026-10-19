@@ -18,12 +18,10 @@ In this toy example, we will:
 
 The repo is small enough not to eat any sensible part of your quota on a 20 USD subscription.
 
-## Navigating the tutorial
-
-The tutorial is organized in sections. Each section has some writing explaining best practices. However, if you just want to skip it and execute the code, skip to the **What to do** paragraph. Also, if you are not interested in some stages, you may ask your agent to do that stage for you.
-
 
 ## Stages
+
+The tutorial is organized in stages. If you just want to skip it and execute the code, skip to the **What to do** paragraph. Also, if you are not interested in some stages, you may ask your agent to do that stage for you.
 
 1. **Collect papers.** List the journals' articles, draw the sample, download the PDFs, extract the text.
 2. **Classify.** Does the paper use a log-transformed outcome (Haiku)?
