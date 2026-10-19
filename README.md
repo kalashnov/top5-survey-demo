@@ -47,6 +47,8 @@ The first thing is to collect any public URLs for each paper. To save time, the 
 3. NBER
 4. arXiv
 
+A prompt for this is in [`prompts/collect_urls.md`](prompts/collect_urls.md).
+
 The result will contain mistakes: some links will lead to other papers, and some will lead to supplementary material instead. Some papers will have no link, even though the paper is public on the author's website. A good approach is to run a number of Haiku subagents tasked with correcting the mistakes and searching the web for the correct versions. This is more expensive than scraping the APIs of the sources above with code, but by then we have already narrowed down the task before handing it to LLMs.
 
 > [!NOTE]
