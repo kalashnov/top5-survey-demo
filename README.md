@@ -80,7 +80,7 @@ Our virtues and our vices:
 - **Vice:** We need to classify thousands of papers.
 - **Vice:** We need structured output, so that it is ready to load into Stata and explore.
 
-Therefore, we will heavily optimize the cost per paper. Here are a few important choices:
+Therefore, we will heavily optimize the cost per paper. Here are a few ways to do it:
 
 1. **Pre-screen with a local model.** We can run a local model to pre-screen paper texts and throw away anything not related to methodology. UCSD's Slurm cluster can run a local model large enough for this task. I do not cover this in detail, because it requires more involvement. Less input text means lower costs.
 2. **A long prompt with examples.** We use a very verbose, clear prompt with a bunch of examples, and we validate this prompt with a few experiments/iterations. The prompt for this task is in [`prompts/system_prompt.md`](prompts/system_prompt.md). A really good prompt lets us use smaller models.
