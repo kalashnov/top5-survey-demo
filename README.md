@@ -42,12 +42,6 @@ With an API key instead, `export ANTHROPIC_API_KEY=<key>`: the same code, billed
 4. **Download replication data.** 6 of the 50 so far.
 5. **Replicate the published regressions.** 5 of the 50 so far.
 
-## Run stage 1
-
-```bash
-python fetch_pdfs.py        # downloads each pdf_url in papers.json to pdfs/<wid>.pdf
-```
-
 ## Stage 1: Collect papers
 
 The first thing is to collect any public urls for each paper. The repo already contains urls for each paper in order to save time, but generally, a good approach is to ask your agent to write a script that will systematically review the following sources:
@@ -58,6 +52,14 @@ The first thing is to collect any public urls for each paper. The repo already c
 4. Arxiv
 
 This will contain mistakes, some links will lead to other papers, some links will lead to supplementary material instead. Some papers will have no link, even though the paper is made public on the author's website. A good approach is to run a number of haiku subagents who will be tasked to correct the mistakes/search the web for correct versions. This is more expensive then searching API of above sources with the code, but we have already narrowed down the task before handing it to LLMs. For this excercise I made sure none of the papers in this sample link to a wrong PDF, so we skip the data cleaning part here, and will learn about subagents on a more exciting example.
+
+To download the PDFs yourself instead of `dvc pull`, run:
+
+```bash
+python fetch_pdfs.py
+```
+
+It saves each paper's `pdf_url` from `papers.json` to `pdfs/<wid>.pdf`, skips the files you already have and prints `ok` or `failed` for each paper; a failed download usually works on a rerun. All 50 take about 6 minutes.
 
 ## Run stage 3
 
