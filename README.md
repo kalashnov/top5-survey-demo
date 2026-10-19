@@ -91,9 +91,9 @@ Vice: We need structured output for it to be ready to load in STATA and explore.
 Therefore, we will heavily optimize the cost per paper. Here are a few important choices:
 
 1. We can run a local model to pre-screen paper texts to throw away anything not related to methodology. UCSD's slurm cluster can run local model of the size enough to do this task. I do not cover this in detail, because it requires more involvement. Less text to input -> less costs.
-2. We run a very verbose, clear prompt with a lot of examples. And we validate this prompt with a few experiments/iterations. The prompt for this task is given in ... . A really good prompt can allow us to use smaller models.
+2. We run a very verbose, clear prompt with a lot of examples. And we validate this prompt with a few experiments/iterations. The prompt for this task is given in [`prompts/system_prompt.md`](prompts/system_prompt.md). A really good prompt can allow us to use smaller models.
 3. One can worry that a larger prompt means more input, therefore more costs. But, the prompt doesn't change from request to request, and if everything is designed correctly, it is cached, and is billed at a 10% rate. The larger part of the input is the paper anyway.
-4. Finally, we use a feature called "structured output". It constrains the model to output a valid json, which we can then use to construct our final dataset. The schema for this application is in ...
+4. Finally, we use a feature called "structured output". It constrains the model to output a valid json, which we can then use to construct our final dataset. The schema for this application is in [`prompts/json_schema.json`](prompts/json_schema.json).
 
 **What to do.** To run the classification analysis, just execute:
 
