@@ -1,4 +1,4 @@
-"""Stage 3: classify each paper in papers.json with Haiku; writes verdicts/<wid>.json."""
+"""Stage 2: classify each paper in papers.json with Haiku; writes verdicts/<wid>.json."""
 import asyncio
 import json
 from pathlib import Path

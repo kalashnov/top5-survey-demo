@@ -50,10 +50,9 @@ With an API key instead, `export ANTHROPIC_API_KEY=<key>`: the same code, billed
 ## Stages
 
 1. **Collect papers.** List the journals' articles, draw the sample, download the PDFs, extract the text.
-2. **Condense.** Score each chunk of a paper and keep the best ~10K characters (Haiku).
-3. **Classify.** Does the paper use a log-transformed outcome (Haiku)?
-4. **Download replication data.** 6 of the 50 so far.
-5. **Replicate the published regressions.** 5 of the 50 so far.
+2. **Classify.** Does the paper use a log-transformed outcome (Haiku)?
+3. **Download replication data.** 6 of the 50 so far.
+4. **Replicate the published regressions.** 5 of the 50 so far.
 
 ## Stage 1: Collect papers
 
@@ -79,7 +78,7 @@ python extract_text.py
 ```
 
 
-## Stage 3: classifying the methodology of papers
+## Stage 2: classifying the methodology of papers
 
 Now we arrive to fun part: running an army of subagents. The idea of this stage is as follows. Let the agent's read the paper and answer a few question: do they run an experiment? do they run difference-in-differences? What is the source of data?
 
@@ -104,7 +103,7 @@ python classify.py          # writes verdicts/<wid>.json
 
 This will output a json with the questions we asked, answered in a structured way
 
-## Stage 4: Download replication data
+## Stage 3: Download replication data
 
 For dataset downloading we follow the same approach as for pdfs. We first need to collect a list of urls (which are already collected for this example). Ask the agent to write code that systematically searches the following sources:
 
@@ -135,7 +134,7 @@ For some repos downloading cannot be efficiently automated. Here are the options
 | W4407240810, QJE 2025 | 214 MB | Harvard Dataverse | https://doi.org/10.7910/DVN/PDFDKR |
 | W3186531035, AER 2024 | 1.2 GB | openICPSR | https://doi.org/10.3886/E198004V1 |
 
-## Run stage 5
+## Run stage 4
 
 **What to do.** Check that the registered tables replicate:
 
@@ -146,4 +145,4 @@ pytest test_replications.py            # one test per published column
 `prompts/replicate.md` asks an agent to add a paper: `replications/<wid>.py` with its data loader and `SPECS`.
 
 
-## Stage 6: new analysis
+## Stage 5: new analysis
