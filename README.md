@@ -70,7 +70,7 @@ python extract_text.py
 
 ## Stage 2: Classifying the methodology of papers
 
-*Concepts: subagents at scale, small models, prompt caching, structured output, batch processing*
+*Concepts: subagents at scale, verose prompts, few-shot examples, prompt caching, structured output, batch processing*
 
 Now we arrive at the fun part: running an army of subagents. The idea of this stage is as follows. Let the agents read the paper and answer a few questions: Do they run an experiment? Do they run difference-in-differences? What is the source of the data?
 
@@ -83,7 +83,7 @@ Our virtues and our vices:
 Therefore, we will heavily optimize the cost per paper. Here are a few important choices:
 
 1. **Pre-screen with a local model.** We can run a local model to pre-screen paper texts and throw away anything not related to methodology. UCSD's Slurm cluster can run a local model large enough for this task. I do not cover this in detail, because it requires more involvement. Less input text means lower costs.
-2. **A long prompt with examples.** We use a very verbose, clear prompt with a lot of examples, and we validate this prompt with a few experiments/iterations. The prompt for this task is in [`prompts/system_prompt.md`](prompts/system_prompt.md). A really good prompt lets us use smaller models.
+2. **A long prompt with examples.** We use a very verbose, clear prompt with a bunch of examples, and we validate this prompt with a few experiments/iterations. The prompt for this task is in [`prompts/system_prompt.md`](prompts/system_prompt.md). A really good prompt lets us use smaller models.
 3. **Prompt caching.** One may worry that a larger prompt means more input, and therefore higher costs. But the prompt doesn't change from request to request, and if everything is designed correctly, it is cached and billed at a 10% rate. The larger part of the input is the paper anyway.
 4. **Structured output.** Finally, we use a feature called "structured output". It constrains the model to output valid JSON, which we can then use to construct our final dataset. The schema for this application is in [`prompts/json_schema.json`](prompts/json_schema.json).
 5. **Batch processing.** The other way to save is batch processing, which we do not use here. Most providers let you submit a job as a "batch" instead of "on demand". They guarantee a response within 24 hours, but are not obliged to answer right away, and they give significant discounts. However, it also involves tradeoffs, e.g. it might be harder to manage the prompt cache (which expires). For Claude, it also doesn't work with a subscription. At my scale I found that a 100 USD subscription, though it adds some inconvenience, is the most cost-effective option, so I do not rely on batch processing.
