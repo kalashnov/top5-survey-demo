@@ -1,5 +1,7 @@
 # Top-5 survey demo
 
+REFER TO PAUL GOLDSMITH, HULL, CR
+
 This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
 
 1. How to run/manage/schedule hundreds of subagents
