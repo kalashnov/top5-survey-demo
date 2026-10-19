@@ -1,8 +1,17 @@
 # Top-5 survey demo
 
-50 articles from AER, QJE, JPE, ECMA and REStud, 2 per journal per year, 2021–2025, listed in `papers.json`.
+This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
 
-`dvc pull -r r2ro` fetches `pdfs/`, `txt/` and the 6 replication packages in `datasets/`.
+1. How to run/manage/schedule a hundreds of subagents
+2. How to save on costs
+3. How to write prompts
+
+In this toy example, we will survey methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in `papers.json`. Then we will take the empirical papers in the sample and ask the agents to replicate them in an organized way. Then next step is bounded by imagination only.
+
+## Setup
+
+Note: if you wish, ask you agent to help you with that.
+
 
 ## Stages
 
