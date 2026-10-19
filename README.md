@@ -123,6 +123,8 @@ For some repos downloading cannot be efficiently automated. Here are the options
 1. Ask Claude for Chrome to open each of the links in the new tab and go over them manually
 2. Ask Claude for Chrome to download themselves: this spends a lot of tokens, is very slow, quite unreliable, but might save your own time.
 
+Sometimes the packages doesn't contain the data itself, but provide instructions how to fetch this data from another source. Agents are quite good at doing that most of the times, just ask them to follow author's instructions.
+
 **What to do.** For this tutorial I suggest to manually download a few replication packages, e.g. these. After they are downloaded just ask Claude to go into your downloads folder and copy them into the project
 
 | Paper | Size | Repository | Package |
@@ -134,7 +136,13 @@ For some repos downloading cannot be efficiently automated. Here are the options
 | W4407240810, QJE 2025 | 214 MB | Harvard Dataverse | https://doi.org/10.7910/DVN/PDFDKR |
 | W3186531035, AER 2024 | 1.2 GB | openICPSR | https://doi.org/10.3886/E198004V1 |
 
-## Run stage 4
+## Stage 4: replication
+
+This is another stage, where we will heavily used subagents. However, this time the task is not clear cut, and we will need the agents to explore and use whatever tools they need. We however need to add structure to their search.
+
+A good way to structure is to understand that our unit of analysis is a regression. Regression is more or less decided by right hand side and left hand side. So, we need the subagent to provide us with 1) prepared dataset 2) right hand side 3) left hand side 4) published coefficients. Then the code, that we fixed in advance will run the regression and check the published coefficient against the result, reporting back, if the paper replicates or not
+
+You will find that papers
 
 **What to do.** Check that the registered tables replicate:
 
@@ -146,3 +154,6 @@ pytest test_replications.py            # one test per published column
 
 
 ## Stage 5: new analysis
+
+
+## Take home lessons:
