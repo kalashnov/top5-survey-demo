@@ -12,24 +12,10 @@ from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
 MODEL = "claude-haiku-5-5"
 PROMPTS = Path("prompts")
 SCHEMA = json.loads((PROMPTS / "json_schema.json").read_text())
-FIELDS = SCHEMA["properties"]["verdicts"]["items"]["properties"]
-
-# System prompt: the base prompt plus six worked examples (paragraphs.json paired with groundtruth/).
-examples = ["", "", "## EXAMPLES", "",
-            "The following 6 papers have been carefully audited. Each paragraph "
-            "summarizes the paper's relevant methodology, including details that "
-            "could mislead a careless reader (logs on the RHS, multi-arm RCT "
-            "design, theoretical log-linearization, descriptive stratification). "
-            "The JSON shows the correct classification. Study how each paragraph "
-            "maps to the verdict.", ""]
-for p in json.loads((PROMPTS / "paragraphs.json").read_text())["papers"]:
-    v = json.loads((PROMPTS / "groundtruth" / f"verdict_{p['wid']}.json").read_text())["structured_output"]["verdicts"][0]
-    examples += [f"### Example {p['slot']} — {p['role']}", "", "Paper:", p["paragraph"], "",
-                 "Correct verdict:", json.dumps({k: v[k] for k in FIELDS if k in v}, indent=2, ensure_ascii=False), ""]
 
 # No tools, settings or plugins: Claude Code's own context would otherwise ride along.
 OPTIONS = ClaudeAgentOptions(
-    model=MODEL, system_prompt=(PROMPTS / "system_prompt.md").read_text() + "\n".join(examples),
+    model=MODEL, system_prompt=(PROMPTS / "system_prompt.md").read_text(),
     tools=[], allowed_tools=[], setting_sources=[], mcp_servers={}, strict_mcp_config=True,
     skills=[], agents={}, plugins=[],
     output_format={"type": "json_schema", "schema": SCHEMA},
