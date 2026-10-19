@@ -50,7 +50,7 @@ The first thing is to collect any public URLs for each paper. To save time, the 
 
 Here is a suggested prompt: [`prompts/collect_urls.md`](prompts/collect_urls.md).
 
-The result will contain mistakes: some links will lead to other papers, and some will lead to supplementary material instead. Some papers will have no link, even though the paper is public on the author's website. A good approach is to run a number of Haiku subagents tasked with correcting the mistakes and searching the web for the correct versions. This is more expensive than scraping the APIs of the sources above with code, but by then we have already narrowed down the task before handing it to LLMs.
+The result will contain mistakes: some links will lead to other papers, and some will lead to supplementary material instead. Some papers will have no link, even though the paper is public on the author's website. A good approach is to run a number of **Haiku subagents** tasked each with a couple of papers to check for the mistakes and/or search the web for the correct versions. This is more expensive than scraping the APIs of the sources above with code, but also, we have already narrowed down the task before handing it to LLMs.
 
 > [!NOTE]
 > For this exercise I made sure none of the papers in this sample link to a wrong PDF, so we skip the data cleaning part here and will learn about subagents on a more exciting example.
