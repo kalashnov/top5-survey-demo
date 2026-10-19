@@ -125,16 +125,27 @@ Sometimes a package doesn't contain the data itself, but provides instructions o
 
 ## Stage 4: Replication
 
-This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add structure to their search.
+This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add some structure to their search. 
 
-A good way to add structure is to recognize that our unit of analysis is a regression. A regression is more or less determined by its right-hand side and left-hand side. So we need the subagent to provide us with 1) a prepared dataset, 2) the right-hand side, 3) the left-hand side and 4) the published coefficients. Then code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
+Note: why do we ask a subagent to do it and ask only one paper at a time? We do this for both quality and costs minimization. We do not want the each subagent to have contest from the other paper, for two reasons: 1) long contexts are more expensive 2) too long contexts may deteriorate quality. 
+
+A good way to add structure is to recognize that our unit of analysis is a regression. A regression is more or less determined by its right-hand side and left-hand side. So we need the subagent to provide us with 
+    1. a prepared dataset, 
+    2. the right-hand side, and the left-hand side and other details of specification (e.g. standard errors variant)
+    3. the published coefficients.
+
+This is where we fix the `Spec` interface. It register the model specification the agent is willing to fit and it's reference value. After that the code that we fixed in advance runs the regression, checks the published coefficients against the result and reports back whether the paper replicates or not.
+
+This way we
+    1. have some guardrail that the agent did indeed check the coefficient against the published one
+    2. have the replication results in a structured format as well (a set of `Specs`), which can be later collected in the dataset of their own
 
 You will find that papers fail to replicate for various reasons: the package doesn't contain the required data, the version of the PDF we have is not the published version, or the authors indeed made a mistake. But in most cases they replicate well.
 
 
 **What to do.**
 
-The prompt for this stage is in [`prompts/replicate.md`](prompts/replicate.md). You can either write scheduling code in the spirit of Stage 2, or just ask in chat something like this:
+The prompt for this stage is in [`prompts/replicate.md`](prompts/replicate.md). The prompt asks a subagent to take a specific paper and replicate tables from it. You can either write scheduling code in the spirit of Stage 2, or just ask in chat something like this:
 
 ```
 Run 1 sonnet subagent for each paper with a dataset (2 in parallel),
@@ -152,12 +163,19 @@ pytest test_replications.py            # one test per published column
 ```
 
 ## Stage 5: new analysis
+time: eternity
 
-Registering own spec...
+Suppose, instead of just replicating the analysis of the authors we want to extend it. Here there are two useful approaches. 
 
+First example will require decision for each seperate paper from scratch: Just as an example, we want them to systematically run interaction tables. Then, we can write `ISpec`, that will formalize interaction tables and write a prompt that will ask an agent to 
+
+Then, we can register another version of `Spec`, e.g. `ISpec` (`I` for interaction) and ask the subagents to come up with sensible interaction regressions. Of course, we should also come up with some automated way to validate/aggregate the agent's output.
+
+Another example, we can try to test, what if we replace all left hand sides with `exp` -- we can do it from the shared code we wrote in advance. There is no need to spawn a new subagent for each paper from scratch
 
 ## Take home lessons:
 
+<Claude, please summarize>
 
 ## More tips
 
