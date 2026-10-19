@@ -108,7 +108,7 @@ This will output one JSON file per paper with the answers to the questions we as
 
 ## Stage 3: Download replication data
 
-*Concepts: data repositories and their APIs, browser agents*
+*Concepts: browser agents*
 
 For downloading datasets we follow the same approach as for PDFs. We first need to collect a list of URLs (already collected for this example). Ask the agent to write code that systematically scrapes the following sources:
 
