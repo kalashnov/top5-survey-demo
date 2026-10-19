@@ -34,6 +34,17 @@ dvc pull -r r2ro
 4. **Download replication data.** 6 of the 50 so far.
 5. **Replicate the published regressions.** 4 of the 50 so far.
 
+## Stage 1: Collect papers
+
+The first thing is to collect any public urls for each paper. The repo already contains urls for each paper in order to save time, but generally, a good approach is to ask your agent to write a script that will systematically review the following sources:
+
+1. OpenAlex
+2. SemanticScholar
+3. NBER
+4. Arxiv
+
+This will contain mistakes, some links will lead to other papers, some links will lead to supplementary material instead. Some papers will have no link, even though the paper is made public on the author's website. A good approach is to run a number of haiku subagents who will be tasked to correct the mistakes/search the web for correct versions. This is more expensive then searching API of above sources with the code, but we have already narrowed down the task before handing it to LLMs. For this excercise I made sure none of the papers in this sample link to a wrong PDF, so we skip the data cleaning part here, and will learn about subagents on a more exciting example.
+
 ## Run stage 3
 
 Uses your Claude Code login; `ANTHROPIC_API_KEY` must be unset.
