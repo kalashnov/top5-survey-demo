@@ -179,20 +179,10 @@ Check that the registered tables replicate:
 pytest stage4_replicate            # one test per published column
 ```
 
-To get all registered specs as one dataset, with the published and replicated coefficient side by side, start Python from the repository root with `PYTHONPATH=stage4_replicate python` and run:
+To get all registered specs as one dataset, with the published and replicated coefficient side by side, run:
 
-```python
-from dataclasses import asdict
-import pandas as pd
-from replications import registry
-from replications.spec import check
-
-specs = pd.DataFrame([
-    {"spec": key, "formula": spec.formula, "vcov": str(spec.vcov), "sample": spec.sample, **asdict(row)}
-    for key, (load, spec) in registry().items()
-    for row in check(load(), spec)
-])
-specs.to_csv("specs.csv", index=False)   # one row per published number: term, published, ours, ok
+```bash
+python stage4_replicate/collect_specs.py   # writes specs.csv: one row per published number
 ```
 
 ## Stage 5: new analysis
