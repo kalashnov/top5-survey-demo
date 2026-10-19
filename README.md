@@ -97,7 +97,7 @@ For some repos downloading cannot be efficiently automated. Here are the options
 1. Ask Claude for Chrome to open each of the links in the new tab and go over them manually
 2. Ask Claude for Chrome to download themselves: this spends a lot of tokens, is very slow, quite unreliable, but might save your own time.
 
-The 6 packages used in this tutorial:
+For this tutorial I suggest to manually download a few replication packages, e.g. these. After they are downloaded just ask Claude to go into your downloads folder and copy them into the project
 
 | Paper | Size | Package |
 |---|---|---|
