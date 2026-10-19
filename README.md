@@ -147,9 +147,6 @@ Sometimes a package doesn't contain the data itself, but provides instructions o
 
 This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add some structure to their search.
 
-> [!NOTE]
-> Why do we use *sub*agent, and why do we ask to process one paper at a time? For both quality and cost. We do not want each our main chat to carry context from processing of other papers, for two reasons: 1) longer contexts are expensive, and 2) longer contexts may deteriorate quality.
-
 A good way to add structure is to recognize that our unit of analysis is a regression. A regression is more or less determined by its right-hand side and left-hand side. So we need the subagent to provide us with
     1. a prepared dataset,
     2. the right-hand side, the left-hand side and other details of the specification (e.g. the standard errors variant),
@@ -162,6 +159,9 @@ This way we
     2. have the replication results in a structured format as well (a set of `Spec`s), which can later be collected into a dataset of their own.
 
 You will find that papers fail to replicate for various reasons: the package doesn't contain the required data, the version of the PDF we have is not the published version, or the authors indeed made a mistake. But in most cases they replicate well.
+
+> [!NOTE]
+> Why do we use *sub*agent, and why do we ask to process one paper at a time? For both quality and cost. We do not want each our main chat to carry context from processing of other papers, for two reasons: 1) longer contexts are expensive, and 2) longer contexts may deteriorate quality.
 
 
 **What to do.**
