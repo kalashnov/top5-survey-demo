@@ -38,9 +38,9 @@ All commands below assume the environment is active and you are in the repositor
 The tutorial is organized in stages. If you just want to skip it and execute the code, skip to the **What to do** paragraph. Also, if you are not interested in some stages, you may ask your agent to do that stage for you.
 
 1. **Collect papers.** List the journals' articles, draw the sample, download the PDFs, extract the text.
-2. **Classify.** Does the paper use a log-transformed outcome (Haiku)?
-3. **Download replication data.** 6 of the 50 so far.
-4. **Replicate the published regressions.** 1 of the 50 so far.
+2. **Classify.** Ask each paper a fixed set of questions about its methodology, collect the answers as structured data.
+3. **Download replication data.** Find each paper's replication package, download it, add it to the project.
+4. **Replicate the published regressions.** Prepare the data, register each published regression, check it against the paper.
 
 ## Stage 1: Collect papers
 
