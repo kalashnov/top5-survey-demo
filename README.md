@@ -21,6 +21,8 @@ The repo is small enough to not eat any sensible part of your quota on a 20 USD 
 
 ## Navigating the tutorial
 
+The tutorial is organized in sections. Each section have some writing, explaining best practices. However, if you just want to skip it and execute code, skip to **what to do** paragraph. Also, if you are not interested in some stages, you may ask your subagent to do this specific stage for you
+
 ## Setup
 
 Note: if you wish, ask you agent to help you with this part.
