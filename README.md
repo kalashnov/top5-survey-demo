@@ -19,6 +19,5 @@ Uses your Claude Code login; `ANTHROPIC_API_KEY` must be unset.
 ```bash
 pip install -r requirements.txt
 dvc pull -r r2ro txt.dvc
-python -m survey.judging.run_llm_judgement --backend claude --model claude-haiku-5-5 \
-  --subset papers.json --pdftxt-dir txt --out-dir verdicts
+python classify.py          # writes verdicts/<wid>.json; reruns skip finished papers
 ```
