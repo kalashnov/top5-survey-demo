@@ -23,12 +23,6 @@ In this toy example, we will:
 
 The repo is small enough not to eat any sensible part of your quota on a 20 USD subscription.
 
-## Related work
-
-- **Chen and Roth (2024), "Logs with Zeros? Some Problems and Solutions", QJE.** Their replication code, [jiafengkevinchen/logs-public](https://github.com/jiafengkevinchen/logs-public), re-estimates the log specifications of published papers. The classification question in Stage 2, whether a paper logs its outcome, comes from the same problem.
-- **Peter Hull** ([@instrumenthull](https://x.com/instrumenthull)) used an AI agent to read more than 5,000 top-five papers from the last ten years and find two-way fixed effects regressions with staggered adoption, to measure how much "negative weights" matter in practice.
-- **Paul Goldsmith-Pinkham** teaches [Claude Code for applied economists](https://markusacademy.substack.com/p/claude-code-for-applied-economists) and has proposed [LLM-friendly academic papers](https://paulgp.substack.com/p/llm-friendly-academic-papers-a-proposal), whose replication packages an agent can run and verify.
-
 ## Navigating the tutorial
 
 The tutorial is organized in sections. Each section has some writing explaining best practices. However, if you just want to skip it and execute the code, skip to the **What to do** paragraph. Also, if you are not interested in some stages, you may ask your agent to do that stage for you.
@@ -214,3 +208,9 @@ Another example, we can try to test, what if we replace all left hand sides with
 - **Worktrees.** When you start a chat (or a subagent), ask it to `work in a worktree`. This gives the agent their own folder, where they can do whatever they want.
 - **Pull requests.** Having dozens of subagent each working on their paper makes it hard to review their results in detail. Ask them to submit a pull request to the github repo after they are done in their worktree. This way you can see what they done, before it reaches the main project folder. Generally, using git is a requirement here, to always be able to rollback their changes
 - **Questions document.** Subagents may want you to make some decisions they hesitate to do on their own. Make a document, and ask them to collect questions in a document. You can answer in the document and then just instruct them to read the answer from there. There are numerous ways to improve: require to structure the document in a certain way, provide tags to filter/classify questions, and even have small subagents, whom you can ask follow up questions on the decisions to make
+
+## Related work
+
+- **Chen and Roth (2024), "Logs with Zeros? Some Problems and Solutions", QJE.** Their replication code, [jiafengkevinchen/logs-public](https://github.com/jiafengkevinchen/logs-public), re-estimates the log specifications of published papers. The classification question in Stage 2, whether a paper logs its outcome, comes from the same problem.
+- **Peter Hull** ([@instrumenthull](https://x.com/instrumenthull)) used an AI agent to read more than 5,000 top-five papers from the last ten years and find two-way fixed effects regressions with staggered adoption, to measure how much "negative weights" matter in practice.
+- **Paul Goldsmith-Pinkham** teaches [Claude Code for applied economists](https://markusacademy.substack.com/p/claude-code-for-applied-economists) and has proposed [LLM-friendly academic papers](https://paulgp.substack.com/p/llm-friendly-academic-papers-a-proposal), whose replication packages an agent can run and verify.
