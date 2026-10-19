@@ -1,4 +1,4 @@
-# Top-5 survey demo
+# Demo: survey and replication of papers in Economics
 
 This is a tutorial on a mass survey and replication of papers using an LLM. It shows how to:
 
