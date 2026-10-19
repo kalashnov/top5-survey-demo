@@ -138,22 +138,36 @@ Sometimes the packages doesn't contain the data itself, but provide instructions
 
 ## Stage 4: replication
 
-This is another stage, where we will heavily used subagents. However, this time the task is not clear cut, and we will need the agents to explore and use whatever tools they need. We however need to add structure to their search.
+This is another stage, where we will heavily use subagents. However, this time the task is not clear cut, and we will need the agents to explore and use whatever tools they need. We however need to add structure to their search.
 
 A good way to structure is to understand that our unit of analysis is a regression. Regression is more or less decided by right hand side and left hand side. So, we need the subagent to provide us with 1) prepared dataset 2) right hand side 3) left hand side 4) published coefficients. Then the code, that we fixed in advance will run the regression and check the published coefficient against the result, reporting back, if the paper replicates or not. 
 
 You will find that papers do not replicate for various reasons: the package doesn't contain required data, the version of the PDF we have is not the published version, the authors indeed made a mistake. But in most of the cases they do replicate well.
 
-**What to do.** Check that the registered tables replicate:
+
+**What to do.**
+
+The prompt for this stage is in ... You can either write scheduling code in the spirit of Stage 2, or just ask in chat something like this:
+
+```
+Run 1 subagent for each of the paper with dataset (2 in parallel), prompt them with replicate.md and ask them to replicate the paper. Report back with results
+```
+
+The output of the agents should be data preparation scripts and registered regression, that they could or could not replicated.
+
+Check that the registered tables replicate:
 
 ```bash
 pytest test_replications.py            # one test per published column
 ```
 
-`prompts/replicate.md` asks an agent to add a paper: `replications/<wid>.py` with its data loader and `SPECS`.
-
-
 ## Stage 5: new analysis
 
 
 ## Take home lessons:
+
+
+## More tips
+
+Worktrees and Pull requests
+...
