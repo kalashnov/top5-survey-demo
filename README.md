@@ -163,6 +163,8 @@ pytest test_replications.py            # one test per published column
 
 ## Stage 5: new analysis
 
+Registering own spec...
+
 
 ## Take home lessons:
 
