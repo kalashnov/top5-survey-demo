@@ -1,5 +1,4 @@
 """Stage 3: classify each paper in papers.json with Haiku; writes verdicts/<wid>.json.
-Finished papers are skipped, so a stopped run resumes.
 """
 import asyncio
 import json
@@ -52,18 +51,10 @@ async def classify(p: dict, slots: asyncio.Semaphore) -> None:
     print(wid, [v["log_dv_likely"] for v in verdict["verdicts"]], flush=True)
 
 
-def pending(p: dict) -> bool:
-    """Has text and no verdict yet."""
-    has_text = Path(f"txt/{p['wid']}.txt").exists()
-    done = Path(f"verdicts/{p['wid']}.json").exists()
-    return has_text and not done
-
-
 async def main() -> None:
     papers = json.loads(Path("papers.json").read_text())
-    todo = [p for p in papers if pending(p)]
     slots = asyncio.Semaphore(WORKERS)
-    await asyncio.gather(*(classify(p, slots) for p in todo))
+    await asyncio.gather(*(classify(p, slots) for p in papers))
 
 
 Path("verdicts").mkdir(exist_ok=True)
