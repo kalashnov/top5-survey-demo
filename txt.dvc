@@ -1,0 +1,6 @@
+outs:
+- md5: 4516469c8563c73d767499aa46b4518e.dir
+  size: 14118115
+  nfiles: 100
+  hash: md5
+  path: txt

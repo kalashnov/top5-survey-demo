@@ -1,0 +1,19 @@
+[core]
+    remote = r2
+    autostage = true
+[cache]
+    type = hardlink
+['remote "r2"']
+    url = s3://meta-study-dvc/cache
+    region = auto
+    endpointurl = https://3692e1bb7392ebf9cf0da3f93179ee1e.r2.cloudflarestorage.com
+# Read-only twin of `r2`, with its credentials committed so a collaborator's
+# clone needs no setup: `dvc pull -r r2ro <target>.dvc`. Keys live here rather
+# than on `r2` because a remote's own keys override the AWS_* environment CI
+# and the devcontainer authenticate with, which would break `dvc push`.
+['remote "r2ro"']
+    url = s3://meta-study-dvc/cache
+    region = auto
+    endpointurl = https://3692e1bb7392ebf9cf0da3f93179ee1e.r2.cloudflarestorage.com
+    access_key_id = a19cafcedda7d09af5845a320524009c
+    secret_access_key = 0fb3d4f261c2c68be9b0f4bb93db6a0241f19993b29bde97af803c8a0a52c95f

@@ -1,0 +1,4 @@
+/pdfs
+/txt
+/datasets/*
+!/datasets/*.dvc

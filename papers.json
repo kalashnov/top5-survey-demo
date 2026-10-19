@@ -1,0 +1,902 @@
+[
+ {
+  "wid": "W2912507001",
+  "journal": "AER",
+  "year": 2021,
+  "doi": "https://doi.org/10.1257/aer.20181151",
+  "title": "Naïve Learning with Uninformed Agents",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3037654554",
+  "journal": "AER",
+  "year": 2021,
+  "doi": "https://doi.org/10.1257/aer.20200988",
+  "title": "Projection of Private Values in Auctions",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3174918233",
+  "journal": "AER",
+  "year": 2021,
+  "doi": "https://doi.org/10.1257/aer.20191972",
+  "title": "Recruitment, Effort, and Retention Effects of Performance Contracts for Civil Servants: Experimental Evidence from Rwandan Primary Schools",
+  "data": "datasets/W3174918233",
+  "replicated": true
+ },
+ {
+  "wid": "W3202051763",
+  "journal": "AER",
+  "year": 2021,
+  "doi": "https://doi.org/10.1257/aer.20190913",
+  "title": "Oligopolistic Price Leadership and Mergers: The United States Beer Industry",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3145681792",
+  "journal": "AER",
+  "year": 2022,
+  "doi": "https://doi.org/10.1257/aer.20191244",
+  "title": "State-Dependent Effects of Monetary Policy: The Refinancing Channel",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3181993182",
+  "journal": "AER",
+  "year": 2022,
+  "doi": "https://doi.org/10.1257/aer.20211729",
+  "title": "Signaling and Discrimination in Collaborative Projects",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4281695733",
+  "journal": "AER",
+  "year": 2022,
+  "doi": "https://doi.org/10.1257/aer.20210240",
+  "title": "Efficient Matching in the School Choice Problem",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4283385561",
+  "journal": "AER",
+  "year": 2022,
+  "doi": "https://doi.org/10.1257/aer.20200212",
+  "title": "Designing Deadlines",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W2998755519",
+  "journal": "AER",
+  "year": 2023,
+  "doi": "https://doi.org/10.1257/aer.20210254",
+  "title": "The Matching Multiplier and the Amplification of Recessions",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4323366286",
+  "journal": "AER",
+  "year": 2023,
+  "doi": "https://doi.org/10.1257/aer.20201434",
+  "title": "Droughts, Deluges, and (River) Diversions: Valuing Market-Based Water Reallocation",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4367321980",
+  "journal": "AER",
+  "year": 2023,
+  "doi": "https://doi.org/10.1257/aer.20220357",
+  "title": "Smart Contracts and the Coase Conjecture",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4390363324",
+  "journal": "AER",
+  "year": 2023,
+  "doi": "https://doi.org/10.1257/aer.20221605",
+  "title": "Competing to Commit: Markets with Rational Inattention",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W2972551319",
+  "journal": "AER",
+  "year": 2024,
+  "doi": "https://doi.org/10.1257/aer.20191068",
+  "title": "Anticipatory Anxiety and Wishful Thinking",
+  "data": "datasets/W2972551319",
+  "replicated": true
+ },
+ {
+  "wid": "W3186531035",
+  "journal": "AER",
+  "year": 2024,
+  "doi": "https://doi.org/10.1257/aer.20230585",
+  "title": "Financial Access and Labor Market Outcomes: Evidence from Credit Lotteries",
+  "data": "datasets/W3186531035",
+  "replicated": false
+ },
+ {
+  "wid": "W4401126511",
+  "journal": "AER",
+  "year": 2024,
+  "doi": "https://doi.org/10.1257/aer.20220711",
+  "title": "Indirect Effects of Access to Finance",
+  "data": "datasets/W4401126511",
+  "replicated": true
+ },
+ {
+  "wid": "W4403893415",
+  "journal": "AER",
+  "year": 2024,
+  "doi": "https://doi.org/10.1257/aer.20220110",
+  "title": "The Dynamic Consequences of State Building: Evidence from the French Revolution",
+  "data": "datasets/W4403893415",
+  "replicated": false
+ },
+ {
+  "wid": "W4409963010",
+  "journal": "AER",
+  "year": 2025,
+  "doi": "https://doi.org/10.1257/aer.20231067",
+  "title": "Changing Tracks: Human Capital Investment after Loss of Ability",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4409963023",
+  "journal": "AER",
+  "year": 2025,
+  "doi": "https://doi.org/10.1257/aer.20231529",
+  "title": "Risk Aversion and Insurance Propensity",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4411811737",
+  "journal": "AER",
+  "year": 2025,
+  "doi": "https://doi.org/10.1257/aer.20231278",
+  "title": "The Long-Run Effects of Government Spending",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4414626388",
+  "journal": "AER",
+  "year": 2025,
+  "doi": "https://doi.org/10.1257/aer.20240401",
+  "title": "Apart but Connected: Online Tutoring, Cognitive Outcomes, and Soft Skills",
+  "data": "datasets/W4414626388",
+  "replicated": true
+ },
+ {
+  "wid": "W2780896461",
+  "journal": "ECMA",
+  "year": 2021,
+  "doi": "https://doi.org/10.3982/ecta15966",
+  "title": "Inferring Inequality With Home Production",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W2885955945",
+  "journal": "ECMA",
+  "year": 2021,
+  "doi": "https://doi.org/10.3982/ecta16414",
+  "title": "Inequality, Business Cycles, and Monetary‐Fiscal Policy",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3093036166",
+  "journal": "ECMA",
+  "year": 2021,
+  "doi": "https://doi.org/10.3982/ecta17017",
+  "title": "Equilibrium Allocations Under Alternative Waitlist Designs: Evidence From Deceased Donor Kidneys",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3201027892",
+  "journal": "ECMA",
+  "year": 2021,
+  "doi": "https://doi.org/10.3982/ecta15404",
+  "title": "The Size‐Power Tradeoff in HAR Inference",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3124139196",
+  "journal": "ECMA",
+  "year": 2022,
+  "doi": "https://doi.org/10.3982/ecta14411",
+  "title": "Volatility and the Gains From Trade",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3124803780",
+  "journal": "ECMA",
+  "year": 2022,
+  "doi": "https://doi.org/10.3982/ecta17984",
+  "title": "Determination of Pareto Exponents in Economic Models Driven by Markov Multiplicative Processes",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3147380965",
+  "journal": "ECMA",
+  "year": 2022,
+  "doi": "https://doi.org/10.3982/ecta19417",
+  "title": "Uneven Growth: Automation's Impact on Income and Wealth Inequality",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4286543772",
+  "journal": "ECMA",
+  "year": 2022,
+  "doi": "https://doi.org/10.3982/ecta17348",
+  "title": "The Analytic Theory of a Monetary Shock",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3114534008",
+  "journal": "ECMA",
+  "year": 2023,
+  "doi": "https://doi.org/10.3982/ecta19304",
+  "title": "Invidious Comparisons: Ranking and Selection as Compound Decisions",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4226393979",
+  "journal": "ECMA",
+  "year": 2023,
+  "doi": "https://doi.org/10.3982/ecta20598",
+  "title": "Estimation Based on Nearest Neighbor Matching: From Density Ratio to Average Treatment Effect",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4386870831",
+  "journal": "ECMA",
+  "year": 2023,
+  "doi": "https://doi.org/10.3982/ecta18771",
+  "title": "A Quantitative Theory of the Credit Score",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4389384914",
+  "journal": "ECMA",
+  "year": 2023,
+  "doi": "https://doi.org/10.3982/ecta21248",
+  "title": "Same Root Different Leaves: Time Series and Cross‐Sectional Methods in Panel Data",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W2951425311",
+  "journal": "ECMA",
+  "year": 2024,
+  "doi": "https://doi.org/10.3982/ecta19466",
+  "title": "Bias‐Aware Inference in Fuzzy Regression Discontinuity Designs",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4399295338",
+  "journal": "ECMA",
+  "year": 2024,
+  "doi": "https://doi.org/10.3982/ecta21157",
+  "title": "Walras–Bowley Lecture: Market Power and Wage Inequality",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4402682991",
+  "journal": "ECMA",
+  "year": 2024,
+  "doi": "https://doi.org/10.3982/ecta20579",
+  "title": "Historical Self‐Governance and Norms of Cooperation",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4404527804",
+  "journal": "ECMA",
+  "year": 2024,
+  "doi": "https://doi.org/10.3982/ecta19051",
+  "title": "Sparse Network Asymptotics for Logistic Regression Under Possible Misspecification",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4406989522",
+  "journal": "ECMA",
+  "year": 2025,
+  "doi": "https://doi.org/10.3982/ecta20849",
+  "title": "Mussa Puzzle Redux",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4408886212",
+  "journal": "ECMA",
+  "year": 2025,
+  "doi": "https://doi.org/10.3982/ecta22841",
+  "title": "Comparative Statics With Adjustment Costs and the Le Chatelier Principle",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4410940470",
+  "journal": "ECMA",
+  "year": 2025,
+  "doi": "https://doi.org/10.3982/ecta20411",
+  "title": "Soaking up the Sun: Battery Investment, Renewable Energy, and Market Equilibrium",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W7105823412",
+  "journal": "ECMA",
+  "year": 2025,
+  "doi": "https://doi.org/10.3982/ecta18385",
+  "title": "Transparency and Percent Plans",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3000995785",
+  "journal": "JPE",
+  "year": 2021,
+  "doi": "https://doi.org/10.1086/713191",
+  "title": "Optimal Fiscal Policy without Commitment: Revisiting Lucas-Stokey",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3121680671",
+  "journal": "JPE",
+  "year": 2021,
+  "doi": "https://doi.org/10.1086/717046",
+  "title": "Management and Shocks to Worker Productivity",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3157470586",
+  "journal": "JPE",
+  "year": 2021,
+  "doi": "https://doi.org/10.1086/715023",
+  "title": "Communication and Community Enforcement",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3174894477",
+  "journal": "JPE",
+  "year": 2021,
+  "doi": "https://doi.org/10.1086/718370",
+  "title": "Good Reverberations? Teacher Influence in Music Composition since 1450",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W2262212231",
+  "journal": "JPE",
+  "year": 2022,
+  "doi": "https://doi.org/10.1086/720393",
+  "title": "The Economic Effects of Long-Term Climate Change: Evidence from the Little Ice Age",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3203294756",
+  "journal": "JPE",
+  "year": 2022,
+  "doi": "https://doi.org/10.1086/720140",
+  "title": "Sorting or Steering: The Effects of Housing Discrimination on Neighborhood Choice",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4286285556",
+  "journal": "JPE",
+  "year": 2022,
+  "doi": "https://doi.org/10.1086/721153",
+  "title": "Getting Dynamic Implementation to Work",
+  "data": "datasets/W4286285556",
+  "replicated": false
+ },
+ {
+  "wid": "W4308884910",
+  "journal": "JPE",
+  "year": 2022,
+  "doi": "https://doi.org/10.1086/722934",
+  "title": "Partial Default",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4319041392",
+  "journal": "JPE",
+  "year": 2023,
+  "doi": "https://doi.org/10.1086/724112",
+  "title": "Dynamic Bank Expansion: Spatial Growth, Financial Access, and Inequality",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4361214439",
+  "journal": "JPE",
+  "year": 2023,
+  "doi": "https://doi.org/10.1086/724843",
+  "title": "Informed Information Design",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4367595454",
+  "journal": "JPE",
+  "year": 2023,
+  "doi": "https://doi.org/10.1086/725707",
+  "title": "Market Segmentation and Competition in Health Insurance",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4387449673",
+  "journal": "JPE",
+  "year": 2023,
+  "doi": "https://doi.org/10.1086/728109",
+  "title": "Augmenting State Capacity for Child Development: Experimental Evidence from India",
+  "data": "datasets/W4387449673",
+  "replicated": true
+ },
+ {
+  "wid": "W4390831510",
+  "journal": "JPE",
+  "year": 2024,
+  "doi": "https://doi.org/10.1086/729445",
+  "title": "The Morality of Markets",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4391135319",
+  "journal": "JPE",
+  "year": 2024,
+  "doi": "https://doi.org/10.1086/729580",
+  "title": "Organizing for Collective Action: Olson Revisited",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4400649443",
+  "journal": "JPE",
+  "year": 2024,
+  "doi": "https://doi.org/10.1086/732218",
+  "title": "Not a Flying Start after All? A Comment",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4401880830",
+  "journal": "JPE",
+  "year": 2024,
+  "doi": "https://doi.org/10.1086/732891",
+  "title": "Sorting with Teams",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4406321535",
+  "journal": "JPE",
+  "year": 2025,
+  "doi": "https://doi.org/10.1086/734780",
+  "title": "Colluding against Workers",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4409540477",
+  "journal": "JPE",
+  "year": 2025,
+  "doi": "https://doi.org/10.1086/736211",
+  "title": "Welfare Assessments with Heterogeneous Individuals",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4410772320",
+  "journal": "JPE",
+  "year": 2025,
+  "doi": "https://doi.org/10.1086/736766",
+  "title": "Black Empowerment and White Mobilization: The Effects of the Voting Rights Act",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4413511944",
+  "journal": "JPE",
+  "year": 2025,
+  "doi": "https://doi.org/10.1086/738341",
+  "title": "A Case for Pay-as-Bid Auctions",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3005464981",
+  "journal": "QJE",
+  "year": 2021,
+  "doi": "https://doi.org/10.1093/qje/qjab013",
+  "title": "The Economic Consequences of Increasing Sleep Among the Urban Poor",
+  "data": "datasets/W3005464981",
+  "replicated": true
+ },
+ {
+  "wid": "W3121436318",
+  "journal": "QJE",
+  "year": 2021,
+  "doi": "https://doi.org/10.1093/qje/qjab043",
+  "title": "Origins of the Opioid Crisis and its Enduring Impacts",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3208424642",
+  "journal": "QJE",
+  "year": 2021,
+  "doi": "https://doi.org/10.1093/qje/qjab040",
+  "title": "The Costs of Employment Segregation: Evidence from the Federal Government Under Woodrow Wilson",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3213561563",
+  "journal": "QJE",
+  "year": 2021,
+  "doi": "https://doi.org/10.1093/qje/qjab042",
+  "title": "The Macroeconomics of Sticky Prices with Generalized Hazard Functions",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3188468289",
+  "journal": "QJE",
+  "year": 2022,
+  "doi": "https://doi.org/10.1093/qje/qjac042",
+  "title": "Welfare and Output With Income Effects and Taste Shocks",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3203953521",
+  "journal": "QJE",
+  "year": 2022,
+  "doi": "https://doi.org/10.1093/qje/qjac030",
+  "title": "Asset Specificity of Nonfinancial Firms",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4210377766",
+  "journal": "QJE",
+  "year": 2022,
+  "doi": "https://doi.org/10.1093/qje/qjac009",
+  "title": "The Assessment Gap: Racial Inequalities in Property Taxation",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4306153210",
+  "journal": "QJE",
+  "year": 2022,
+  "doi": "https://doi.org/10.1093/qje/qjac039",
+  "title": "Does Directed Innovation Mitigate Climate Damage? Evidence from U.S. Agriculture",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3175614040",
+  "journal": "QJE",
+  "year": 2023,
+  "doi": "https://doi.org/10.1093/qje/qjad037",
+  "title": "Measuring Welfare and Inequality with Incomplete Price Information",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4378549213",
+  "journal": "QJE",
+  "year": 2023,
+  "doi": "https://doi.org/10.1093/qje/qjad024",
+  "title": "A Quantity-Driven Theory of Term Premia and Exchange Rates",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4381955671",
+  "journal": "QJE",
+  "year": 2023,
+  "doi": "https://doi.org/10.1093/qje/qjag022",
+  "title": "The Effects of Mandatory Profit-Sharing on Workers and Firms: Evidence from France",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4387325871",
+  "journal": "QJE",
+  "year": 2023,
+  "doi": "https://doi.org/10.1093/qje/qjad050",
+  "title": "A Retrieved-Context Theory of Financial Decisions",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3147970991",
+  "journal": "QJE",
+  "year": 2024,
+  "doi": "https://doi.org/10.1093/qje/qjae015",
+  "title": "The Health Costs of Cost Sharing",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4399045409",
+  "journal": "QJE",
+  "year": 2024,
+  "doi": "https://doi.org/10.1093/qje/qjae013",
+  "title": "Identifying Prediction Mistakes in Observational Data",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4399466691",
+  "journal": "QJE",
+  "year": 2024,
+  "doi": "https://doi.org/10.1093/qje/qjae016",
+  "title": "The Lifetime Impacts of the New Deal's Youth Employment Program",
+  "data": "datasets/W4399466691",
+  "replicated": false
+ },
+ {
+  "wid": "W4403145100",
+  "journal": "QJE",
+  "year": 2024,
+  "doi": "https://doi.org/10.1093/qje/qjae029",
+  "title": "Mandatory Notice of Layoff, Job Search, and Efficiency",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4406515002",
+  "journal": "QJE",
+  "year": 2025,
+  "doi": "https://doi.org/10.1093/qje/qjaf002",
+  "title": "The Diffusion of New Technologies",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4407240810",
+  "journal": "QJE",
+  "year": 2025,
+  "doi": "https://doi.org/10.1093/qje/qjaf009",
+  "title": "Can Pollution Markets Work in Developing Countries? Experimental Evidence from India",
+  "data": "datasets/W4407240810",
+  "replicated": true
+ },
+ {
+  "wid": "W4411847034",
+  "journal": "QJE",
+  "year": 2025,
+  "doi": "https://doi.org/10.1093/qje/qjaf031",
+  "title": "Barriers to Global Capital Allocation",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4417199301",
+  "journal": "QJE",
+  "year": 2025,
+  "doi": "https://doi.org/10.1093/qje/qjaf053",
+  "title": "Who’s Afraid of the Minimum Wage? Measuring the Impacts on Independent Businesses Using Matched U.S. Tax Returns",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3122342239",
+  "journal": "REST",
+  "year": 2021,
+  "doi": "https://doi.org/10.1093/restud/rdab012",
+  "title": "Dynastic Precautionary Savings",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3143306836",
+  "journal": "REST",
+  "year": 2021,
+  "doi": "https://doi.org/10.1093/restud/rdab017",
+  "title": "Workforce Composition, Productivity, and Labour Regulations in a Compensating Differentials Theory of Informality",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3212196606",
+  "journal": "REST",
+  "year": 2021,
+  "doi": "https://doi.org/10.1093/restud/rdab074",
+  "title": "Central Bank Swap Lines: Evidence on the Effects of the Lender of Last Resort",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4206393319",
+  "journal": "REST",
+  "year": 2021,
+  "doi": "https://doi.org/10.1093/restud/rdab086",
+  "title": "Recovering Investor Expectations from Demand for Index Funds",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4226348880",
+  "journal": "REST",
+  "year": 2022,
+  "doi": "https://doi.org/10.1093/restud/rdac017",
+  "title": "Should Central Banks Issue Digital Currency?",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4226507043",
+  "journal": "REST",
+  "year": 2022,
+  "doi": "https://doi.org/10.1093/restud/rdac016",
+  "title": "How Do Inheritances Shape Wealth Inequality? Theory and Evidence from Sweden",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4292647031",
+  "journal": "REST",
+  "year": 2022,
+  "doi": "https://doi.org/10.1093/restud/rdac041",
+  "title": "Revealed Price Preference: Theory and Empirical Analysis",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4313389613",
+  "journal": "REST",
+  "year": 2022,
+  "doi": "https://doi.org/10.1093/restud/rdac080",
+  "title": "Unemployment Insurance in Macroeconomic Stabilization",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3044391142",
+  "journal": "REST",
+  "year": 2023,
+  "doi": "https://doi.org/10.1093/restud/rdad054",
+  "title": "Optimal Long-Term Health Insurance Contracts: Characterization, Computation, and Welfare Effects",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4321598214",
+  "journal": "REST",
+  "year": 2023,
+  "doi": "https://doi.org/10.1093/restud/rdad029",
+  "title": "The Size and Life-Cycle Growth of Plants: The Role of Productivity, Demand, and Wedges",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4385858759",
+  "journal": "REST",
+  "year": 2023,
+  "doi": "https://doi.org/10.1093/restud/rdad079",
+  "title": "Superiority-Seeking and the Preference for Exclusion",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4386408503",
+  "journal": "REST",
+  "year": 2023,
+  "doi": "https://doi.org/10.1093/restud/rdad087",
+  "title": "Discrimination in Hiring: Evidence from Retail Sales",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4310656628",
+  "journal": "REST",
+  "year": 2024,
+  "doi": "https://doi.org/10.1093/restud/rdae081",
+  "title": "Unpaired Kidney Exchange: Overcoming Double Coincidence of Wants without Money",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4393304835",
+  "journal": "REST",
+  "year": 2024,
+  "doi": "https://doi.org/10.1093/restud/rdae022",
+  "title": "Partially Linear Models under Data Combination",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4394761112",
+  "journal": "REST",
+  "year": 2024,
+  "doi": "https://doi.org/10.1093/restud/rdae040",
+  "title": "Shallow Meritocracy",
+  "data": "datasets/W4394761112",
+  "replicated": false
+ },
+ {
+  "wid": "W4400548728",
+  "journal": "REST",
+  "year": 2024,
+  "doi": "https://doi.org/10.1093/restud/rdae075",
+  "title": "Trade Wars, Nominal Rigidities, and Monetary Policy",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W3140303326",
+  "journal": "REST",
+  "year": 2025,
+  "doi": "https://doi.org/10.1093/restud/rdaf098",
+  "title": "Markups Across Space and Time",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4408972552",
+  "journal": "REST",
+  "year": 2025,
+  "doi": "https://doi.org/10.1093/restud/rdaf019",
+  "title": "Unemployment Insurance Reforms and Labour Market Dynamics",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4411962208",
+  "journal": "REST",
+  "year": 2025,
+  "doi": "https://doi.org/10.1093/restud/rdaf054",
+  "title": "Endogenous Clustering and Analogy-Based Expectation Equilibrium",
+  "data": null,
+  "replicated": false
+ },
+ {
+  "wid": "W4416093211",
+  "journal": "REST",
+  "year": 2025,
+  "doi": "https://doi.org/10.1093/restud/rdaf094",
+  "title": "Taxes Depress Corporate Borrowing: Evidence from Private Firms",
+  "data": null,
+  "replicated": false
+ }
+]
