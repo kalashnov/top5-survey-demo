@@ -79,22 +79,23 @@ python classify.py          # writes verdicts/<wid>.json
 
 ## Stage 4: Download replication data
 
-For dataset downloading we follow the same approach as for :
+For dataset downloading we follow the same approach as for pdfs. We first need to collect a list of urls (which are already collected for this example). Ask the agent to write code that systematically searches the following sources:
 
-1. DataCite: deposits that cite the paper's DOI, and deposits with the paper's title
-2. Harvard Dataverse: search by title
-3. Zenodo: search by title
-4. ScholeXplorer (OpenAIRE): datasets linked to the paper's DOI
-5. Crossref: relations recorded on the paper's DOI
-6. World Bank Microdata Library: search by title
-7. Econometric Society: the paper's supplementary material page
-8. The paper's own text: the data availability statement and links to openICPSR, Dataverse, Zenodo, OSF, figshare, GitHub and similar
+1. DataCite
+2. Harvard Dataverse
+3. Zenodo
+4. ScholeXplorer (OpenAIRE)
+5. Crossref
+6. World Bank Microdata Library
+7. Econometric Society
+8. The paper's own text for direct links
 
-This finds packages for QJE almost always, and for the other journals much less often: their deposits often do not link back to the paper. It also makes mistakes, some links lead to a preprint or to a dataset the paper only cites. As in Stage 1, a few haiku subagents searching the web can fill the gaps and fix the mistakes. The repo already contains the 20 links I am sure about, in the `replication_url` field of `papers.json`.
+When you have the links, downloading them is more of a problem, compared to PDFs, because it usually requires you to consent to something and/or to leave your contacts. Some repositories (e.g. Harvard Dataverse and Zenodo) have api. You can ask your agent to figure the API out and run code to download datasets. Anyway, you need to babysit it.
 
-Dataverse and Zenodo have open APIs, so your agent can download from them with a short script. openICPSR needs a login and a click through its terms, so AER packages are easier to download by hand. Packages range from a few MB to tens of GB, so check the size before you download. Some come with code only, because their data is confidential.
+For some repos downloading cannot be efficiently automated. Here are the options:
 
-The 6 packages used in this tutorial are already in `datasets/`, and `dvc pull` gets them.
+1. Ask Claude for Chrome to open each of the links in the new tab and go over them manually
+2. Ask Claude for Chrome to download themselves: this spends a lot of tokens, is very slow, quite unreliable, but might save your own time.
 
 ## Run stage 5
 
