@@ -139,7 +139,7 @@ Sometimes a package doesn't contain the data itself, but provides instructions o
 
 *Covers: context management, orchestrating subagents from chat, testing*
 
-This is another stage where we will heavily use subagents. However, this time the task is not clear-cut, and we need the agents to explore and use whatever tools they need. Still, we need to add some structure to their search.
+This is another stage where we will heavily use subagents. However, this time the task requires the agents to explore and use whatever tools they need. Still, we need to add some structure to their search.
 
 A good way to add structure is to recognize that our unit of analysis is a regression. A regression is more or less determined by its right-hand side and left-hand side. So we need the subagent to provide us with
 
