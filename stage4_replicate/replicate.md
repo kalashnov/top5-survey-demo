@@ -6,14 +6,14 @@ its replication package `datasets/<wid>/` (read-only).
 **Goal:** re-estimate the paper's main regression table, and any table of treatment-effect
 heterogeneity (interactions or subgroups), and check every published number. Nothing beyond that.
 
-Read `replications/spec.py` (the `Spec` every column is) and `replications/W4401126511.py`
+Read `stage4_replicate/replications/spec.py` (the `Spec` every column is) and `stage4_replicate/replications/W4401126511.py`
 (a worked paper) before you start.
 
 ## Steps
 
 1. **Find the table** and the script in the package that produces it. Prefer the package's
    own table output (`.tex`, `.csv`, logs) over the PDF: it carries more digits.
-2. **Write `replications/<wid>.py`** with:
+2. **Write `stage4_replicate/replications/<wid>.py`** with:
    - one `load()` per analysis dataset (`@cache`), building it as the package does;
    - `SPECS = {"<table>_<column>": (load, Spec(...))}`, one entry per published column.
    Interactions go in the formula (`treat*female`); a subgroup column is its own spec
@@ -21,8 +21,8 @@ Read `replications/spec.py` (the `Spec` every column is) and `replications/W4401
 3. **Type the published numbers in by hand** into `targets` and `n`. Never fill them in from
    your own output. `tol` is half a unit of the last printed digit (2 decimals: 0.005);
    never loosen it to make a check pass.
-4. **Check:** `pytest test_replications.py -k <wid>`.
-5. **Write `replications/<wid>.md`** in a few lines: which tables, which version of the
+4. **Check:** `pytest stage4_replicate -k <wid>`.
+5. **Write `stage4_replicate/replications/<wid>.md`** in a few lines: which tables, which version of the
    paper the numbers came from, and the result.
 
 ## Rules

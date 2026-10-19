@@ -7,7 +7,7 @@ from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
 
 MODEL = "claude-haiku-5-5"
 WORKERS = 4  # papers in flight at once
-PROMPTS = Path("prompts")
+PROMPTS = Path(__file__).parent
 SCHEMA = json.loads((PROMPTS / "json_schema.json").read_text())
 
 # No tools, settings or plugins: Claude Code's own context would otherwise ride along.

@@ -41,7 +41,7 @@ The first thing is to collect any public URLs for each paper. To save time, the 
 3. NBER
 4. arXiv
 
-Here is a suggested prompt: [`prompts/collect_urls.md`](prompts/collect_urls.md).
+Here is a suggested prompt: [`stage1_collect_papers/collect_urls.md`](stage1_collect_papers/collect_urls.md).
 
 The result will contain mistakes: some links will lead to other papers, and some will lead to supplementary material instead. Some papers will have no link, even though the paper is public on the author's website. A good approach is to run a number of **Haiku subagents** tasked each with a couple of papers to check for the mistakes and/or search the web for the correct versions. This is more expensive than scraping the APIs of the sources above with code, but also, we have already narrowed down the task before handing it to LLMs.
 
@@ -51,13 +51,13 @@ The result will contain mistakes: some links will lead to other papers, and some
 **What to do.** To download the PDFs from my list, run (this will take a few minutes):
 
 ```bash
-python fetch_pdfs.py
+python stage1_collect_papers/fetch_pdfs.py
 ```
 
 Then extract the plain text from the PDFs:
 
 ```bash
-python extract_text.py
+python stage1_collect_papers/extract_text.py
 ```
 
 
@@ -76,9 +76,9 @@ Our virtues and our vices:
 Therefore, we will heavily optimize the cost per paper. Here are a few ways to do it:
 
 1. **Pre-screen with a local model.** We can run a local model to pre-screen paper texts and throw away anything not related to methodology. UCSD's Slurm cluster can run a local model large enough for this task. I do not cover this in detail, because it requires more involvement. Less input text means lower costs.
-2. **A long prompt with examples.** We use a very verbose, clear prompt with a bunch of examples, and we validate this prompt with a few experiments/iterations. The prompt for this task is in [`prompts/system_prompt.md`](prompts/system_prompt.md). A really good prompt lets us use smaller models.
+2. **A long prompt with examples.** We use a very verbose, clear prompt with a bunch of examples, and we validate this prompt with a few experiments/iterations. The prompt for this task is in [`stage2_classify/system_prompt.md`](stage2_classify/system_prompt.md). A really good prompt lets us use smaller models.
 3. **Prompt caching.** One may worry that a larger prompt means more input, and therefore higher costs. But the prompt doesn't change from request to request, and if everything is designed correctly, it is cached and billed at a 10% rate. The larger part of the input is the paper anyway.
-4. **Structured output.** Finally, we use a feature called "structured output". It constrains the model to output valid JSON, which we can then use to construct our final dataset. The schema for this application is in [`prompts/json_schema.json`](prompts/json_schema.json).
+4. **Structured output.** Finally, we use a feature called "structured output". It constrains the model to output valid JSON, which we can then use to construct our final dataset. The schema for this application is in [`stage2_classify/json_schema.json`](stage2_classify/json_schema.json).
 5. **Batch processing.** The other way to save is batch processing, which we do not use here. Most providers let you submit a job as a "batch" instead of "on demand". They guarantee a response within 24 hours, but are not obliged to answer right away, and they give significant discounts. However, it also involves tradeoffs, e.g. it might be harder to manage the prompt cache (which expires). For Claude, it also doesn't work with a subscription. At my scale I found that a 100 USD subscription, though it adds some inconvenience, is the most cost-effective option, so I do not rely on batch processing.
 
 **What to do.**
@@ -95,7 +95,7 @@ claude -p "Reply with OK"
 To run the classification, just execute (this already implements all of the recommendations above):
 
 ```bash
-python classify.py          # writes verdicts/<wid>.json
+python stage2_classify/classify.py          # writes verdicts/<wid>.json
 ```
 
 This will output one JSON file per paper with the answers to the questions we asked.
@@ -115,7 +115,7 @@ For downloading datasets we follow the same approach as for PDFs. We first need 
 7. Econometric Society
 8. The paper's own text for direct links
 
-Here is a suggested prompt: [`prompts/collect_data_urls.md`](prompts/collect_data_urls.md).
+Here is a suggested prompt: [`stage3_replication_data/collect_data_urls.md`](stage3_replication_data/collect_data_urls.md).
 
 Once you have the links, downloading is more of a problem than for PDFs, because it usually requires you to consent to something and/or leave your contact details. Some repositories (e.g. Harvard Dataverse and Zenodo) have an API. You can ask your agent to figure out the API and run code to download the datasets. Either way, you need to babysit it.
 
@@ -164,7 +164,7 @@ You will find that papers fail to replicate for various reasons: the package doe
 
 **What to do.**
 
-The prompt for this stage is in [`prompts/replicate.md`](prompts/replicate.md). The prompt asks a subagent to take a specific paper and replicate tables from it. You can either write scheduling code in the spirit of Stage 2, or just ask in chat something like this:
+The prompt for this stage is in [`stage4_replicate/replicate.md`](stage4_replicate/replicate.md). The prompt asks a subagent to take a specific paper and replicate tables from it. You can either write scheduling code in the spirit of Stage 2, or just ask in chat something like this:
 
 ```
 Run 1 sonnet subagent for each paper with a dataset (2 in parallel),
@@ -178,7 +178,7 @@ The output of the agents should be data preparation scripts and registered regre
 Check that the registered tables replicate:
 
 ```bash
-pytest test_replications.py            # one test per published column
+pytest stage4_replicate            # one test per published column
 ```
 
 ## Stage 5: new analysis

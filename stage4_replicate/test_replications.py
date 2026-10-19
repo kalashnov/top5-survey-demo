@@ -1,4 +1,4 @@
-"""One test per registered spec: `pytest`, or `pytest -k <wid>` for one paper."""
+"""One test per registered spec: `pytest stage4_replicate`, or add `-k <wid>` for one paper."""
 import importlib
 from pathlib import Path
 
@@ -7,7 +7,7 @@ import pytest
 from replications.spec import check
 
 CASES = {}
-for path in sorted(Path("replications").glob("W*.py")):
+for path in sorted((Path(__file__).parent / "replications").glob("W*.py")):
     paper = importlib.import_module(f"replications.{path.stem}")
     for name, (load, spec) in paper.SPECS.items():
         CASES[f"{path.stem}/{name}"] = (load, spec)
