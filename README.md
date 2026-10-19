@@ -2,7 +2,7 @@
 
 This is a tutorial on a mass survey and replication of papers using an LLM. The tutorial teaches:
 
-1. How to run/manage/schedule a hundreds of subagents
+1. How to run/manage/schedule hundreds of subagents
 2. How to save on costs
 3. How to write prompts
 
