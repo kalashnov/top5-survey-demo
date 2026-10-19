@@ -15,6 +15,8 @@ The whole tutorial is written with Claude in mind, but a large part of it is not
 
 The repo is small enough to not eat any sensible part of your quota on a 20 USD subscription
 
+## Navigating the tutorial
+
 ## Setup
 
 Note: if you wish, ask you agent to help you with this part.
@@ -77,7 +79,7 @@ python classify.py          # writes verdicts/<wid>.json
 
 ## Stage 4: Download replication data
 
-All five journals ask authors to publish a replication package, but the package rarely sits next to the paper. A good approach is to ask your agent to write a script that will systematically review the following sources:
+For dataset downloading we follow the same approach as for :
 
 1. DataCite: deposits that cite the paper's DOI, and deposits with the paper's title
 2. Harvard Dataverse: search by title
