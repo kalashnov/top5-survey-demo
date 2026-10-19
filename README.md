@@ -19,5 +19,5 @@ Uses your Claude Code login; `ANTHROPIC_API_KEY` must be unset.
 ```bash
 pip install -r requirements.txt
 dvc pull -r r2ro txt.dvc
-python classify.py          # writes verdicts/<wid>.json; reruns skip finished papers
+python classify.py          # writes verdicts/<wid>.json
 ```
