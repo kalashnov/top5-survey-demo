@@ -4,8 +4,8 @@ This is a tutorial on a mass survey and replication of papers using an LLM. It t
 
 | | |
 |---|---|
-| 🤖 **Run, manage and schedule dozens of subagents** | with the API · simply in chat |
-| 💸 **Save on costs** | local models · tight prompts · context control · prompt caching · batch processing |
+| **Run, manage and schedule dozens of subagents** | with the API · simply in chat |
+| **Save on costs** | local models · tight prompts · context control · prompt caching · batch processing |
 
 In this toy example, we will:
 
