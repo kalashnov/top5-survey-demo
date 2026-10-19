@@ -108,8 +108,6 @@ For this tutorial I suggest to manually download a few replication packages, e.g
 | W4407240810, QJE 2025 | 214 MB | https://doi.org/10.7910/DVN/PDFDKR |
 | W3186531035, AER 2024 | 1.2 GB | https://doi.org/10.3886/E198004V1 |
 
-The openICPSR links (`10.3886`) ask for a login.
-
 ## Run stage 5
 
 ```bash
