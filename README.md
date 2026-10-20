@@ -227,7 +227,7 @@ python stage4_replicate/collect_specs.py   # writes specs.csv: one row per publi
 
 Suppose that, instead of just replicating the authors' analysis, we want to extend it. There are two useful approaches. 
 
-The first example requires a decision for each separate paper from scratch. Say we want the agents to systematically run interaction tables. Then we can write `ISpec`, which will formalize interaction tables, and write a prompt that will ask an agent to 
+The first example requires a decision for each separate paper from scratch. Say we want the agents to systematically look for new interactions in data. Then we can write `ISpec`, which will formalize interaction tables, and write a prompt that will ask an agent to 
 
 Then, we can register another version of `Spec`, e.g. `ISpec` (`I` for interaction) and ask the subagents to come up with sensible interaction regressions. Of course, we should also come up with some automated way to validate/aggregate the agents' output.
 
