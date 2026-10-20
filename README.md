@@ -26,6 +26,14 @@ Everything below runs through an agent, so you need one first. I personally pref
 
 1. **Get a subscription.** Sign up at [claude.ai](https://claude.ai) and pick a plan on the [pricing page](https://claude.com/pricing). **Pro** (20 USD a month) is enough for this tutorial
 2. **Install the Claude app.** Download the desktop app from [claude.ai/download](https://claude.ai/download) (macOS and Windows) and sign in. Its **Code** tab runs Claude Code on a folder on your computer: open this repository there and chat with the agent.
+3. **Install the command line interface.** Stage 2 calls `claude` from a script, so install the CLI as well:
+
+   ```bash
+   curl -fsSL https://claude.ai/install.sh | bash          # macOS, Linux, WSL
+   irm https://claude.ai/install.ps1 | iex                 # Windows PowerShell
+   ```
+
+   Then run `claude` once in a terminal and log in with your subscription account.
 
 Both, Gemini and ChatGPT have their respective analog of app/extension/cli. Any of these will do the job as well
 
