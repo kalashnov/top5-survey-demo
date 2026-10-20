@@ -31,6 +31,10 @@ Both, Gemini and ChatGPT have their respective analog of app/extension/cli. Any 
 
 ### Python environment
 
+> [!TIP]
+> Just ask your agent to do it: "Set up a Python environment for this repo and install requirements.txt."
+
+
 Create a Python environment (Python 3.11 or newer) and install the requirements, from the repository root:
 
 ```bash
@@ -40,9 +44,6 @@ pip install -r requirements.txt
 ```
 
 All commands below assume the environment is active and you are in the repository root.
-
-> [!TIP]
-> Just ask your agent to do it: "Set up a Python environment for this repo and install requirements.txt."
 
 ## Stages
 
