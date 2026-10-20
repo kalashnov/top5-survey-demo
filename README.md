@@ -28,6 +28,10 @@ Everything below runs through an agent, so you need one first. I personally pref
 2. **Install the Claude app.** Download the desktop app from [claude.ai/download](https://claude.ai/download) (macOS and Windows) and sign in. Its **Code** tab runs Claude Code on a folder on your computer: open this repository there and chat with the agent.
 3. **Install the command line interface.** Stage 2 calls `claude` from a script, so install the CLI as well:
 
+> [!TIP]
+> When you see a command like this, and not sure what to do, just ask your agent to help: "Please, install Claude Code CLI for me and help me authenticate"
+
+
    ```bash
    curl -fsSL https://claude.ai/install.sh | bash          # macOS, Linux, WSL
    irm https://claude.ai/install.ps1 | iex                 # Windows PowerShell
