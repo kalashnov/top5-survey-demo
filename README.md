@@ -20,6 +20,24 @@ The repo is small enough not to eat any sensible part of your quota on a 20 USD 
 
 ## Setup
 
+### Stage 0: Install Claude app and get a subscription
+
+Everything below runs through an agent, so you need one first.
+
+1. **Get a subscription.** Sign up at [claude.ai](https://claude.ai) and pick a plan on the [pricing page](https://claude.com/pricing). **Pro** (20 USD a month) is enough for this tutorial; **Max** (100 or 200 USD a month) is for when you scale up to thousands of papers. Both include Claude Code.
+2. **Install the Claude app.** Download the desktop app from [claude.ai/download](https://claude.ai/download) (macOS and Windows) and sign in. Its **Code** tab runs Claude Code on a folder on your computer: open this repository there and chat with the agent.
+3. **Install the command line interface.** Stage 2 calls `claude` from a script, so install the CLI as well:
+
+   ```bash
+   curl -fsSL https://claude.ai/install.sh | bash          # macOS, Linux, WSL
+   irm https://claude.ai/install.ps1 | iex                 # Windows PowerShell
+   ```
+
+   Then run `claude` once in a terminal and log in with your subscription account.
+4. **Optional: Claude in Chrome.** Stage 3 uses the [Claude in Chrome](https://claude.com/claude-in-chrome) extension to open and download replication packages.
+
+### Python environment
+
 Create a Python environment (Python 3.11 or newer) and install the requirements, from the repository root:
 
 ```bash
