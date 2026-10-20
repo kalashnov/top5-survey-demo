@@ -58,6 +58,8 @@ The tutorial is organized in stages. If you want to skip the explanations and ju
 
 *Covers: code extraction first, then subagents*
 
+We have two tasks here: collect paper URLs and download them. This section explains how to try to collect the URLs yourself with the help of LLM, but the repo does already provide URLs, so you can just run the script that pulls the files in the **what to do** section
+
 The first thing is to collect any public URLs for each paper. To save time, the repo already contains URLs for each paper, but generally a good approach is to ask your agent to write a script that systematically reviews the following sources:
 
 1. OpenAlex
