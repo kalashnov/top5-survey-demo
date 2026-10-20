@@ -1,0 +1,6 @@
+/pdfs
+/txt
+/datasets
+/verdicts
+__pycache__/
+/.venv

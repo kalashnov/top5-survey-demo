@@ -1,0 +1,15 @@
+[
+ {
+  "wid": "W4387449673",
+  "journal_code": "JPE",
+  "publication_year": 2023,
+  "doi": "https://doi.org/10.1086/728109",
+  "pdf_url": "http://www.nber.org/papers/w28780.pdf",
+  "replication_url": "https://doi.org/10.7910/DVN/NYSNOT",
+  "title": "Augmenting State Capacity for Child Development: Experimental Evidence from India",
+  "authors": "Alejandro Ganimian; Karthik Muralidharan; Christopher R. Walters",
+  "abstract": "We use a large-scale randomized experiment to study the impact of augmenting staffing in the world’s largest public early-childhood program: India’s Integrated Child Development Services. Adding a worker doubled net preschool instructional time and led to increases of 0.28σ and 0.46σ in math and language test scores after 18 months for children who remained enrolled in the program and 0.13σ and 0.10σ for all children enrolled at baseline. Rates of stunting and severe malnutrition were also lower in the treatment group for children who remained enrolled. A cost-benefit analysis suggests that the benefits of augmenting staffing significantly exceed its costs. These effects are likely to replicate even at larger scales of program implementation.",
+  "data": "datasets/W4387449673",
+  "replicated": false
+ }
+]
