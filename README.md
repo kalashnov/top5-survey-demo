@@ -22,10 +22,12 @@ The repo is small enough not to eat any sensible part of your quota on a 20 USD 
 
 ### Install Claude app and get a subscription
 
-Everything below runs through an agent, so you need one first.
+Everything below runs through an agent, so you need one first. I personally prefer running Claude in VSCode extension, others prefer Claude Code command line interface, but for a newcomer I suggest to use an app:
 
 1. **Get a subscription.** Sign up at [claude.ai](https://claude.ai) and pick a plan on the [pricing page](https://claude.com/pricing). **Pro** (20 USD a month) is enough for this tutorial
 2. **Install the Claude app.** Download the desktop app from [claude.ai/download](https://claude.ai/download) (macOS and Windows) and sign in. Its **Code** tab runs Claude Code on a folder on your computer: open this repository there and chat with the agent.
+
+Both, Gemini and ChatGPT have their respective analog of app/extension/cli. Any of these will do the job as well
 
 ### Python environment
 
