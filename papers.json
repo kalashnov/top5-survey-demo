@@ -1,5 +1,41 @@
 [
  {
+  "wid": "W4361214439",
+  "journal_code": "JPE",
+  "publication_year": 2023,
+  "doi": "https://doi.org/10.1086/724843",
+  "pdf_url": "https://discovery.ucl.ac.uk/id/eprint/10185609/1/koessler-skreta-2023-informed-information-design.pdf",
+  "replication_url": null,
+  "title": "Informed Information Design",
+  "authors": "Frédéric Koessler; Vasiliki Skreta",
+  "abstract": "We study informed persuasion, whereby a privately informed designer without ex ante commitment power chooses disclosure mechanisms to influence agents’ actions. We characterize the subset of Bayes-correlated equilibria yielding every designer type a payoff higher than what they could get from any disclosure mechanism with credible beliefs. This set of interim-optimal mechanisms is nonempty and tractable, and all its elements are perfect Bayesian equilibrium mechanisms of the informed-designer game. Interim-optimal mechanisms are characterized via belief-based approaches in pure persuasion settings. We identify single- and multiagent interactive environments in which ex ante–optimal mechanisms are interim optimal.",
+  "table": null
+ },
+ {
+  "wid": "W4407240810",
+  "journal_code": "QJE",
+  "publication_year": 2025,
+  "doi": "https://doi.org/10.1093/qje/qjaf009",
+  "pdf_url": "https://wrap.warwick.ac.uk/id/eprint/174171/13/WRAP-twerp-1453-Sudarshan-24.pdf",
+  "replication_url": "https://doi.org/10.7910/DVN/PDFDKR",
+  "title": "Can Pollution Markets Work in Developing Countries? Experimental Evidence from India",
+  "authors": "Michael Greenstone; Rohini Pande; Nicholas Ryan; Anant Sudarshan",
+  "abstract": "Abstract Market-based environmental regulations are seldom used in low-income countries, where pollution is highest but state capacity is often low. We collaborated with the Gujarat Pollution Control Board (GPCB) to design and experimentally evaluate the world’s first particulate-matter emissions market, which covered industrial plants in a large Indian city. There are three main findings. First, the market functioned well. Treatment plants, randomly assigned to the emissions market, traded permits to become significant net sellers or buyers. After trading, treatment plants held enough permits to cover their emissions 99% of the time, compared with just 66% compliance with standards under the command-and-control status quo. Second, treatment plants reduced pollution emissions, relative to control plants, by 20%–30%. Third, the market reduced abatement costs by an estimated 11%, holding constant emissions. This cost-savings estimate is based on plant-specific marginal cost curves that we estimate from the universe of bids to buy and sell permits in the market. The combination of pollution reductions and low costs imply that the emissions market has mortality benefits that exceed its costs by at least 25 times.",
+  "table": "Table 3"
+ },
+ {
+  "wid": "W4405354213",
+  "journal_code": "REST",
+  "publication_year": 2024,
+  "doi": "https://doi.org/10.1093/restud/rdae074",
+  "pdf_url": "https://documents1.worldbank.org/curated/en/321751586281645715/pdf/Optimal-Pricing-of-a-New-Utility-Service-The-Case-of-Piped-Water-in-Vietnam.pdf",
+  "replication_url": "https://doi.org/10.5281/zenodo.10783446",
+  "title": "Optimal Pricing of a New Utility Service: The Case of Piped Water in Vietnam",
+  "authors": "Quy‐Toan Do; Hanan G. Jacoby",
+  "abstract": "Abstract As utility services expand throughout the developing world, providers must grapple with how to set prices to recover average costs. Data from a multiyear randomised pricing experiment among nearly 1,500 recently connected piped water customers in Vietnam reveal month-to-month demand persistence. Based on structural demand estimation, we document how endogenous preferences, if unaccounted for, can lead to low take-up and thereby threaten the financial viability of the new water utility. We also show that such demand persistence calls for pricing schemes that defer lump-sum payment, effectively allowing future consumers to subsidise their present selves.",
+  "table": "Table 1"
+ },
+ {
   "wid": "W4387449673",
   "journal_code": "JPE",
   "publication_year": 2023,
@@ -9,7 +45,18 @@
   "title": "Augmenting State Capacity for Child Development: Experimental Evidence from India",
   "authors": "Alejandro Ganimian; Karthik Muralidharan; Christopher R. Walters",
   "abstract": "We use a large-scale randomized experiment to study the impact of augmenting staffing in the world’s largest public early-childhood program: India’s Integrated Child Development Services. Adding a worker doubled net preschool instructional time and led to increases of 0.28σ and 0.46σ in math and language test scores after 18 months for children who remained enrolled in the program and 0.13σ and 0.10σ for all children enrolled at baseline. Rates of stunting and severe malnutrition were also lower in the treatment group for children who remained enrolled. A cost-benefit analysis suggests that the benefits of augmenting staffing significantly exceed its costs. These effects are likely to replicate even at larger scales of program implementation.",
-  "data": "datasets/W4387449673",
-  "replicated": false
+  "table": "Table A.4"
+ },
+ {
+  "wid": "W4403145100",
+  "journal_code": "QJE",
+  "publication_year": 2024,
+  "doi": "https://doi.org/10.1093/qje/qjae029",
+  "pdf_url": "https://uu.diva-portal.org/smash/get/diva2:1952746/FULLTEXT01",
+  "replication_url": "https://doi.org/10.7910/DVN/JC9K31",
+  "title": "Mandatory Notice of Layoff, Job Search, and Efficiency",
+  "authors": "Jonas Cederlöf; Peter Fredriksson; Arash Nekoei; David Seim",
+  "abstract": "Abstract In all OECD countries, mandatory notice (MN) policies require firms to inform workers in advance of a layoff. In our theoretical framework, MN helps workers avoid unemployment and find better jobs by encouraging them to search for a new job while still employed, thereby increasing future production. The magnitude of this production gain depends on the relative effectiveness of search while employed versus unemployed. But on-the-job search and diminished work incentives reduce current production. If future gains outweigh current production losses, longer advance notice improves production efficiency. If not, Coasian bargaining predicts that firms offer a larger severance instead of longer notice. With bargaining, the sole efficiency loss of MN is due to delayed separations of unproductive job matches. We test these predictions using novel Swedish administrative data on layoff notifications. Workers eligible for extended MN receive longer notice and larger severance, resulting in less exposure to nonemployment spells and higher-paying jobs. These favorable labor market outcomes are solely due to longer notice; in contrast, larger severance delays job finding and has no impact on wages. We also show that advance notice replaces job search while unemployed with more effective search while employed. On the production side, we document a productivity drop among notified workers and estimate a production loss due to delayed separations. Using our estimates of production gains and losses to evaluate the overall production efficiency, we conclude that the gains of MN seem to outweigh the losses.",
+  "table": "Table II"
  }
 ]

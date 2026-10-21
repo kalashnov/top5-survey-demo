@@ -1,13 +1,19 @@
-# Demo: classify and replicate one Economics paper with an agent
+# Demo: classify and replicate Economics papers with an agent
 
-A short version of the tutorial in [`full_demo/`](full_demo/). It takes one paper, listed in [`papers.json`](papers.json):
+A short version of the tutorial in [`full_demo/`](full_demo/). It takes five papers, listed in [`papers.json`](papers.json):
 
-> Ganimian, Muralidharan and Walters (2023), "Augmenting State Capacity for Child Development: Experimental Evidence from India", *JPE*.
+| Paper | Journal |
+|---|---|
+| Koessler & Skreta, "Informed Information Design" | JPE 2023 |
+| Greenstone, Pande, Ryan & Sudarshan, "Can Pollution Markets Work in Developing Countries?" | QJE 2025 |
+| Do & Jacoby, "Optimal Pricing of a New Utility Service: The Case of Piped Water in Vietnam" | REStud 2024 |
+| Ganimian, Muralidharan & Walters, "Augmenting State Capacity for Child Development" | JPE 2023 |
+| Cederlöf, Fredriksson, Nekoei & Seim, "Mandatory Notice of Layoff, Job Search, and Efficiency" | QJE 2024 |
 
 We will:
 
-1. **Classify.** Have a subagent answer a fixed set of questions about the paper's methodology, as JSON.
-2. **Replicate.** Have a subagent reproduce the paper's main results table from the authors' replication package.
+1. **Classify.** Have subagents answer a fixed set of questions about each paper's methodology, as JSON. Papers with no empirical work drop out here.
+2. **Replicate.** Have subagents reproduce one table of each remaining paper from the authors' replication package.
 
 You do not need a terminal for any of it. Every step is a message you paste into the Claude app.
 
@@ -26,55 +32,76 @@ Set up a Python environment (.venv) for this repo and install full_demo/requirem
 
 Claude will ask for permission before it runs commands. Read what it wants to do, then allow it.
 
-## Step 1: Get the paper
+## Step 1: Get the papers
 
 ```
-Download the paper and extract its text: run full_demo/stage1_collect_papers/fetch_pdfs.py
+Download the papers and extract their text: run full_demo/stage1_collect_papers/fetch_pdfs.py
 and then full_demo/stage1_collect_papers/extract_text.py from the repository root.
 ```
 
-The scripts read [`papers.json`](papers.json), which lists one paper. You get `pdfs/W4387449673.pdf` and `txt/W4387449673.txt`.
+The scripts read [`papers.json`](papers.json). You get one PDF in `pdfs/` and one text file in `txt/` per paper.
 
 ## Step 2: Classify
 
-The full demo calls the model from a script and uses *structured output*, so the API guarantees valid JSON. Here we just ask a subagent for JSON and then check what it returns:
+The full demo calls the model from a script and uses *structured output*, so the API guarantees valid JSON. Here we just ask subagents for JSON and then check what they return:
 
 ```
-Spawn one Haiku subagent. Tell it to follow full_demo/stage2_classify/system_prompt.md,
-read txt/W4387449673.txt and reply with only a JSON object that matches
-full_demo/stage2_classify/json_schema.json, with no other text.
-Save its reply to verdicts/W4387449673.json, check that it parses and has every
-required field with allowed values, and show me the verdict as a table.
+For each paper in papers.json, spawn one Haiku subagent, all in parallel. Tell each to follow
+full_demo/stage2_classify/system_prompt.md, read txt/<wid>.txt and reply with only a JSON
+object that matches full_demo/stage2_classify/json_schema.json, with no other text.
+Save each reply to verdicts/<wid>.json, check that it parses and has every required field
+with allowed values, and show me all verdicts as one table, one row per paper.
 ```
 
-Why a subagent? It reads the whole paper in its own context. Your main chat only gets back the JSON, so it stays short and cheap. Haiku is the smallest model, and a detailed prompt with examples is enough for it.
+Why one subagent per paper? Each one reads a whole paper in its own context. Your main chat only gets back the JSON, so it stays short and cheap. Haiku is the smallest model, and a detailed prompt with examples is enough for it.
 
-Compare the verdict with the abstract. It is a randomized experiment (`experimental: yes`) with standardized test scores as outcomes (`log_dv_likely: no`).
+Koessler & Skreta is pure theory, so it should come back `is_empirical: no`. It drops out here.
 
 ## Step 3: Download the replication data
 
 ```
-Download the replication package at replication_url in papers.json into datasets/W4387449673/.
-It is on Harvard Dataverse: use its API, no login is needed.
+For each paper with is_empirical other than "no" and a replication_url in papers.json,
+download its replication package into datasets/<wid>/. They are on Harvard Dataverse
+and Zenodo: use their APIs, no login is needed.
 ```
 
-The package is about 20 MB: the Stata do-file `analysis.do` and its data files.
+The Greenstone et al. package is the largest, about 300 MB.
 
 ## Step 4: Replicate
 
 ```
-Spawn one Sonnet subagent to replicate Table 5 ("Impact on endline assessments") of
-pdfs/W4387449673.pdf with the package in datasets/W4387449673/ (read-only).
-It should find the code in analysis.do that makes the table, port it to Python
-(pandas, pyfixest) as replication/W4387449673.py, and print each published
-coefficient, standard error and N next to its own. It must type the published
-numbers in by hand from the PDF and never copy them from its own output.
-When it is done, report which numbers match, which miss and by how much.
+For each paper with a folder in datasets/, spawn one Sonnet subagent, two at a time.
+Ask each to replicate the table named in the paper's `table` field in papers.json:
+- The paper is pdfs/<wid>.pdf and the package is datasets/<wid>/ (read-only).
+  Use this PDF only; do not look for other versions of the paper.
+- Find the code in the package that makes the table, and port it to Python
+  (pandas, pyfixest) as replications/<wid>.py. If the package has code but no data,
+  stop and say so.
+- Print each published coefficient, standard error and N next to its own.
+  Type the published numbers in by hand: from the package's own table output if it
+  has one, otherwise from the PDF. Never copy them from your own output.
+- A number that misses is a result: say by how much, and what you ruled out.
+When they are done, show me one table: paper, how many numbers match, how many miss, why.
 ```
 
-Check the result yourself: open `pdfs/W4387449673.pdf` at Table 5 and compare a few numbers.
+Check a few numbers yourself against the PDF.
 
-If some numbers miss, that is a result too. Our PDF is the NBER working paper, and the package was made for the published *JPE* version. Ask Claude to find out why a number misses.
+## What you should see
+
+| Paper | Classify | Replicate |
+|---|---|---|
+| Koessler & Skreta | not empirical | — |
+| Greenstone et al. | empirical | Table 3 replicates |
+| Do & Jacoby | empirical | Table 1 replicates |
+| Ganimian et al. | empirical | Table A.4 replicates only in part |
+| Cederlöf et al. | empirical | no data: the package has only code |
+
+Two reasons a paper does not replicate:
+
+- **Ganimian et al.** We have the 2021 NBER working paper. The package was made for the 2023 version, and some columns of Table A.4 changed in between.
+- **Cederlöf et al.** The paper uses Swedish administrative data, which cannot be shared. The package has only the code.
+
+Ask Claude to explain any miss. Whether your run matches this table is a test of the prompts.
 
 ## Next
 
