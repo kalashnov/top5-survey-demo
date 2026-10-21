@@ -43,24 +43,23 @@ The scripts read [`papers.json`](papers.json). You get one PDF in `pdfs/` and on
 
 ## Step 2: Classify
 
-The full demo calls the model from a script and uses *structured output*, so the API guarantees valid JSON. Here we just ask subagents for JSON and then check what they return:
+The questions are in [`classify.md`](classify.md): is the paper empirical, is it an experiment, does it study heterogeneity, is the intervention costly, does it use a lot of controls. The full demo asks many more, calls the model from a script and uses *structured output*, so the API guarantees valid JSON. Here we just ask subagents for JSON and then check what they return:
 
 ```
-For each paper in papers.json, spawn one Haiku subagent, all in parallel. Tell each to follow
-full_demo/stage2_classify/system_prompt.md, read txt/<wid>.txt and reply with only a JSON
-object that matches full_demo/stage2_classify/json_schema.json, with no other text.
-Save each reply to verdicts/<wid>.json, check that it parses and has every required field
-with allowed values, and show me all verdicts as one table, one row per paper.
+For each paper in papers.json, spawn one Haiku subagent, all in parallel. Give each the
+instructions in classify.md and the paper txt/<wid>.txt.
+Save each reply to verdicts/<wid>.json, check that it parses and has every field
+with an allowed value, and show me all verdicts as one table, one row per paper.
 ```
 
-Why one subagent per paper? Each one reads a whole paper in its own context. Your main chat only gets back the JSON, so it stays short and cheap. Haiku is the smallest model, and a detailed prompt with examples is enough for it.
+Why one subagent per paper? Each one reads a whole paper in its own context. Your main chat only gets back the JSON, so it stays short and cheap. Haiku is the smallest model, and a clear prompt is enough for it.
 
-Koessler & Skreta is pure theory, so it should come back `is_empirical: no`. It drops out here.
+Koessler & Skreta is pure theory, so it should come back `empirical: no`. It drops out here.
 
 ## Step 3: Download the replication data
 
 ```
-For each paper with is_empirical other than "no" and a replication_url in papers.json,
+For each paper with empirical other than "no" and a replication_url in papers.json,
 download its replication package into datasets/<wid>/. They are on Harvard Dataverse
 and Zenodo: use their APIs, no login is needed.
 ```
