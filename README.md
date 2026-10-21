@@ -56,7 +56,7 @@ Print back a table, showing the results
 ## Step 3: Download the replication data
 
 ```
-For each paper classified as impirical and download the replication file using replication_url in papers.json,
+For each paper classified as empirical and download the replication file using replication_url in papers.json,
 download its replication package into datasets/<wid>/. Use the API of Harvard Dataverse
 and Zenodo to download.
 ```
