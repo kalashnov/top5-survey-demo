@@ -35,11 +35,11 @@ Claude will ask for permission before it runs commands. Read what it wants to do
 ## Step 1: Get the papers
 
 ```
-Download the papers and extract their text: run full_demo/stage1_collect_papers/fetch_pdfs.py
-and then full_demo/stage1_collect_papers/extract_text.py from the repository root.
+Download the 5 papers PDFs in `papers.json` listed in json and extract their text. Use the scripts in `full_demo/stage1_collect_papers`. 
+
+Report the paper titles, please
 ```
 
-The scripts read [`papers.json`](papers.json). You get one PDF in `pdfs/` and one text file in `txt/` per paper.
 
 ## Step 2: Classify
 
@@ -47,24 +47,20 @@ The questions are in [`classify.md`](classify.md): is the paper empirical, is it
 
 ```
 For each paper in papers.json, spawn one Haiku subagent, all in parallel. Give each the
-instructions in classify.md and the paper txt/<wid>.txt.
-Save each reply to verdicts/<wid>.json, check that it parses and has every field
-with an allowed value, and show me all verdicts as one table, one row per paper.
+instructions in classify.md and the paper text.
+Save each reply to verdicts/<wid>.json, check that it correctly as json.
+
+Print back a table, showing the results
 ```
-
-Why one subagent per paper? Each one reads a whole paper in its own context. Your main chat only gets back the JSON, so it stays short and cheap. Haiku is the smallest model, and a clear prompt is enough for it.
-
-Koessler & Skreta is pure theory, so it should come back `empirical: no`. It drops out here.
 
 ## Step 3: Download the replication data
 
 ```
-For each paper with empirical other than "no" and a replication_url in papers.json,
-download its replication package into datasets/<wid>/. They are on Harvard Dataverse
-and Zenodo: use their APIs, no login is needed.
+For each paper classified as impirical and download the replication file using replication_url in papers.json,
+download its replication package into datasets/<wid>/. Use the API of Harvard Dataverse
+and Zenodo to download.
 ```
 
-The Greenstone et al. package is the largest, about 300 MB.
 
 ## Step 4: Replicate
 
