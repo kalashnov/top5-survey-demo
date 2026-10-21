@@ -26,7 +26,7 @@ You do not need a terminal for any of it. Every step is a message you paste into
 Then paste the first message:
 
 ```
-Clone or download https://github.com/kalashnov/top5-survey-demo into this folder,
+Clone or download https://github.com/kalashnov/top5-survey-demo,
 create a Python environment and install full_demo/requirements.txt in it.
 ```
 
