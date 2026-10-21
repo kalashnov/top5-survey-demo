@@ -5,7 +5,7 @@ A short version of the tutorial in [`full_demo/`](full_demo/). It takes five pap
 | Paper | Journal |
 |---|---|
 | Koessler & Skreta, "Informed Information Design" | JPE 2023 |
-| Greenstone, Pande, Ryan & Sudarshan, "Can Pollution Markets Work in Developing Countries?" | QJE 2025 |
+| Englmaier, Grimm, Grothe, Schindler & Schudy, "The Effect of Incentives in Nonroutine Analytical Team Tasks" | JPE 2024 |
 | Do & Jacoby, "Optimal Pricing of a New Utility Service: The Case of Piped Water in Vietnam" | REStud 2024 |
 | Ganimian, Muralidharan & Walters, "Augmenting State Capacity for Child Development" | JPE 2023 |
 | Cederlöf, Fredriksson, Nekoei & Seim, "Mandatory Notice of Layoff, Job Search, and Efficiency" | QJE 2024 |
@@ -86,7 +86,7 @@ Check a few numbers yourself against the PDF.
 | Paper | Classify | Replicate |
 |---|---|---|
 | Koessler & Skreta | not empirical | — |
-| Greenstone et al. | empirical | Table 3 replicates |
+| Englmaier et al. | empirical | Table 8 replicates |
 | Do & Jacoby | empirical | Table 1 replicates |
 | Ganimian et al. | empirical | Table A.4 replicates only in part |
 | Cederlöf et al. | empirical | no data: the package has only code |

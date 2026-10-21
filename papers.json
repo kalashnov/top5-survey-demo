@@ -12,16 +12,16 @@
   "table": null
  },
  {
-  "wid": "W4407240810",
-  "journal_code": "QJE",
-  "publication_year": 2025,
-  "doi": "https://doi.org/10.1093/qje/qjaf009",
-  "pdf_url": "https://wrap.warwick.ac.uk/id/eprint/174171/13/WRAP-twerp-1453-Sudarshan-24.pdf",
-  "replication_url": "https://doi.org/10.7910/DVN/PDFDKR",
-  "title": "Can Pollution Markets Work in Developing Countries? Experimental Evidence from India",
-  "authors": "Michael Greenstone; Rohini Pande; Nicholas Ryan; Anant Sudarshan",
-  "abstract": "Abstract Market-based environmental regulations are seldom used in low-income countries, where pollution is highest but state capacity is often low. We collaborated with the Gujarat Pollution Control Board (GPCB) to design and experimentally evaluate the world’s first particulate-matter emissions market, which covered industrial plants in a large Indian city. There are three main findings. First, the market functioned well. Treatment plants, randomly assigned to the emissions market, traded permits to become significant net sellers or buyers. After trading, treatment plants held enough permits to cover their emissions 99% of the time, compared with just 66% compliance with standards under the command-and-control status quo. Second, treatment plants reduced pollution emissions, relative to control plants, by 20%–30%. Third, the market reduced abatement costs by an estimated 11%, holding constant emissions. This cost-savings estimate is based on plant-specific marginal cost curves that we estimate from the universe of bids to buy and sell permits in the market. The combination of pollution reductions and low costs imply that the emissions market has mortality benefits that exceed its costs by at least 25 times.",
-  "table": "Table 3"
+  "wid": "W4390827051",
+  "journal_code": "JPE",
+  "publication_year": 2024,
+  "doi": "https://doi.org/10.1086/729443",
+  "pdf_url": "https://rationality-and-competition.de/wp-content/uploads/discussion_paper/468.pdf",
+  "replication_url": "https://doi.org/10.7910/DVN/2BADW3",
+  "title": "The Effect of Incentives in Nonroutine Analytical Team Tasks",
+  "authors": "Florian Englmaier; Stefan Grimm; Dominik Grothe; David Schindler; Simeon Schudy",
+  "abstract": "Despite the prevalence of nonroutine analytical team tasks in modern economies, little is understood regarding how incentives influence performance in these tasks. In a series of field experiments involving more than 5,000 participants, we investigate how incentives alter behavior in teams working on such a task. We document a positive effect of bonus incentives on performance, even among teams with strong intrinsic motivation. Bonuses also transform team organization by enhancing the demand for leadership. Exogenously increasing teams' demand for leadership results in performance improvements comparable to those seen with bonus incentives, rendering it as a likely mediator of incentive effects.",
+  "table": "Table 8"
  },
  {
   "wid": "W4405354213",
