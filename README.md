@@ -66,16 +66,7 @@ and Zenodo to download.
 
 ```
 For each paper with a folder in datasets/, spawn one Sonnet subagent, two at a time.
-Ask each to replicate the table named in the paper's `table` field in papers.json:
-- The paper is pdfs/<wid>.pdf and the package is datasets/<wid>/ (read-only).
-  Use this PDF only; do not look for other versions of the paper.
-- Find the code in the package that makes the table, and port it to Python
-  (pandas, pyfixest) as replications/<wid>.py. If the package has code but no data,
-  stop and say so.
-- Print each published coefficient, standard error and N next to its own.
-  Type the published numbers in by hand: from the package's own table output if it
-  has one, otherwise from the PDF. Never copy them from your own output.
-- A number that misses is a result: say by how much, and what you ruled out.
+Give each the instructions in replicate.md and the paper's wid.
 When they are done, show me one table: paper, how many numbers match, how many miss, why.
 ```
 
