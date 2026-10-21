@@ -89,6 +89,19 @@ Two reasons a paper does not replicate:
 
 Ask Claude to explain any miss. Whether your run matches this table is a test of the prompts.
 
+## Step 5: Your own interaction table
+
+Now write a prompt yourself. Pick a paper that replicated, e.g. Do & Jacoby, and ask a subagent for a new table: the paper's main regression, with the treatment interacted with characteristics of the subjects. Does a price discount work differently for larger households, or for those who used more water before the experiment?
+
+A good prompt says:
+
+- **Where to start.** The replication in `replications/<wid>.py`, so the agent builds on code that matches the paper.
+- **Which characteristics.** Only ones measured before treatment; a characteristic the treatment could change biases the interaction. Name the ones you care about, or ask the agent to propose a few and to justify each.
+- **What to return.** One column per characteristic, the main effect and the interaction with their standard errors, and N. Saved as a script, e.g. `interactions/<wid>.py`.
+- **What not to do.** Change nothing else in the specification, and report every column it ran, not just the significant ones.
+
+Read the agent's choices before its results.
+
 ## Next
 
 [`full_demo/`](full_demo/) runs the same steps on 50 papers. It shows how to:
