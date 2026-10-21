@@ -29,12 +29,7 @@ Then paste the first message:
 Set up the repository https://github.com/kalashnov/top5-survey-demo in this folder:
 1. Clone it here, into the current folder itself, not a subfolder. If git is not
    installed, download the ZIP from GitHub and unpack it here instead.
-2. Make sure Python 3.11 or newer is available. If it is not, tell me how to install
-   it on my system and stop.
-3. Create a virtual environment .venv in this folder and install full_demo/requirements.txt into it.
-4. Check that it works: import pymupdf, pandas and pyfixest with the .venv Python.
-From now on, run all Python in this folder with the .venv Python.
-Tell me what you did and whether anything failed.
+2. Create a virtual environment .venv in this folder and install full_demo/requirements.txt into it.
 ```
 
 Claude will ask for permission before it runs commands. Read what it wants to do, then allow it.
