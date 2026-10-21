@@ -26,10 +26,8 @@ You do not need a terminal for any of it. Every step is a message you paste into
 Then paste the first message:
 
 ```
-Set up the repository https://github.com/kalashnov/top5-survey-demo in this folder:
-1. Clone it here, into the current folder itself, not a subfolder. If git is not
-   installed, download the ZIP from GitHub and unpack it here instead.
-2. Create a virtual environment .venv in this folder and install full_demo/requirements.txt into it.
+Clone or download https://github.com/kalashnov/top5-survey-demo into this folder,
+create a Python environment and install full_demo/requirements.txt in it.
 ```
 
 Claude will ask for permission before it runs commands. Read what it wants to do, then allow it.
