@@ -21,13 +21,20 @@ You do not need a terminal for any of it. Every step is a message you paste into
 
 1. **Get a subscription.** Sign up at [claude.ai](https://claude.ai) and pick a plan on the [pricing page](https://claude.com/pricing). **Pro** (20 USD a month) is enough.
 2. **Install the Claude app.** Download it from [claude.ai/download](https://claude.ai/download) (macOS and Windows) and sign in.
-3. **Get this repository.** On its GitHub page click **Code → Download ZIP**, then unzip it.
-4. **Open it in Claude Code.** In the app's **Code** tab, choose the unzipped folder as the working folder.
+3. **Open a folder in Claude Code.** Make a new, empty folder, e.g. `survey-demo` in your Documents. In the app's **Code** tab, choose it as the working folder.
 
 Then paste the first message:
 
 ```
-Set up a Python environment (.venv) for this repo and install full_demo/requirements.txt.
+Set up the repository https://github.com/kalashnov/top5-survey-demo in this folder:
+1. Clone it here, into the current folder itself, not a subfolder. If git is not
+   installed, download the ZIP from GitHub and unpack it here instead.
+2. Make sure Python 3.11 or newer is available. If it is not, tell me how to install
+   it on my system and stop.
+3. Create a virtual environment .venv in this folder and install full_demo/requirements.txt into it.
+4. Check that it works: import pymupdf, pandas and pyfixest with the .venv Python.
+From now on, run all Python in this folder with the .venv Python.
+Tell me what you did and whether anything failed.
 ```
 
 Claude will ask for permission before it runs commands. Read what it wants to do, then allow it.
