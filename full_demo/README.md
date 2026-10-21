@@ -1,6 +1,6 @@
 # Demo: survey and replication of papers in Economics
 
-This is a tutorial on a mass survey and replication of papers using an LLM. It shows how to:
+This is a tutorial on surveying and replicating papers at scale with an LLM. It shows how to:
 
 | | |
 |---|---|
@@ -9,7 +9,7 @@ This is a tutorial on a mass survey and replication of papers using an LLM. It s
 
 In this toy example, we will:
 
-1. **Survey.** Survey the methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in `papers.json`.
+1. **Survey.** Survey the methodology of 50 papers from AER, QJE, JPE, ECMA and REStud, 2021–2025, listed in [`papers.json`](papers.json).
 2. **Replicate.** Ask the agents to replicate the empirical papers in the sample in an organized way.
 3. **Extend.** The next step is bounded only by imagination.
 
@@ -22,14 +22,14 @@ The repo is small enough not to eat any sensible part of your quota on a 20 USD 
 
 ### Install Claude app and get a subscription
 
-Everything below runs through an agent, so you need one first. I personally prefer running Claude in VSCode extension, others prefer Claude Code command line interface, but for a newcomer I suggest to use an app:
+Everything below runs through an agent, so you need one first. I personally prefer running Claude in the VS Code extension, and others prefer the Claude Code command-line interface, but for a newcomer I suggest the app:
 
-1. **Get a subscription.** Sign up at [claude.ai](https://claude.ai) and pick a plan on the [pricing page](https://claude.com/pricing). **Pro** (20 USD a month) is enough for this tutorial
+1. **Get a subscription.** Sign up at [claude.ai](https://claude.ai) and pick a plan on the [pricing page](https://claude.com/pricing). **Pro** (20 USD a month) is enough for this tutorial.
 2. **Install the Claude app.** Download the desktop app from [claude.ai/download](https://claude.ai/download) (macOS and Windows) and sign in. Its **Code** tab runs Claude Code on a folder on your computer: open this repository there and chat with the agent.
 3. **Install the command line interface.** Stage 2 calls `claude` from a script, so install the CLI as well:
 
 > [!TIP]
-> When you see a command like this, and not sure what to do, just ask your agent to help: "Please, install Claude Code CLI for me and help me authenticate"
+> When you see a command like this and are not sure what to do, just ask your agent for help: "Please install the Claude Code CLI for me and help me authenticate."
 
 
    ```bash
@@ -39,7 +39,7 @@ Everything below runs through an agent, so you need one first. I personally pref
 
    Then run `claude` once in a terminal and log in with your subscription account.
 
-Both, Gemini and ChatGPT have their respective analog of app/extension/cli. Any of these will do the job as well
+Gemini and ChatGPT both have their own app, editor extension and CLI. Any of these will do the job as well.
 
 ### Python environment
 
@@ -59,7 +59,7 @@ All commands below assume the environment is active and you are in the repositor
 
 ## Stages
 
-The tutorial is organized in stages. If you want to skip the explanations and just execute the code, go to the **What to do** paragraph. Also, if you are not interested in some stages, you may ask your agent to do that stage for you.
+The tutorial is organized in stages. If you want to skip the explanations and just run the code, go to each stage's **What to do** paragraph. If you are not interested in a stage, you may ask your agent to do it for you.
 
 1. **Collect papers.** List the journals' articles, draw the sample, download the PDFs, extract the text.
 2. **Classify.** Ask each paper a fixed set of questions about its methodology, collect the answers as structured data.
@@ -101,7 +101,7 @@ python stage1_collect_papers/extract_text.py
 
 *Covers: subagents at scale, verbose prompts, few-shot examples, prompt caching, structured output, batch processing*
 
-Now we arrive at the fun part: running an army of subagents. The idea of this stage is as follows. Let the agents read the paper and answer a few questions: Do they run an experiment? Do they run difference-in-differences? What is the source of the data?
+Now we arrive at the fun part: running an army of subagents. The idea of this stage is as follows: let the agents read each paper and answer a few questions: Do they run an experiment? Do they run difference-in-differences? What is the source of the data?
 
 Our virtues and our vices:
 
@@ -162,7 +162,7 @@ For some repositories, downloading cannot be efficiently automated. Here are the
 
 Sometimes a package doesn't contain the data itself, but provides instructions on how to fetch the data from another source. Agents are quite good at this most of the time; just ask them to follow the authors' instructions.
 
-**What to do.** For this tutorial I suggest manually downloading a few replication packages, e.g. these. After they are downloaded, just ask Claude to go into your downloads folder and copy them into the project.
+**What to do.** For this tutorial I suggest manually downloading a few replication packages, e.g. the ones below. After they are downloaded, just ask Claude to go into your downloads folder and copy them into the project.
 
 | Paper | Size | Repository | Package |
 |---|---|---|---|
@@ -223,15 +223,13 @@ To get all registered specs as one dataset, with the published and replicated co
 python stage4_replicate/collect_specs.py   # writes specs.csv: one row per published number
 ```
 
-## Stage 5: new analysis
+## Stage 5: New analysis
 
 Suppose that, instead of just replicating the authors' analysis, we want to extend it. There are two useful approaches. 
 
-The first example requires a decision for each separate paper from scratch. Say we want the agents to systematically look for new interactions in data. Then we can write `ISpec`, which will formalize interaction tables, and write a prompt that will ask an agent to 
+The first approach needs a fresh decision for each paper. Say we want the agents to systematically look for new interactions in the data. Then we can register another version of `Spec`, e.g. `ISpec` (`I` for interaction), and ask the subagents to come up with sensible interaction regressions. Of course, we should also come up with an automated way to validate and aggregate the agents' output.
 
-Then, we can register another version of `Spec`, e.g. `ISpec` (`I` for interaction) and ask the subagents to come up with sensible interaction regressions. Of course, we should also come up with some automated way to validate/aggregate the agents' output.
-
-In another example, we can test what happens if we replace all left-hand sides with `exp`: we can do it with the shared code we wrote in advance. There is no need to spawn a new subagent for each paper from scratch.
+The second approach needs no new decisions. Say we want to test what happens if we replace every left-hand side with its `exp`: the shared code we wrote in advance can do it for every registered `Spec`, with no need to spawn a new subagent for each paper.
 
 ## Take-home lessons
 

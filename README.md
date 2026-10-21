@@ -1,8 +1,8 @@
 # Demo: classify and replicate Economics papers with an agent
 
-This is a tutorial on survey and replication of papers using an LLM. This is a short version. The full version is in [`full_demo/`](full_demo/).
+This is a tutorial on surveying and replicating papers with an LLM. This is the short version; the full version is in [`full_demo/`](full_demo/).
 
-On a sampple of 5 papers we will:
+On a sample of 5 papers, listed in [`papers.json`](papers.json), we will:
 
 1. **Classify.** Have subagents answer a fixed set of questions about each paper's methodology.
 2. **Replicate.** Have subagents reproduce one table of each remaining paper from the authors' replication package.
@@ -24,45 +24,46 @@ Clone or download https://github.com/kalashnov/top5-survey-demo,
 create a Python environment and install full_demo/requirements.txt in it.
 ```
 
-Claude will ask for permission before it runs commands and writes in the folder.
+Claude will ask for permission before it runs commands or writes to the folder.
 
 ## Step 1: Get the papers
 
-Ask the agent to download paper PDFs
+Ask the agent to download the papers' PDFs with the scripts in [`full_demo/stage1_collect_papers/`](full_demo/stage1_collect_papers/):
 
 ```
-Download the 5 papers PDFs in `papers.json` listed in json and extract their text. Use the scripts in `full_demo/stage1_collect_papers`. 
+Download the PDFs of the 5 papers listed in papers.json and extract their text.
+Use the scripts in full_demo/stage1_collect_papers.
 
-Report the paper titles, please
+Please report the paper titles.
 ```
 
 
 ## Step 2: Classify
 
-Now we want to ask Claude some questions about each of the paper: is the paper empirical, is it an experiment, does it study heterogeneity, is the intervention costly, does it use a lot of controls. You can read the full prompt for this task in the file classify.md
+Now we ask Claude a few questions about each paper: is it empirical, is it an experiment, does it study heterogeneity, is the intervention costly, does it use a lot of controls. You can read the full prompt for this task in [`classify.md`](classify.md).
 
 ```
 For each paper in papers.json, spawn one Haiku subagent, all in parallel. Give each the
-instructions in classify.md and the paper text.
-Save each reply to verdicts/<wid>.json, check that it correctly as json.
+instructions in classify.md and the paper's text.
+Save each reply to verdicts/<wid>.json and check that it is valid JSON.
 
-Print back a table, showing the results
+Print a table with the results.
 ```
 
 ## Step 3: Download the replication data
 
-Now we want to take the empirical papers and download their datasets.
+Now we take the empirical papers and download their datasets.
 
 ```
-For each paper classified as empirical and download the replication file using replication_url in papers.json,
-download its replication package into datasets/<wid>/. Use the API of Harvard Dataverse
+For each paper classified as empirical, download its replication package from
+replication_url in papers.json into datasets/<wid>/. Use the APIs of Harvard Dataverse
 and Zenodo to download.
 ```
 
 
 ## Step 4: Replicate
 
-Finally, we want them to replicate a table from each paper, and report the reason if it doesn't replicate. You may read the full prompt in `replicate.md`
+Finally, we ask subagents to replicate a table from each paper and to report the reason if it does not replicate. You can read the full prompt in [`replicate.md`](replicate.md).
 
 ```
 For each paper with a folder in datasets/, spawn one Sonnet subagent, two at a time.
@@ -70,7 +71,7 @@ Give each the instructions in replicate.md and the paper's wid.
 When they are done, show me one table: paper, how many numbers match, how many miss, why.
 ```
 
-You can ask a few follow up questions, if you are interested.
+If you are interested, ask a few follow-up questions.
 
 ## Step 5: Your own interaction table
 
