@@ -28,7 +28,7 @@ Claude will ask for permission before it runs commands or writes to the folder.
 
 ## Step 1: Get the papers
 
-Ask the agent to download the papers' PDFs with the scripts in [`full_demo/stage1_collect_papers/`](full_demo/stage1_collect_papers/):
+Ask the agent to download the papers' PDFs:
 
 ```
 Download the PDFs of the 5 papers listed in papers.json and extract their text.
